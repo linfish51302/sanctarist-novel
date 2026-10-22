@@ -50,6 +50,7 @@
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
+            cursor: pointer;
         }
 
         .gallery-card:hover {
@@ -60,9 +61,8 @@
 
         .gallery-img-box {
             width: 100%;
-            /* 調整高度比例以完美容納 9:16 直式海報 */
             aspect-ratio: 9 / 16;
-            background: #080808; /* 海報未滿處的沉浸式暗色底 */
+            background: #080808;
             overflow: hidden;
             position: relative;
             display: flex;
@@ -73,7 +73,6 @@
         .gallery-img-box img {
             width: 100%;
             height: 100%;
-            /* 改用 contain，確保圖片 100% 完整呈現，不裁切任何 Logo 或邊緣 */
             object-fit: contain;
             filter: sepia(10%) contrast(105%);
             transition: transform 0.5s ease, filter 0.5s ease;
@@ -107,6 +106,116 @@
             font-size: 0.85rem;
             color: #a39b8b;
             letter-spacing: 0.15em;
+            margin-bottom: 12px;
+        }
+
+        .view-detail-hint {
+            font-size: 0.75rem;
+            color: var(--gold-accent);
+            opacity: 0.7;
+            letter-spacing: 0.15em;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-card:hover .view-detail-hint {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- 彈出視窗（Modal）高質感暗黑奇幻設計 --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-box {
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(10, 10, 10, 0.98));
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 40px;
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.25);
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: none;
+            border: none;
+            color: var(--gold-accent);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.2);
+        }
+
+        .modal-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--gold-accent);
+            margin-bottom: 5px;
+            letter-spacing: 0.1em;
+        }
+
+        .modal-subtitle {
+            font-size: 0.9rem;
+            color: #a39b8b;
+            letter-spacing: 0.15em;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 15px;
+        }
+
+        .modal-body {
+            color: #e0d6c3;
+            font-size: 1rem;
+            line-height: 2.2;
+            text-align: justify;
+            margin-bottom: 25px;
+        }
+
+        .modal-quote {
+            font-family: 'Cinzel', serif;
+            font-style: italic;
+            color: #ffe875;
+            background: rgba(212, 175, 55, 0.08);
+            border-left: 3px solid var(--gold-accent);
+            padding: 15px 20px;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            border-radius: 0 6px 6px 0;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.05);
         }
     </style>
 </head>
@@ -132,69 +241,75 @@
 
         <!-- 角色海報網格 -->
         <div class="gallery-grid">
-            <!-- 1. 柴克・安德烈 -->
-            <div class="gallery-card">
+            <!-- 1. 柴克 -->
+            <div class="gallery-card" onclick="openModal('zack')">
                 <div class="gallery-img-box">
                     <img src="zack.png" alt="柴克・安德烈">
                 </div>
                 <div class="gallery-caption">
                     <h3>柴克・安德烈</h3>
                     <div class="char-title">ZACK ANDRE</div>
+                    <div class="view-detail-hint">✦ 點擊觀看角色檔案</div>
                 </div>
             </div>
 
-            <!-- 2. 克里斯・安德烈 -->
-            <div class="gallery-card">
+            <!-- 2. 克里斯 -->
+            <div class="gallery-card" onclick="openModal('chris')">
                 <div class="gallery-img-box">
                     <img src="chris.png" alt="克里斯・安德烈">
                 </div>
                 <div class="gallery-caption">
                     <h3>克里斯・安德烈</h3>
                     <div class="char-title">CHRIS ANDRE</div>
+                    <div class="view-detail-hint">✦ 點擊觀看角色檔案</div>
                 </div>
             </div>
 
-            <!-- 3. 安娜・安德烈 -->
-            <div class="gallery-card">
+            <!-- 3. 安娜 -->
+            <div class="gallery-card" onclick="openModal('anna')">
                 <div class="gallery-img-box">
                     <img src="anna.png" alt="安娜・安德烈">
                 </div>
                 <div class="gallery-caption">
                     <h3>安娜・安德烈</h3>
                     <div class="char-title">ANNA ANDRE</div>
+                    <div class="view-detail-hint">✦ 點擊觀看角色檔案</div>
                 </div>
             </div>
 
-            <!-- 4. 雷・安德烈 -->
-            <div class="gallery-card">
+            <!-- 4. 雷 -->
+            <div class="gallery-card" onclick="openModal('ray')">
                 <div class="gallery-img-box">
                     <img src="ray.png" alt="雷・安德烈">
                 </div>
                 <div class="gallery-caption">
                     <h3>雷・安德烈</h3>
                     <div class="char-title">RAY ANDRE</div>
+                    <div class="view-detail-hint">✦ 點擊觀看角色檔案</div>
                 </div>
             </div>
 
-            <!-- 5. 傑西・約爾森 -->
-            <div class="gallery-card">
+            <!-- 5. 傑西 -->
+            <div class="gallery-card" onclick="openModal('jesse')">
                 <div class="gallery-img-box">
                     <img src="jesse.png" alt="傑西・約爾森">
                 </div>
                 <div class="gallery-caption">
                     <h3>傑西・約爾森</h3>
                     <div class="char-title">JESSE JORGENSEN</div>
+                    <div class="view-detail-hint">✦ 點擊觀看角色檔案</div>
                 </div>
             </div>
 
             <!-- 6. 鮑勃？ -->
-            <div class="gallery-card">
+            <div class="gallery-card" onclick="openModal('bob')">
                 <div class="gallery-img-box">
                     <img src="bob.png" alt="鮑勃？">
                 </div>
                 <div class="gallery-caption">
                     <h3>鮑勃？</h3>
                     <div class="char-title">BOB?</div>
+                    <div class="view-detail-hint">✦ 點擊觀看角色檔案</div>
                 </div>
             </div>
         </div>
@@ -206,5 +321,81 @@
         </div>
     </div>
 
+    <!-- 彈出視窗結構 -->
+    <div class="modal-overlay" id="characterModal" onclick="outsideClose(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-title" id="modalTitle">角色名稱</div>
+            <div class="modal-subtitle" id="modalSubtitle">身分與類型</div>
+            <div class="modal-body" id="modalBody">詳細敘述文字...</div>
+            <div class="modal-quote" id="modalQuote">「角色經典台詞」</div>
+        </div>
+    </div>
+
+    <!-- 互動控制 JavaScript -->
+    <script>
+        const characterData = {
+            zack: {
+                title: "柴克・安德烈",
+                subtitle: "ZACK ANDRE ｜ 聖術師類型未知",
+                body: "原本只是剛熱愛籃球的高中生，卻在一連串神祕事件後，發現自己的家族隱藏著長達十五年的祕密，得知自己是「雷翼」的繼承者。他擅長射箭，總在家裡後院透過練習射箭整理心情。身為安德烈家族的一員，他被迫踏入陌生的聖術世界。面對眾人的期待與未知的命運，柴克必須找到屬於自己的答案。",
+                quote: "「在成為任何人期待的模樣之前，我想先做我自己。」"
+            },
+            chris: {
+                title: "克里斯・安德烈",
+                subtitle: "CHRIS ANDRE ｜ 雷之元素使",
+                body: "柴克的哥哥，擁有出色的科技天賦與靈活的思考方式。他的元素使天賦「雷之演算法」，能讓自身進入電子化狀態，與數位系統互相連結。看似輕鬆幽默的外表下，藏著對家人深厚的責任感。",
+                quote: "「聖術不是只有力量，還要看你怎麼使用它。」"
+            },
+            anna: {
+                title: "安娜・安德烈",
+                subtitle: "ANNA ANDRE ｜ 雷之術器使",
+                body: "安德烈家的女兒，個性果斷、勇敢，面對危險從不輕易退縮。以媽媽-瑞秋為模範學習。她的術器是黑金雙頭劍「艾連」，能以精準而凌厲的攻勢迎戰敵人。比起空談，她更習慣用行動保護重要的人，是家族中可靠的戰鬥力量。",
+                quote: "「有些事情，不需要等到準備好了才去做。」"
+            },
+            ray: {
+                title: "雷・安德烈",
+                subtitle: "RAY ANDRE ｜ 術器使",
+                body: "詹姆斯・安德烈同父異母的弟弟，也是柴克從未真正熟悉的叔叔。他的母親來自日本雷之聖術名門家庭，使他也有強大的聖術血統。以黑色菱形術器「阿法」操控強大的金色雷電，擁有豐富的戰鬥經驗。外表冷峻、不善表達情感，卻始終默默履行對哥哥的承諾，守護安德烈一家。",
+                quote: "「有些事情，我答應過他，就一定會做到。」"
+            },
+            jesse: {
+                title: "傑西・約爾森",
+                subtitle: "JESSE JORGENSEN ｜ 雷之元素使",
+                body: "約爾森家族的家主，也是十五年前重大事件的親歷者。他的元素使天賦「紫電」能夠帶人穿梭各種空間，左手佩戴象徵家主身分的「鳴之戒」。沉穩、謹慎且重視承諾的他，始終守護著一段不願輕易提起的過去。",
+                quote: "「有些承諾，即使過了十五年，也不能忘記。」"
+            },
+            bob: {
+                title: "鮑勃・？？？",
+                subtitle: "BOB ??? ｜ 原為水之元素使／黑水巫師",
+                body: "曾以親切可靠的形象接近安德烈一家，真實身分與目的卻始終籠罩在謎團之中。原本是操控水元素的聖術師，如今卻使用詭異的黑水巫術，能將身體化為液態、穿越狹窄空間，甚至改變外貌。他似乎與十五年前的事件有著不為人知的關聯。",
+                quote: "「有些帳，本來就不是一代人欠下的。」"
+            }
+        };
+
+        function openModal(charKey) {
+            const data = characterData[charKey];
+            if (!data) return;
+
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalSubtitle').innerText = data.subtitle;
+            document.getElementById('modalBody').innerText = data.body;
+            document.getElementById('modalQuote').innerText = data.quote;
+
+            document.getElementById('characterModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; // 背景禁止滾動
+        }
+
+        function closeModal() {
+            document.getElementById('characterModal').classList.remove('active');
+            document.body.style.overflow = 'auto'; // 恢復背景滾動
+        }
+
+        function outsideClose(event) {
+            if (event.target.id === 'characterModal') {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
