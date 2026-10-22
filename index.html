@@ -1,203 +1,116 @@
 <!DOCTYPE html>
-
 <html lang="zh-TW">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>聖術師 - 失落的繼承者 | 官方小說網站</title>
-
     <link rel="stylesheet" href="style.css">
-
     <style>
+        /* 將書本容器 (.book-container) 的底圖替換為 cover2.png */
+        .book-container {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.92), rgba(10, 10, 10, 0.95)), 
+                        url('cover2.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            padding: 40px;
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+        }
 
         /* 導覽專區精緻質感樣式 */
-
         .nav-section {
-
             text-align: center;
-
             position: relative;
-
             z-index: 2;
-
             max-width: 400px;
-
             margin: 0 auto;
-
         }
-
         .nav-title {
-
             font-family: 'Cinzel', serif;
-
             color: var(--gold-accent);
-
             font-size: 0.9rem;
-
             letter-spacing: 0.3em;
-
             margin-bottom: 20px;
-
             opacity: 0.85;
-
             text-transform: uppercase;
-
         }
-
         .nav-links {
-
             list-style: none;
-
             padding: 0;
-
             margin: 0;
-
         }
-
         .nav-links li {
-
             margin-bottom: 15px;
-
         }
-
         .nav-links a {
-
             display: inline-block;
-
             color: #d8cebc;
-
             text-decoration: none;
-
             font-size: 1.05rem;
-
             letter-spacing: 0.2em;
-
             padding: 8px 20px;
-
             transition: all 0.3s ease;
-
             border-bottom: 1px solid transparent;
-
         }
-
         .nav-links a:hover {
-
             color: #ffe875;
-
             border-bottom: 1px solid rgba(212, 175, 55, 0.5);
-
             text-shadow: 0 0 10px rgba(255, 232, 117, 0.5);
-
             transform: translateY(-2px);
-
         }
-
         /* 優雅的細金線分隔線 */
-
         .ornament-line {
-
             width: 120px;
-
             height: 1px;
-
             background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
-
             margin: 30px auto;
-
         }
-
     </style>
-
 </head>
-
 <body>
 
-
-
     <!-- 魔法漂浮光點背景 -->
-
     <div class="magic-particles"></div>
 
-
-
     <div class="book-container">
-
         <!-- 封面主內容 -->
-
         <div style="text-align: center; padding: 15px 0; position: relative; z-index: 2;">
-
             
-
             <!-- 上方：白魔法工作室 Logo -->
-
             <div style="margin-bottom: 25px;">
-
                 <img src="whitemagic-logo.png" alt="白魔法藝術工作室 Logo" style="display: block; margin: 0 auto; transform: translateX(-15px); max-width: 120px; width: 100%; height: auto; filter: drop-shadow(0 0 10px rgba(212,175,55,0.6)); opacity: 0.95;">
-
                 <p style="font-family: 'Cinzel', serif; color: var(--gold-accent); letter-spacing: 0.35em; font-size: 0.75rem; opacity: 0.75; margin-top: 6px; transform: translateX(-15px); text-align: center;">WHITE MAGIC ART STUDIO</p>
-
             </div>
-
             
-
             <!-- 正中央：超大版六芒星與書名 Logo (logo2.png) -->
-
             <div style="margin: 15px 0 25px 0;">
-
                 <img src="logo2.png" alt="聖術師 - 失落的繼承者" style="max-width: 600px; width: 100%; height: auto; filter: drop-shadow(0 0 28px rgba(212,175,55,0.75));">
-
             </div>
-
-
 
             <!-- 史詩級小說簡介文字（含呼吸閃動燙金字） -->
-
             <p style="max-width: 540px; margin: 0 auto 35px auto; font-size: 0.98rem; color: #f0e6d2; opacity: 0.95; line-height: 2.2; text-shadow: 0 2px 6px rgba(0,0,0,0.9); text-align: justify;">
-
                 當滾滾雷聲劃破夜空時，你可曾想過，那或許不是暴雨將至的預兆，而是ㄧ群隱密的人正在黑夜中為你與惡魔浴血奮戰？當滔天巨浪洶湧翻騰時，你可曾想過，那或許不是惡劣的天氣所致，而是他們正乘風破浪，為了守護這座世界而奔赴戰場？在他們之中，有人能憑藉意念撫平致命的傷口，有人能徒手移山倒海。他們從不公開現身，卻曾在歷史的陰影裡悄悄扭轉了無數文明的命運。其真實身份早已湮沒在歲月的塵埃中，唯有一個古老的稱呼流傳至今——<span class="gold-breathe">聖術師</span>。
-
             </p>
-
             
-
             <!-- 翻開序章按鈕 -->
-
             <a href="prologue.html" class="magical-btn">翻開序章：血祭封印</a>
-
         </div>
-
-
 
         <div class="ornament-line"></div>
-
         
-
         <!-- 質感導覽專區 -->
-
         <div class="nav-section">
-
             <div class="nav-title">Navigation</div>
-
             <ul class="nav-links">
-
                 <li><a href="characters.html">主要人物介紹</a></li>
-
                 <li><a href="character-gallery.html">角色形象專欄</a></li>
-
                 <li><a href="toc.html">完整章節目錄</a></li>
-
             </ul>
-
         </div>
-
     </div>
 
-
-
 </body>
-
-</html> 
+</html>
