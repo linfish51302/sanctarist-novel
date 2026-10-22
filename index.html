@@ -6,6 +6,35 @@
     <title>聖術師 - 失落的繼承者 | 官方小說網站</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* 頁面背景圖（cover2.png）與暗黑濾鏡設定 */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: url('cover2.png') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* 加上一層沉浸式半透明暗色遮罩，讓文字與金色光芒更清晰突出 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.78); /* 可依喜好調整透明度 0.7~0.85 */
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* 確保所有內容層級高於背景遮罩 */
+        .magic-particles, .book-container {
+            position: relative;
+            z-index: 2;
+        }
+
         /* 導覽專區精緻質感樣式 */
         .nav-section {
             text-align: center;
