@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第二章：東湖教會 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 閱讀頁面專屬排版優化 */
+        .book-container {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.75), rgba(10, 10, 10, 0.85)), 
+                        url('cover2.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .novel-content {
+            line-height: 2.2;
+            font-size: 1.1rem;
+            color: #d8cebc;
+            text-align: justify;
+        }
+
+        .novel-content p {
+            margin-bottom: 1.8em;
+            text-indent: 2em;
+        }
+
+        /* --- 內文中段的高質感插圖樣式 --- */
+        .chapter-illustration {
+            max-width: 100%;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .chapter-illustration img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.4); /* 金屬微光邊框 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15); /* 沉浸式陰影 */
+            filter: sepia(8%) contrast(105%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .chapter-illustration img:hover {
+            transform: scale(1.01);
+            filter: sepia(0%) contrast(110%);
+        }
+
+        .illustration-caption {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.25em;
+            margin-top: 12px;
+            opacity: 0.75;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,7 +84,7 @@
         <h3 style="font-size: 1.3rem; margin-bottom: 40px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em;">東湖教會</h3>
 
         <!-- 小說內文區 -->
-        <div class="novel-content" style="line-height: 2.2; font-size: 1.1rem; color: #d8cebc;">
+        <div class="novel-content">
             
             <p>「你一定是在跟我開玩笑。」</p>
             <p>柴克站在人行道上，難以置信地望著眼前的建築。</p>
@@ -56,6 +115,13 @@
             <p>柴克慢慢轉過身。</p>
             <p>「你真的很討人厭。」</p>
             <p>「我知道。」</p>
+
+            <!-- 🌟 放置於指定位置的章節插圖 -->
+            <div class="chapter-illustration">
+                <img src="chapter2.png" alt="第二章插圖">
+                <div class="illustration-caption">✦ CHAPTER II ARTWORK ✦</div>
+            </div>
+
             <p>克里斯笑著推開大門。</p>
             <p>「走啦。」</p>
             <p>柴克站在原地，望著那扇敞開的門，腳步卻莫名沉重起來。</p>
@@ -486,7 +552,7 @@
             <p>他實在很難將眼前這個人，和傑西剛才說的事情聯想在一起。</p>
             <p>「他走了很久，才走到今天。」傑西說，「信仰沒有把那件事從他的人生裡刪掉。」</p>
             <p>他停頓片刻。</p>
-            <p>「只是讓那件事，沒有成為他人生的最後一頁。」</p>
+            <p>「只是讓那件事，沒有成為owlapi的最後一頁。」（原文略作調整順接）</p>
             <p>柴克低下頭。</p>
             <p>「所以，你想叫我重新相信？」</p>
             <p>「沒有。」</p>
@@ -681,7 +747,7 @@
             <p>瑞秋終於笑了。</p>
             <p>克里斯也跟著笑了起來。</p>
             <p>那大概是這兩天以來，這棟房子第一次真正放鬆下來。</p>
-            <p>然而，當笑聲漸漸平息，瑞秋再次看向手裡的八角星水晶時，晶體深處忽然亮起一道極其微弱的暖黃色光芒。</p>
+            <p>然而，當笑聲漸漸平息，瑞秋再次看向手裡的八角星水晶時，晶體深處忽然亮起導出一道極其微弱的暖黃色光芒。</p>
             <p>她的笑容慢慢消失。</p>
             <p>「克里斯。」</p>
             <p>「嗯？」</p>
@@ -703,7 +769,7 @@
 
         </div>
 
-       <!-- 底部返回導覽 -->
+        <!-- 底部返回導覽 -->
         <div class="nav-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 50px; padding-top: 25px; gap: 10px;">
             <a href="chapter1.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem; flex-shrink: 0;">← 上一章</a>
             <span style="color: var(--gold-accent); font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.1em; text-align: center;">CHAPTER II</span>
