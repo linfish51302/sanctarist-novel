@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第九章：約爾森陵墓 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 閱讀頁面專屬排版優化 */
+        .book-container {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.75), rgba(10, 10, 10, 0.85)), 
+                        url('cover2.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .novel-content {
+            line-height: 2.2;
+            font-size: 1.1rem;
+            color: #d8cebc;
+            text-align: justify;
+        }
+
+        .novel-content p {
+            margin-bottom: 1.8em;
+            text-indent: 2em;
+        }
+
+        /* --- 內文中段的高質感插圖樣式 --- */
+        .chapter-illustration {
+            max-width: 100%;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .chapter-illustration img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.4); /* 金屬微光邊框 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15); /* 沉浸式陰影 */
+            filter: sepia(8%) contrast(105%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .chapter-illustration img:hover {
+            transform: scale(1.01);
+            filter: sepia(0%) contrast(110%);
+        }
+
+        .illustration-caption {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.25em;
+            margin-top: 12px;
+            opacity: 0.75;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,7 +84,7 @@
         <h3 style="font-size: 1.3rem; margin-bottom: 40px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em;">約爾森陵墓</h3>
 
         <!-- 小說內文區 -->
-        <div class="novel-content" style="line-height: 2.2; font-size: 1.1rem; color: #d8cebc;">
+        <div class="novel-content">
             
             <p>美國・紐約</p>
             <p>鐘聲響了。</p>
@@ -40,6 +99,13 @@
             <p>一道微弱的光芒從他身上升起。</p>
             <p>那光並非白色，而是一種近乎透明的灰。</p>
             <p>它緩緩飄過長椅，穿過殘破的十字架，最後向教堂上方飛去。</p>
+
+            <!-- 🌟 放置於指定位置的第一張插圖 -->
+            <div class="chapter-illustration">
+                <img src="chapter9-1.png" alt="第九章插圖一">
+                <div class="illustration-caption">✦ CHAPTER IX ARTWORK I ✦</div>
+            </div>
+
             <p>黑暗中，有個男人懸浮在半空。</p>
             <p>灰色光芒沒入他的胸口。</p>
             <p>男人緩緩睜開眼睛。</p>
@@ -128,7 +194,9 @@
             <p>鮑勃站在原地，手指無意識地碰向胸前。</p>
             <p>衣服底下，似乎藏著某樣很小的東西。</p>
             <p>他很快收回手，轉身走入黑暗。</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>鹽湖城・東湖地下教會</p>
             <p>查德的手機被放在桌上。</p>
             <p>螢幕早已熄滅。</p>
@@ -231,7 +299,9 @@
             <p>「詹姆斯。」</p>
             <p>傑西點頭。</p>
             <p>「我要親眼確認，他還在那裡。」</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>美國・華盛頓州・西雅圖近郊</p>
             <p>紫色雷光劃破山谷間的白霧。</p>
             <p>兩道人影出現在林間空地。</p>
@@ -400,7 +470,7 @@
             <p>過了很久，才緩緩開口。</p>
             <p>「塞西爾・約爾森。」</p>
             <p>雷從未聽過這個名字。</p>
-            <p>誰？」</p>
+            <p>「誰？」</p>
             <p>傑西睜眼，仍然望著那道水痕。</p>
             <p>「我堂哥。」</p>
             <p>雷一怔。</p>
@@ -470,7 +540,15 @@
             <p>兩人對望。</p>
             <p>同時想起了同一個人。</p>
             <p>「柴克。」</p>
+
+            <!-- 🌟 放置於指定位置的第二張插圖 -->
+            <div class="chapter-illustration">
+                <img src="chapter9-2.png" alt="第九章插圖二">
+                <div class="illustration-caption">✦ CHAPTER IX ARTWORK II ✦</div>
+            </div>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>紐約・廢棄教堂</p>
             <p>地下室裡沒有燈。</p>
             <p>鮑勃獨自站在一張舊木桌前。</p>
