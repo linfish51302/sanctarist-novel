@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>序章：血祭封印 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 閱讀頁面專屬排版優化 */
+        .book-container {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.75), rgba(10, 10, 10, 0.85)), 
+                        url('cover2.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .novel-content {
+            line-height: 2.2;
+            font-size: 1.1rem;
+            color: #d8cebc;
+            text-align: justify;
+        }
+
+        .novel-content p {
+            margin-bottom: 1.8em;
+            text-indent: 2em;
+        }
+
+        /* --- 放置於文章底部的電影感插圖樣式 --- */
+        .chapter-illustration {
+            max-width: 100%;
+            margin: 50px auto 30px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .chapter-illustration img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.4); /* 金屬微光邊框 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15); /* 沉浸式陰影 */
+            filter: sepia(8%) contrast(105%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .chapter-illustration img:hover {
+            transform: scale(1.01);
+            filter: sepia(0%) contrast(110%);
+        }
+
+        .illustration-caption {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.25em;
+            margin-top: 12px;
+            opacity: 0.75;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,7 +84,7 @@
         <h3 style="font-size: 1.3rem; margin-bottom: 40px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em;">血祭封印</h3>
 
         <!-- 小說內文區 -->
-        <div class="novel-content" style="line-height: 2.2; font-size: 1.1rem; color: #d8cebc;">
+        <div class="novel-content">
             
             <p>十五年前，美國某座郊區小鎮。</p>
             <p>深夜，一道閃電劃破天空，慘白的光芒瞬間照亮整條街道。</p>
@@ -294,7 +353,7 @@
             <p>同一時間，耀眼的白光吞沒了整座小鎮。</p>
             <p>不知道過了多久，雷聲終於停了。</p>
             <p>夜色重新籠罩大地。</p>
-            <p>曾經滿是惡魔的街道，此刻只剩下滿地碎石與焦黑的痕跡。</p>
+            <p>曾經滿是惡魔的街道，只剩下滿地碎石與焦黑的痕跡。</p>
             <p>魔神消失了。</p>
             <p>惡魔也不見了。</p>
             <p>而詹姆斯，再也沒有出現。</p>
@@ -306,7 +365,13 @@
 
         </div>
 
-       <!-- 底部返回導覽 -->
+        <!-- 🌟 統一放置於底部的章節精選插圖 -->
+        <div class="chapter-illustration">
+            <img src="prologue.png" alt="序章插圖">
+            <div class="illustration-caption">✦ PROLOGUE ARTWORK ✦</div>
+        </div>
+
+        <!-- 底部返回導覽 -->
         <div class="nav-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 50px; padding-top: 25px; gap: 10px;">
             <a href="index.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem; flex-shrink: 0;">← 返回首頁</a>
             <span style="color: var(--gold-accent); font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.1em; text-align: center;">CHAPTER ZERO</span>
