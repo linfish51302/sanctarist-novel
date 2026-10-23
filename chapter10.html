@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第十章：黑水 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 閱讀頁面專屬排版優化 */
+        .book-container {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.75), rgba(10, 10, 10, 0.85)), 
+                        url('cover2.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .novel-content {
+            line-height: 2.2;
+            font-size: 1.1rem;
+            color: #d8cebc;
+            text-align: justify;
+        }
+
+        .novel-content p {
+            margin-bottom: 1.8em;
+            text-indent: 2em;
+        }
+
+        /* --- 內文中段的高質感插圖樣式 --- */
+        .chapter-illustration {
+            max-width: 100%;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .chapter-illustration img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.4); /* 金屬微光邊框 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15); /* 沉浸式陰影 */
+            filter: sepia(8%) contrast(105%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .chapter-illustration img:hover {
+            transform: scale(1.01);
+            filter: sepia(0%) contrast(110%);
+        }
+
+        .illustration-caption {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.25em;
+            margin-top: 12px;
+            opacity: 0.75;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,7 +84,7 @@
         <h3 style="font-size: 1.3rem; margin-bottom: 40px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em;">黑水</h3>
 
         <!-- 小說內文區 -->
-        <div class="novel-content" style="line-height: 2.2; font-size: 1.1rem; color: #d8cebc;">
+        <div class="novel-content">
             
             <p>美國・猶他州・鹽湖城・東湖地下教會</p>
             <p>凌晨兩點十七分。</p>
@@ -46,7 +105,9 @@
             <p>黑水碰上污漬。</p>
             <p>停了一瞬。</p>
             <p>隨後，鞋底的黑色痕跡緩緩濕潤，與地上的水滴融為一體。</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>東湖地下教會深處，更多黑水從排水口、石牆與地磚的縫隙間滲出。</p>
             <p>它們沒有四處漫流，而是沿著走廊朝同一個方向匯聚。</p>
             <p>中央會堂。</p>
@@ -88,6 +149,13 @@
             <p>「轉過來。」克里斯說。</p>
             <p>沒有回答。</p>
             <p>安娜握緊艾連，劍身亮起金色雷光。</p>
+
+            <!-- 🌟 放置於指定位置的第一張插圖 -->
+            <div class="chapter-illustration">
+                <img src="chapter10-1.png" alt="第十章插圖一">
+                <div class="illustration-caption">✦ CHAPTER X ARTWORK I ✦</div>
+            </div>
+
             <p>斗篷人終於動了。</p>
             <p>卻不是轉身。</p>
             <p>而是整個身體突然失去支撐。</p>
@@ -99,7 +167,9 @@
             <p>安娜猛然回頭。</p>
             <p>兩人幾乎同時喊了出來。</p>
             <p>「柴克！」</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>砰！</p>
             <p>213號房門狠狠撞上牆壁。</p>
             <p>「柴克！」</p>
@@ -152,7 +222,9 @@
             <p>「先去找他。」</p>
             <p>克里斯抬起頭。</p>
             <p>兩人立刻衝出房間。</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>舊變電廠外，夜風迎面而來。</p>
             <p>克里斯與安娜穿過出口，衝進空地。</p>
             <p>四周一片寂靜。</p>
@@ -209,7 +281,9 @@
             <p>「找到了。」</p>
             <p>雷已經轉身。</p>
             <p>「走。」</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>美國・紐約・廢棄教堂</p>
             <p>柴克醒來時，第一個感覺是冷。</p>
             <p>不是雪地那種刺骨的寒冷，而是從石牆與地面緩緩滲出的濕氣。</p>
@@ -635,11 +709,18 @@
             <p>男人也緩緩抬起手。</p>
             <p>那雙眼睛深處，浮現出一絲難以察覺的笑意。</p>
             <p>柴克的指尖即將碰上對方。</p>
+
+            <!-- 🌟 放置於指定位置的第二張插圖 -->
+            <div class="chapter-illustration">
+                <img src="chapter10-2.png" alt="第十章插圖二">
+                <div class="illustration-caption">✦ CHAPTER X ARTWORK II ✦</div>
+            </div>
+
             <p>就在這時——</p>
             <p>「柴克——！」</p>
             <p>一道熟悉的聲音從身後傳來。</p>
             <p>柴克猛然一震。</p>
-            <p>「你瘋了嗎？！」</p>
+            <p>「你瘋了嗎？蒂！」</p>
             <p>轟——！！</p>
             <p>教堂大門在翡翠色雷光中轟然炸裂！</p>
             <p>碎木飛散，煙塵湧入禮拜堂。</p>
