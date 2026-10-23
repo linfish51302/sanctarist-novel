@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第六章：東湖地下教會 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 閱讀頁面專屬排版優化 */
+        .book-container {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.75), rgba(10, 10, 10, 0.85)), 
+                        url('cover2.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .novel-content {
+            line-height: 2.2;
+            font-size: 1.1rem;
+            color: #d8cebc;
+            text-align: justify;
+        }
+
+        .novel-content p {
+            margin-bottom: 1.8em;
+            text-indent: 2em;
+        }
+
+        /* --- 內文中段的高質感插圖樣式 --- */
+        .chapter-illustration {
+            max-width: 100%;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .chapter-illustration img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.4); /* 金屬微光邊框 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15); /* 沉浸式陰影 */
+            filter: sepia(8%) contrast(105%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .chapter-illustration img:hover {
+            transform: scale(1.01);
+            filter: sepia(0%) contrast(110%);
+        }
+
+        .illustration-caption {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.25em;
+            margin-top: 12px;
+            opacity: 0.75;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,7 +84,7 @@
         <h3 style="font-size: 1.3rem; margin-bottom: 40px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em;">東湖地下教會</h3>
 
         <!-- 小說內文區 -->
-        <div class="novel-content" style="line-height: 2.2; font-size: 1.1rem; color: #d8cebc;">
+        <div class="novel-content">
             
             <p>美國・猶他州・鹽湖城</p>
             <p>電話響了十一聲。</p>
@@ -67,6 +126,13 @@
             <p>CHAD</p>
             <p>「你到底跑去哪了……」</p>
             <p>查德蹲下身，伸手準備將手機拿出來。</p>
+
+            <!-- 🌟 放置於指定位置的章節插圖 -->
+            <div class="chapter-illustration">
+                <img src="chapter6.png" alt="第六章插圖">
+                <div class="illustration-caption">✦ CHAPTER VI ARTWORK ✦</div>
+            </div>
+
             <p>然而，就在他的指尖即將碰到螢幕時——</p>
             <p>鈴聲突然停止。</p>
             <p>整棟房子瞬間恢復寂靜。</p>
@@ -100,7 +166,9 @@
             <p>只剩下柴克的手機，孤零零地躺在碎玻璃旁。</p>
             <p>螢幕再次亮起。</p>
             <p>1 MISSED CALL</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>「查德！」</p>
             <p>柴克猛然從床上坐起。</p>
             <p>他大口喘著氣，額頭早已布滿冷汗。</p>
@@ -192,7 +260,9 @@
             <p>柴克坐在床上，盯著那扇門看了好一會兒。</p>
             <p>最後，他忍不住低聲抱怨：</p>
             <p>「我真的很討厭我們家現在這種講話方式。」</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>五分鐘後。</p>
             <p>柴克站在走廊盡頭。</p>
             <p>然後，他徹底忘記了剛才的不滿。</p>
@@ -203,7 +273,7 @@
             <p>銀灰色金屬與深色石材交錯構成宏偉的建築。牆面嵌著一道道透明管線，金色雷光沿著其中緩緩流動，將整座空間照得明亮而莊嚴。</p>
             <p>腳下的透明地板深處，巨大的雷元素紋路向四面八方延伸，宛如隱藏在建築底下的血管。</p>
             <p>而在主廳正中央，懸浮著一顆巨大的十字形水晶。</p>
-            <p>水晶散發著柔和的金色光芒，細小的雷電不時從表面向外擴散，沿著四周的導電管線流向不同區域。</p>
+            <p>水晶散發著柔和的金光，細小的雷電不時從表面向外擴散，沿著四周的導電管線流向不同區域。</p>
             <p>那規律閃動的光芒，讓柴克聯想到一顆正在跳動的心臟。</p>
             <p>他忍不住抬頭。</p>
             <p>「這是教會？」</p>
@@ -272,7 +342,9 @@
             <p>克里斯說完，便繼續向前走。</p>
             <p>柴克站在原地愣了幾秒，才重新跟上。</p>
             <p>不知道為什麼，這個回答反而讓他舒服了一點。</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>經過一處轉角時，柴克注意到牆上掛著一幅古老的壁畫。</p>
             <p>畫中描繪著一群手持不同武器的人，站在黑暗與光明交界的地方。天空中雷電交錯，地面則遍布難以辨認的黑色身影。</p>
             <p>柴克停下腳步。</p>
@@ -418,7 +490,7 @@
             <p>克里斯停頓片刻。</p>
             <p>「所以麻煩的是，如果有人主動選擇與惡魔合作……」</p>
             <p>柴克立刻想起一個名字。</p>
-            <p>「鮑伯。」</p>
+            <p>「鮑勃。」</p>
             <p>克里斯看著他。</p>
             <p>「對。」</p>
             <p>「巫師。」</p>
@@ -447,7 +519,9 @@
             <p>柴克往門裡看了一眼。</p>
             <p>眼睛瞬間亮了起來。</p>
             <p>「你終於開始了解我了。」</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>訓練室比半座體育館還要大。</p>
             <p>柴克站在入口，忍不住張大嘴巴。</p>
             <p>黑色合金地板上刻著巨大的圓形雷紋。高處排列著數十組感應裝置，牆面則嵌滿各式機械結構。</p>
@@ -617,7 +691,9 @@
             <p>「已經沒有了！」</p>
             <p>安娜終於笑出聲。</p>
             <p>隨著她鬆開手，雙頭劍化作無數細小的雷光，消失在空氣中。</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>「下一個。」</p>
             <p>克里斯看向潔西卡。</p>
             <p>「靈獸使。」</p>
