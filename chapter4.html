@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第四章：不速之客 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 閱讀頁面專屬排版優化 */
+        .book-container {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.75), rgba(10, 10, 10, 0.85)), 
+                        url('cover2.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .novel-content {
+            line-height: 2.2;
+            font-size: 1.1rem;
+            color: #d8cebc;
+            text-align: justify;
+        }
+
+        .novel-content p {
+            margin-bottom: 1.8em;
+            text-indent: 2em;
+        }
+
+        /* --- 內文中段的高質感插圖樣式 --- */
+        .chapter-illustration {
+            max-width: 100%;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .chapter-illustration img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.4); /* 金屬微光邊框 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15); /* 沉浸式陰影 */
+            filter: sepia(8%) contrast(105%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .chapter-illustration img:hover {
+            transform: scale(1.01);
+            filter: sepia(0%) contrast(110%);
+        }
+
+        .illustration-caption {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.25em;
+            margin-top: 12px;
+            opacity: 0.75;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,7 +84,7 @@
         <h3 style="font-size: 1.3rem; margin-bottom: 40px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em;">不速之客</h3>
 
         <!-- 小說內文區 -->
-        <div class="novel-content" style="line-height: 2.2; font-size: 1.1rem; color: #d8cebc;">
+        <div class="novel-content">
             
             <p>大門緩緩打開。</p>
             <p>映入眼簾的，是一片狼藉的客廳。</p>
@@ -59,6 +118,13 @@
             <p>柴克愣住。</p>
             <p>「……什麼？」</p>
             <p>「去克里斯的房間。」</p>
+
+            <!-- 🌟 放置於指定位置的章節插圖 -->
+            <div class="chapter-illustration">
+                <img src="chapter4.png" alt="第四章插圖">
+                <div class="illustration-caption">✦ CHAPTER IV ARTWORK ✦</div>
+            </div>
+
             <p>瑞秋的語氣忽然變得異常嚴肅。</p>
             <p>「現在。」</p>
             <p>柴克難以置信地望著母親。</p>
@@ -98,7 +164,7 @@
             <p>瑞秋趁機衝進廚房，猛然拉開最下層的抽屜。</p>
             <p>柴克回頭的瞬間，正好看見母親從裡面拿出一把手槍。</p>
             <p>他的腳步差點停住。</p>
-            <p>「媽？！」</p>
+            <p>「媽？涅？！」</p>
             <p>砰！</p>
             <p>槍聲猛然響起，震得整棟房子彷彿都跟著顫動。</p>
             <p>怪物受到攻擊，立刻轉向瑞秋。</p>
@@ -200,7 +266,7 @@
             <p>那本奇怪的聖經。</p>
             <p>血脈。</p>
             <p>鎖鑰。</p>
-            <p>他下意識地要握住胸前的八角星水晶，但卻赫然發現水晶已經消失，</p>
+            <p>他下意識地要握住胸前的八角星水晶，但卻赫然發現水晶已經消失……</p>
             <p>「……什麼鑰匙？」</p>
             <p>男人注意到他的動作，嘴角微微揚起。</p>
             <p>「看來，你今天學到了不少東西。」</p>
@@ -232,7 +298,6 @@
             <p>可是，她很清楚。</p>
             <p>這些方法根本無法真正傷害牠。</p>
             <p>她能做的，只有拖延時間。</p>
-        
             <p>怪物再次撲來！</p>
             <p>瑞秋閃避不及，被龐大的身軀撞倒在地。</p>
             <p>劇烈的疼痛讓她一時無法起身。</p>
@@ -274,7 +339,7 @@
             <p>「我今天心情本來就很差。」</p>
             <p>她抬起眼睛，冷冷地望向怪物。</p>
             <p>「所以，你最好不要再惹我。」</p>
-              <p>回到樓上。</p>
+            <p>回到樓上。</p>
             <p>黑刃猛然揮下！</p>
             <p>柴克連忙側身閃避。</p>
             <p>砰！</p>
@@ -508,7 +573,7 @@
             <p>她連忙收起手中的重劍，快步走了過來。</p>
             <p>「你的肩膀！」</p>
             <p>柴克卻沒有回答。</p>
-            <p>他的目光仍停留在剛才那把武器出現的位置。</p>
+            <p>他的目光仍停留在剛才那發光武器出現的位置。</p>
             <p>接著，緩緩移向安娜。</p>
             <p>「妳……」</p>
             <p>安娜停住了。</p>
