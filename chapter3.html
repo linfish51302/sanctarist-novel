@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第三章：暗房與惡夢 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 閱讀頁面專屬排版優化 */
+        .book-container {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.75), rgba(10, 10, 10, 0.85)), 
+                        url('cover2.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .novel-content {
+            line-height: 2.2;
+            font-size: 1.1rem;
+            color: #d8cebc;
+            text-align: justify;
+        }
+
+        .novel-content p {
+            margin-bottom: 1.8em;
+            text-indent: 2em;
+        }
+
+        /* --- 內文中段的高質感插圖樣式 --- */
+        .chapter-illustration {
+            max-width: 100%;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .chapter-illustration img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.4); /* 金屬微光邊框 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15); /* 沉浸式陰影 */
+            filter: sepia(8%) contrast(105%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .chapter-illustration img:hover {
+            transform: scale(1.01);
+            filter: sepia(0%) contrast(110%);
+        }
+
+        .illustration-caption {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.25em;
+            margin-top: 12px;
+            opacity: 0.75;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,7 +84,7 @@
         <h3 style="font-size: 1.3rem; margin-bottom: 40px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em;">暗房與惡夢</h3>
 
         <!-- 小說內文區 -->
-        <div class="novel-content" style="line-height: 2.2; font-size: 1.1rem; color: #d8cebc;">
+        <div class="novel-content">
             
             <p>「柴克……」</p>
             <p>又來了。</p>
@@ -402,6 +461,13 @@
             <p>「我家到底住過什麼人？」</p>
             <p>就在這時，金色光絲從他身旁緩緩飄過，朝書桌延伸。</p>
             <p>當光絲抵達桌面時，竟逐漸散開，化作細小的金色光點，最後消失在空氣中。</p>
+
+            <!-- 🌟 放置於指定位置的章節插圖 -->
+            <div class="chapter-illustration">
+                <img src="chapter3.png" alt="第三章插圖">
+                <div class="illustration-caption">✦ CHAPTER III ARTWORK ✦</div>
+            </div>
+
             <p>彷彿已經完成了自己的任務。</p>
             <p>柴克走向書桌。</p>
             <p>桌上散落著幾份泛黃的文件。</p>
@@ -438,7 +504,7 @@
             <p>星圖、案件紀錄、奇怪的書籍。</p>
             <p>父親、傑西。</p>
             <p>還有夢裡反覆出現的六芒星。</p>
-            <p>原本毫無關聯的事情，此刻卻彷彿被一條看不見的線串了起來。</p>
+            <p>原本毫無關聯的事情，卻彷彿被一條看不見的線串了起來。</p>
             <p>柴克低頭望著父親的照片。</p>
             <p>「你到底是什麼人……」</p>
             <p>他開始翻找書桌的抽屜。</p>
@@ -455,8 +521,8 @@
             <p>黑色封面的中央，赫然印著一個燙金圖案。</p>
             <p>六芒星。</p>
             <p>柴克臉上的笑容逐漸消失。</p>
-            <p>他慢慢將書放在桌上，小心翼翼地翻開
-                <p>創世記。</p>
+            <p>他慢慢將書放在桌上，小心翼翼地翻開。</p>
+            <p>創世記。</p>
             <p>出埃及記。</p>
             <p>詩篇。</p>
             <p>乍看之下，內容似乎與普通聖經沒有什麼不同。</p>
@@ -660,7 +726,7 @@
             <p>客廳裡，竟然有一頭怪物。</p>
             <p>那東西體型龐大，四肢伏在地面，灰暗的身軀幾乎佔滿了整條走道。</p>
             <p>牠沒有眼睛。</p>
-            <p>臉上只有一張異常巨大的嘴。</p>
+            <p>臉上只有異常巨大的嘴。</p>
             <p>柴克的呼吸瞬間停住。</p>
             <p>並不是因為他第一次看見這種東西。</p>
             <p>而是因為——</p>
@@ -814,11 +880,16 @@
             <p>她知道。</p>
             <p>大門完全敞開。</p>
             <p>瑞秋走了進去。</p>
-                 </div>
 
-       <!-- 底部返回導覽 -->
+        </div>
+
+        <!-- 底部返回導覽 -->
         <div class="nav-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 50px; padding-top: 25px; gap: 10px;">
             <a href="chapter2.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem; flex-shrink: 0;">← 上一章</a>
             <span style="color: var(--gold-accent); font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.1em; text-align: center;">CHAPTER III</span>
             <a href="chapter4.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem; flex-shrink: 0;">下一章 →</a>
         </div>
+    </div>
+
+</body>
+</html>
