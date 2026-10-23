@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第十一章：父親？ - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 閱讀頁面專屬排版優化 */
+        .book-container {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.75), rgba(10, 10, 10, 0.85)), 
+                        url('cover2.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .novel-content {
+            line-height: 2.2;
+            font-size: 1.1rem;
+            color: #d8cebc;
+            text-align: justify;
+        }
+
+        .novel-content p {
+            margin-bottom: 1.8em;
+            text-indent: 2em;
+        }
+
+        /* --- 內文中段的高質感插圖樣式 --- */
+        .chapter-illustration {
+            max-width: 100%;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .chapter-illustration img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.4); /* 金屬微光邊框 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15); /* 沉浸式陰影 */
+            filter: sepia(8%) contrast(105%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .chapter-illustration img:hover {
+            transform: scale(1.01);
+            filter: sepia(0%) contrast(110%);
+        }
+
+        .illustration-caption {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.25em;
+            margin-top: 12px;
+            opacity: 0.75;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,7 +84,7 @@
         <h3 style="font-size: 1.3rem; margin-bottom: 40px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em;">父親？</h3>
 
         <!-- 小說內文區 -->
-        <div class="novel-content" style="line-height: 2.2; font-size: 1.1rem; color: #d8cebc;">
+        <div class="novel-content">
             
             <p>美國・紐約・廢棄教堂</p>
             <p>「柴克——！」</p>
@@ -68,7 +127,7 @@
             <p>雷沒有猶豫。</p>
             <p>甚至沒有試著確認那個男人的身分。</p>
             <p>他看著那張臉時，眼中只有憤怒。</p>
-            <p>柴克低樓，看向自己仍在滲血的掌心。</p>
+            <p>柴克低頭，看向自己仍在滲血的掌心。</p>
             <p>剛才那個男人說的話，一句句重新浮現在腦海。</p>
             <p>我一直都為你驕傲。</p>
             <p>讓我回來。</p>
@@ -327,7 +386,7 @@
 
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
 
-            <p>美國・猶他州・鹽湖城・舊變電廠</p>
+            <p>美國・猶他州・鹽湖城・舊變電廠(東湖地下教會門口)</p>
             <p>滋——啪！</p>
             <p>紫色雷光落下。</p>
             <p>柴克踉蹌著站穩。</p>
@@ -381,7 +440,7 @@
             <p>「可是我們差一點就失去你了！」</p>
             <p>克里斯突然吼了出來。</p>
             <p>柴克怔住。</p>
-            <p>「你以為我是在氣你想放棄當雷翼嗎？！」</p>
+            <p>「你以為我是在氣你想放棄當雷翼嗎？紐」</p>
             <p>克里斯往前一步。</p>
             <p>「我根本不在乎你最後要不要當什麼雷翼！」</p>
             <p>「你不想當，就不要當！」</p>
@@ -390,7 +449,14 @@
             <p>克里斯停住。</p>
             <p>他的胸口劇烈起伏。</p>
             <p>過了很久，才終於把那句話說完。</p>
-            <p>「我差一點沒把你帶回來。」</p>
+            <p>「我差一點沒把你帶回來。」</p> 
+
+            <!-- 🌟 放置於指定位置的章節插圖 -->
+            <div class="chapter-illustration">
+                <img src="chapter11.png" alt="第十一章插圖">
+                <div class="illustration-caption">✦ CHAPTER XI ARTWORK ✦</div>
+            </div>
+
             <p>柴克沒有說話。</p>
             <p>克里斯也沒有。</p>
             <p>兄弟兩人就這樣站在空地上。</p>
