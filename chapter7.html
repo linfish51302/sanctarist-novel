@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第七章：雷之演算法 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 閱讀頁面專屬排版優化 */
+        .book-container {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.75), rgba(10, 10, 10, 0.85)), 
+                        url('cover2.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .novel-content {
+            line-height: 2.2;
+            font-size: 1.1rem;
+            color: #d8cebc;
+            text-align: justify;
+        }
+
+        .novel-content p {
+            margin-bottom: 1.8em;
+            text-indent: 2em;
+        }
+
+        /* --- 內文結尾的高質感插圖樣式 --- */
+        .chapter-illustration {
+            max-width: 100%;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .chapter-illustration img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.4); /* 金屬微光邊框 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15); /* 沉浸式陰影 */
+            filter: sepia(8%) contrast(105%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .chapter-illustration img:hover {
+            transform: scale(1.01);
+            filter: sepia(0%) contrast(110%);
+        }
+
+        .illustration-caption {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.25em;
+            margin-top: 12px;
+            opacity: 0.75;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,7 +84,7 @@
         <h3 style="font-size: 1.3rem; margin-bottom: 40px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em;">雷之演算法</h3>
 
         <!-- 小說內文區 -->
-        <div class="novel-content" style="line-height: 2.2; font-size: 1.1rem; color: #d8cebc;">
+        <div class="novel-content">
             
             <p>美國・紐約・曼哈頓</p>
             <p>清晨六點四十七分。</p>
@@ -89,7 +148,9 @@
             <p>詹姆斯・安德烈，已經死了。</p>
             <p>男人靜靜望向遠方。</p>
             <p>下一秒，黑霧再次從他的腳下蔓延開來。</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>美國・猶他州・鹽湖城・東湖地下教會</p>
             <p>「接下來，是最後一種。」</p>
             <p>克里斯走向訓練場中央。</p>
@@ -249,7 +310,9 @@
             <p>直到現在，他才終於明白。</p>
             <p>那些東西從來不只是興趣。</p>
             <p>克里斯早已將自己理解世界的方式，變成了獨一無二的聖術。</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>「所以……」</p>
             <p>柴克忽然收回視線。</p>
             <p>「我的呢？」</p>
@@ -322,7 +385,7 @@
             <p>「對，籃球是你近期新的才藝。」</p>
             <p>克里斯笑了。</p>
             <p>柴克看著手裡的弓。</p>
-            <p>「可是這些跟聖術有什麼關係？」</p>
+            <p>「可是這些跟聖術師有什麼關係？」</p>
             <p>「你的反應。」</p>
             <p>克里斯說。</p>
             <p>「視野、空間判斷，還有你對速度和距離的掌握。」</p>
@@ -433,7 +496,9 @@
             <p>所有人的身影都開始模糊。</p>
             <p>直到最後——</p>
             <p>整個世界，只剩下光。</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>霧。</p>
             <p>又是這裡。</p>
             <p>柴克緩緩睜開眼睛。</p>
@@ -511,7 +576,9 @@
             <p>「等等！」</p>
             <p>柴克伸出手。</p>
             <p>然而，還來不及碰到眼前的人影，整個世界便驟然碎裂。</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>「柴克！」</p>
             <p>他猛然睜開眼睛。</p>
             <p>第一個映入眼簾的，是克里斯焦急的臉。</p>
@@ -560,7 +627,7 @@
             <p>「我看到他了。」</p>
             <p>柴克忽然說。</p>
             <p>克里斯的目光立刻回到弟弟身上。</p>
-            <p>誰？」</p>
+            <p>「誰？」</p>
             <p>「那個一直叫我的人。」</p>
             <p>周圍安靜下來。</p>
             <p>柴克慢慢坐起身。</p>
@@ -588,7 +655,7 @@
             <p>柴克停頓片刻。</p>
             <p>「那個人是拉比。」</p>
             <p>沒有人說話。</p>
-            <p>偌大的訓練室里，只剩下系統運轉時發出的低沉嗡鳴。</p>
+            <p>偌大的訓練室裡，只剩下系統運轉時發出的低沉嗡鳴。</p>
             <p>柴克看向克里斯。</p>
             <p>他原本以為哥哥會像之前一樣，立刻給出某種解釋。</p>
             <p>解釋聖術。</p>
@@ -600,7 +667,7 @@
             <p>「嗯？」</p>
             <p>「你們所說的那位聖術師至尊……」</p>
             <p>柴克嚥了嚥口水。</p>
-            <p>「會出現在別人的夢里嗎？」</p>
+            <p>「會出現在別人的夢裡嗎？」</p>
             <p>克里斯沉默了很久。</p>
             <p>最後，他只是輕輕搖頭。</p>
             <p>「我不知道。」</p>
@@ -622,6 +689,12 @@
             <p>那不是普通的夢。</p>
             <p>至少——</p>
             <p>不只是一場夢。</p>
+
+            <!-- 🌟 放置於指定結尾位置的章節插圖 -->
+            <div class="chapter-illustration">
+                <img src="chapter7.png" alt="第七章插圖">
+                <div class="illustration-caption">✦ CHAPTER VII ARTWORK ✦</div>
+            </div>
 
         </div>
 
