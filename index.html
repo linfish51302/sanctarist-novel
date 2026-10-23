@@ -23,21 +23,10 @@
 
         /* 上方工作室 Logo 區塊 */
         .studio-logo-box {
-            margin-bottom: 18px;
+            margin-bottom: 25px;
         }
 
-        /* 解法一：將大標題 Logo 上移至頂部，完全避開主角臉部 */
-        .main-title-box {
-            margin: 0 auto 25px auto;
-        }
-        .main-title-box img {
-            max-width: 480px;
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0 0 25px rgba(212,175,55,0.8));
-        }
-
-        /* 史詩級小說簡介文字 */
+        /* 史詩級小說簡介文字（往上移，讓主角臉部完整露出） */
         .novel-intro {
             max-width: 540px;
             margin: 0 auto 30px auto;
@@ -47,6 +36,84 @@
             line-height: 2.1;
             text-shadow: 0 2px 6px rgba(0,0,0,0.9);
             text-align: justify;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* --- 互動式魔法陣與標題區塊 --- */
+        .interactive-title-container {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto 35px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* 後方魔法陣 (star.png)：平時半透明，滑鼠懸停時華麗浮現放大 */
+        .magic-star-bg {
+            position: absolute;
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            opacity: 0.25; /* 平時低調隱藏 */
+            transform: scale(0.95);
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* 前方文字標題 (lostheir.png)：可點擊的超連結容器 */
+        .title-link {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            text-decoration: none;
+            transition: transform 0.4s ease;
+        }
+
+        .title-link img {
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+            filter: drop-shadow(0 0 15px rgba(212,175,55,0.6));
+            transition: filter 0.4s ease, transform 0.4s ease;
+        }
+
+        /* 小提示文字 */
+        .click-hint {
+            position: relative;
+            z-index: 2;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.25em;
+            margin-top: 12px;
+            opacity: 0.7;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        /* --- 關鍵：當滑鼠碰觸互動區塊時的魔法特效 --- */
+        .interactive-title-container:hover .magic-star-bg {
+            opacity: 0.9; /* 魔法陣亮起 */
+            transform: scale(1.08) rotate(15deg); /* 微微放大並旋轉，增加動態感 */
+            filter: drop-shadow(0 0 25px rgba(255, 232, 117, 0.8));
+        }
+
+        .interactive-title-container:hover .title-link img {
+            filter: drop-shadow(0 0 25px rgba(255, 232, 117, 0.9));
+            transform: scale(1.03);
+        }
+
+        .interactive-title-container:hover .click-hint {
+            opacity: 1;
+            transform: translateY(2px);
+            text-shadow: 0 0 12px rgba(255, 232, 117, 0.8);
         }
 
         /* 導覽專區精緻質感樣式 */
@@ -115,18 +182,25 @@
                 <p style="font-family: 'Cinzel', serif; color: var(--gold-accent); letter-spacing: 0.35em; font-size: 0.75rem; opacity: 0.75; margin-top: 6px;">WHITE MAGIC ART STUDIO</p>
             </div>
             
-            <!-- 正中央上方：書名 Logo (logo2.png) 調整至上方避開臉部 -->
-            <div class="main-title-box">
-                <img src="logo2.png" alt="聖術師 - 失落的繼承者">
-            </div>
-
-            <!-- 史詩級小說簡介文字（含呼吸閃動燙金字） -->
+            <!-- 史詩級小說簡介文字（移至上方，讓柴克與安娜的臉部完整呈現） -->
             <p class="novel-intro">
                 當滾滾雷聲劃破夜空時，你可曾想過，那或許不是暴雨將至的預兆，而是ㄧ群隱密的人正在黑夜中為你與惡魔浴血奮戰？當滔天巨浪洶湧翻騰時，你可曾想過，那或許不是惡劣的天氣所致，而是他們正乘風破浪，為了守護這座世界而奔赴戰場？在他們之中，有人能憑藉意念撫平致命的傷口，有人能徒手移山倒海。他們從不公開現身，卻曾在歷史的陰影裡悄悄扭轉了無數文明的命運。其真實身份早已湮沒在歲月的塵埃中，唯有一個古老的稱呼流傳至今——<span class="gold-breathe">聖術師</span>。
             </p>
-            
-            <!-- 翻開序章按鈕 -->
-            <a href="prologue.html" class="magical-btn">翻開序章：血祭封印</a>
+
+            <!-- 互動式魔法陣與標題區塊（滑鼠懸停觸發魔法陣發光，點擊進入序章） -->
+            <div class="interactive-title-container" onclick="location.href='prologue.html';">
+                <!-- 背景魔法陣 (star.png) -->
+                <img src="star.png" alt="魔法陣" class="magic-star-bg">
+                
+                <!-- 前方文字標題 (lostheir.png) -->
+                <a href="prologue.html" class="title-link" onclick="event.stopPropagation();">
+                    <img src="lostheir.png" alt="聖術師：失落的繼承者">
+                </a>
+
+                <!-- 點擊提示 -->
+                <div class="click-hint">✦ 點 擊 標 題 翻 開 序 章 ✦</div>
+            </div>
+
         </div>
 
         <div class="ornament-line"></div>
