@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第八章：星雷 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 閱讀頁面專屬排版優化 */
+        .book-container {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.75), rgba(10, 10, 10, 0.85)), 
+                        url('cover2.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .novel-content {
+            line-height: 2.2;
+            font-size: 1.1rem;
+            color: #d8cebc;
+            text-align: justify;
+        }
+
+        .novel-content p {
+            margin-bottom: 1.8em;
+            text-indent: 2em;
+        }
+
+        /* --- 內文中段的高質感插圖樣式 --- */
+        .chapter-illustration {
+            max-width: 100%;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .chapter-illustration img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.4); /* 金屬微光邊框 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15); /* 沉浸式陰影 */
+            filter: sepia(8%) contrast(105%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .chapter-illustration img:hover {
+            transform: scale(1.01);
+            filter: sepia(0%) contrast(110%);
+        }
+
+        .illustration-caption {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.25em;
+            margin-top: 12px;
+            opacity: 0.75;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,7 +84,7 @@
         <h3 style="font-size: 1.3rem; margin-bottom: 40px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em;">星雷</h3>
 
         <!-- 小說內文區 -->
-        <div class="novel-content" style="line-height: 2.2; font-size: 1.1rem; color: #d8cebc;">
+        <div class="novel-content">
             
             <p>美國・猶他州・鹽湖城・東湖地下教會</p>
             <p>東湖地下教會的最深處，藏著一間不為多數人所知的密室。</p>
@@ -63,6 +122,13 @@
             <p>轟！</p>
             <p>金黃色的雷光驟然爆發！</p>
             <p>強大的衝擊將阿法直接震飛，雷立刻抬手，讓術器重新回到掌中。</p>
+
+            <!-- 🌟 放置於指定位置的章節插圖 -->
+            <div class="chapter-illustration">
+                <img src="chapter8.png" alt="第八章插圖">
+                <div class="illustration-caption">✦ CHAPTER VIII ARTWORK ✦</div>
+            </div>
+
             <p>整間密室被耀眼的光芒照亮。</p>
             <p>瑞秋周圍，無數細小的光點逐漸浮現。</p>
             <p>它們宛如漂浮在夜空中的星辰，彼此之間以極細的雷絲相連。</p>
@@ -143,7 +209,9 @@
             <p>那柔和的光芒，像是十五年前某個人留下的承諾。</p>
             <p>即使那個人早已不在。</p>
             <p>它依然記得，自己應該守護誰。</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>「還有一件事。」</p>
             <p>傑西忽然轉身，走向房間角落的一張工作桌。</p>
             <p>桌上放著一支手機，以及幾份剛整理好的文件。</p>
@@ -285,7 +353,9 @@
             <p>「詹姆斯啊……」</p>
             <p>他無奈地搖頭。</p>
             <p>「你就算死了，還是這麼麻煩。」</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>鹽湖城・安德烈家</p>
             <p>房子比雷記憶中更加安靜。</p>
             <p>也更加殘破。</p>
@@ -469,7 +539,9 @@
             <p>「那個巫師在哪裡攻擊你？」</p>
             <p>「克里斯房間。」</p>
             <p>「帶我去。」</p>
+
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
+
             <p>兩人回到一樓。</p>
             <p>柴克才剛踏出地下室暗門，腳步便突然停住。</p>
             <p>一股寒意，無預警地沿著背脊緩緩爬上來。</p>
@@ -636,7 +708,7 @@
             <p>柴克立刻閉上嘴巴。</p>
             <p>他這才發現，雷竟然帶著自己懸浮在半空中！</p>
             <p>阿法高速旋轉。</p>
-            <p>一道道金色雷弧宛如鎖鏈，在兩人周圍交錯展開。</p>
+            <p>一道單純的金色雷弧宛如鎖鏈，在兩人周圍交錯展開。</p>
             <p>下方，惡魔撲了個空。</p>
             <p>牠還沒來得及落地，雷便已經抬起另一隻手。</p>
             <p>所有雷光瞬間向掌心集中。</p>
