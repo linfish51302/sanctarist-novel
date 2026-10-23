@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第五章：安德烈家族的秘密 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 閱讀頁面專屬排版優化 */
+        .book-container {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.75), rgba(10, 10, 10, 0.85)), 
+                        url('cover2.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .novel-content {
+            line-height: 2.2;
+            font-size: 1.1rem;
+            color: #d8cebc;
+            text-align: justify;
+        }
+
+        .novel-content p {
+            margin-bottom: 1.8em;
+            text-indent: 2em;
+        }
+
+        /* --- 內文中段的高質感插圖樣式 --- */
+        .chapter-illustration {
+            max-width: 100%;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .chapter-illustration img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.4); /* 金屬微光邊框 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15); /* 沉浸式陰影 */
+            filter: sepia(8%) contrast(105%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .chapter-illustration img:hover {
+            transform: scale(1.01);
+            filter: sepia(0%) contrast(110%);
+        }
+
+        .illustration-caption {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.25em;
+            margin-top: 12px;
+            opacity: 0.75;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,7 +84,7 @@
         <h3 style="font-size: 1.3rem; margin-bottom: 40px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em;">安德烈家族的秘密</h3>
 
         <!-- 小說內文區 -->
-        <div class="novel-content" style="line-height: 2.2; font-size: 1.1rem; color: #d8cebc;">
+        <div class="novel-content">
             
             <p>滴。</p>
             <p>滴。</p>
@@ -58,7 +117,7 @@
             <p>以及那個令他無法接受的事實。</p>
             <p>所以，真的只有我不知道。</p>
             <p>柴克猛然坐起！</p>
-            <p>「媽呢？I」</p>
+            <p>「媽呢？」</p>
             <p>劇烈的疼痛瞬間從肩膀傳來。</p>
             <p>「嘶——！」</p>
             <p>「Z！」</p>
@@ -142,6 +201,13 @@
             <p>柴克怔怔地望著他。</p>
             <p>傑西繼續說道：</p>
             <p>「當你在地下室解開它的時候，守護鎖鑰的使命就完成了。」</p>
+
+            <!-- 🌟 放置於指定位置的章節插圖 -->
+            <div class="chapter-illustration">
+                <img src="chapter5.png" alt="第五章插圖">
+                <div class="illustration-caption">✦ CHAPTER V ARTWORK ✦</div>
+            </div>
+
             <p>「等等。」</p>
             <p>柴克皺起眉頭。</p>
             <p>「你怎麼知道地下室那本書寫了什麼？」</p>
@@ -937,7 +1003,7 @@
             <p>傑西輕聲說。</p>
             <p>「你弟弟還是跟以前一樣。」</p>
             <p>他停頓片刻，無奈地搖了搖頭。</p>
-            <p>「很不老實呢。」 </p>
+            <p>「很不老實呢。」</p>
 
         </div>
 
