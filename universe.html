@@ -16,6 +16,7 @@
             overflow-x: hidden !important;
             display: block !important;
             float: none !important;
+            scroll-behavior: smooth; /* 確保點擊錨點時有平滑滾動效果 */
         }
 
         /* --- 全站金色魔法飄浮光點層 --- */
@@ -94,7 +95,7 @@
             z-index: 4 !important;
             text-align: center !important;
             padding: 0 20px !important;
-            margin-top: 15vh; 
+            margin-top: 10vh; 
         }
 
         .hero-logo {
@@ -108,6 +109,40 @@
         @keyframes logoFloat {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
+        }
+
+        /* --- 新增：頁首分類導覽按鈕列 (Hero Nav Bar) --- */
+        .hero-nav-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-nav-btn {
+            background: rgba(15, 15, 15, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            color: #d4af37;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: 'Cinzel', serif, sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-nav-btn:hover {
+            background: #d4af37;
+            color: #121212;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
         }
 
         /* 內容主容器 */
@@ -170,6 +205,7 @@
             letter-spacing: 0.15em;
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
             padding-bottom: 10px;
+            scroll-margin-top: 40px; /* 避免跳轉時被遮擋 */
         }
 
         .universe-content h3 {
@@ -401,7 +437,7 @@
             font-size: 1rem;
         }
 
-        /* --- 升級版白魔法藝術工作室互動合作區塊 --- */
+        /* 合作洽詢區塊 */
         .contact-box {
             background: rgba(18, 18, 18, 0.92);
             border: 1px solid rgba(212, 175, 55, 0.5);
@@ -478,6 +514,14 @@
                 <div style="font-family: 'Cinzel', serif, sans-serif; font-size: 1.4rem; color: #d4af37; font-weight: bold; letter-spacing: 0.3em; text-shadow: 0 0 15px rgba(212,175,55,0.6);">聖術師宇宙觀</div>
                 <div style="font-family: 'Cinzel', serif, sans-serif; color: #d8cebc; letter-spacing: 0.45em; font-size: 0.85rem; margin-top: 5px; opacity: 0.9;">THE SANCTARIST UNIVERSE</div>
             </div>
+
+            <!-- ✨ 頁首快速分類導覽列 ✨ -->
+            <nav class="hero-nav-bar">
+                <a href="#section-elements" class="hero-nav-btn">✨ 六大元素</a>
+                <a href="#section-rabbi" class="hero-nav-btn">👑 聖術師拉比</a>
+                <a href="#section-types" class="hero-nav-btn">🛡️ 三大類型</a>
+                <a href="#section-fractures" class="hero-nav-btn">⚡ 世界裂痕</a>
+            </nav>
         </div>
     </header>
 
@@ -516,7 +560,8 @@
             <p>而這六位最初的守護者的後代子嗣也各自繼承了駕馭神聖元素的能力。</p>
             <p>這些人被稱為『聖術師』。</p>
 
-            <h2>六大神聖元素與聖術陣<br><span style="font-size: 1rem; font-family: 'Cinzel', serif; letter-spacing: 0.2em; opacity: 0.8;">THE SIX SACRED ELEMENTS</span></h2>
+            <!-- ✨ 六大元素錨點 ✨ -->
+            <h2 id="section-elements">六大神聖元素與聖術陣<br><span style="font-size: 1rem; font-family: 'Cinzel', serif; letter-spacing: 0.2em; opacity: 0.8;">THE SIX SACRED ELEMENTS</span></h2>
             
             <p style="text-align: center; text-indent: 0; font-size: 0.95rem; color: #bcaea0; margin-bottom: 10px;">✨ 游標移至下方聖術陣以喚醒元素神力，點擊觀看各元素聖術師詳細資訊 ✨</p>
 
@@ -614,7 +659,8 @@
             <p>除此之外，還存在著凌駕六大元素之上的「禁術」。這類聖術不受單一元素的限制，卻必須以特殊且沉重的代價換取力量。</p>
             <p>六種元素，同一個源頭；不同的血脈，各自承載著獨一無二的力量。</p>
 
-            <h2>聖術師拉比<br><span style="font-size: 1rem; font-family: 'Cinzel', serif; letter-spacing: 0.2em; opacity: 0.8;">RABBI · THE DIVINE AND THE HUMAN</span></h2>
+            <!-- ✨ 聖術師拉比錨點 ✨ -->
+            <h2 id="section-rabbi">聖術師拉比<br><span style="font-size: 1rem; font-family: 'Cinzel', serif; letter-spacing: 0.2em; opacity: 0.8;">RABBI · THE DIVINE AND THE HUMAN</span></h2>
             
             <p>在無數世界誕生以前，祂便已經存在，也是世界上的第一位聖術師。</p>
             <p>祂是萬物的創造者，也是六大元素的源頭。</p>
@@ -630,7 +676,7 @@
 
             <p>當黑暗逐漸侵蝕祂所創造的世界，拉比選擇以自己作為代價，施展了改變世界命運的偉大聖術——「贖罪祭」。</p>
             <p>祂承擔原本落在人類身上的罪與死亡，並在第三日從死亡中復活。</p>
-            <p>這場贖罪祭不僅帶來救贖，也使「神之靈」降臨世間，讓聖術師得以透過自身的信仰，展現出前所未有的力量。</p>
+            <p>這場贖罪祭不僅帶來救贖，也使「神之靈」降臨世間，讓聖術師得以透過信、望、愛，展現出前所未有的力量。</p>
             <p>然而，拉比留給這個世界最重要的，並非只是升級後的聖術。</p>
             <p>而是祂親自向世人證明的一件事——</p>
             <p>真正偉大的力量，不在於能夠支配多少生命，而在於願意為所愛的生命付出多少。</p>
@@ -646,12 +692,13 @@
             <p>六片羽翼，六種元素，六位繼承者。</p>
             <p>即使祂已返回自己的國度，祂的應許仍在世間延續。</p>
 
-            <h2>聖術師的三大類型<br><span style="font-size: 1rem; font-family: 'Cinzel', serif; letter-spacing: 0.2em; opacity: 0.8;">THE THREE TYPES OF SANCTARISTS</span></h2>
+            <!-- ✨ 三大類型錨點 ✨ -->
+            <h2 id="section-types">聖術師的三大類型<br><span style="font-size: 1rem; font-family: 'Cinzel', serif; letter-spacing: 0.2em; opacity: 0.8;">THE THREE TYPES OF SANCTARISTS</span></h2>
             
             <p>在古老的年代，聖術師只能運用血脈所繼承的六大元素，以最原始的方式駕馭雷、土、火、木、風與水。</p>
             <p>直到聖術師拉比使用了最偉大的聖術『贖罪祭』後，徹底改寫了聖術的歷史。</p>
-            <p>隨著拉比完成贖罪祭，「神之靈」降臨世間，讓聖術師與元素之間的關係迎來前所未有的轉變。</p>
-            <p>從此，元素不再只是被操控的自然力量，更能回應聖術師內心深處對拉比的信仰，以獨一無二的姿態顯現於世。</p>
+            <p>隨著拉比完成贖罪祭，一「神之靈」降臨世間，讓聖術師與元素之間的關係迎來前所未有的轉變。</p>
+            <p>從此，元素不再只是被操控的自然力量，更能回應聖術師內心深處的信念、盼望與愛，以獨一無二的姿態顯現於世。</p>
             <p>後世將這些嶄新的聖術形式歸納為三大類型：</p>
             <p class="center-text" style="font-weight: bold; color: #d4af37;">術器使、元素使、靈獸使。</p>
 
@@ -673,7 +720,7 @@
             <!-- 動態切換的內容面板 -->
             <div id="showcase-panel" class="showcase-panel">
                 <div id="content-artifact">
-                    <h3>術器使（ARTIFACT SANCTARIST ）</h3>
+                    <h3>🛡️ 術器使｜信（ARTIFACT SANCTARIST · FAITH）</h3>
                     <p style="text-indent: 0;">當一個人選擇將信任交託給拉比，那份看不見的信念，便有可能凝聚成真實的形體。</p>
                     <p style="text-indent: 0;">術器使能將自己對拉比的信任具現化，創造出專屬於自己的神奇術器。每一把術器都獨一無二，不僅擁有不同的外觀與特性，更能協助持有者將自身的元素聖術發揮得更加出色。</p>
                     <p style="text-indent: 0;">然而，術器並非單純為了戰鬥而存在。</p>
@@ -682,7 +729,7 @@
                     <blockquote>信，是將看不見的信任，化為握得住的力量。</blockquote>
                 </div>
                 <div id="content-elemental" style="display: none;">
-                    <h3>元素使（ELEMENTAL SANCTARIST ）</h3>
+                    <h3>✨ 元素使｜望（ELEMENTAL SANCTARIST · HOPE）</h3>
                     <p style="text-indent: 0;">每個人的心中，都可能藏著一個尚未實現的願望。</p>
                     <p style="text-indent: 0;">或許是想守護重要的人、改變曾經犯下的錯誤，又或是盼望有一天，自己能成為更好的人。</p>
                     <p style="text-indent: 0;">元素使，是能將這份盼望託付給拉比，並使其化為獨特元素力量的聖術師。</p>
@@ -690,17 +737,17 @@
                     <p style="text-indent: 0;">因此，即使同樣繼承雷元素，兩位元素使所展現的聖術，也可能截然不同。</p>
                     <p style="text-indent: 0;">例如，雷之聖術師克里斯・安德烈，曾因自己的過錯而深感懊悔。他向拉比尋求幫助，盼望你的力量不再傷害家人，而能為他們創造更加美好的世界。</p>
                     <p style="text-indent: 0;">這份盼望最終化為他獨有的聖術——「雷之演算法」。</p>
-                    <blockquote>盼望，是相信尚未實現的未來，終有一天能夠成真。</blockquote>
+                    <blockquote>望，是相信尚未實現的未來，終有一天能夠成真。</blockquote>
                 </div>
                 <div id="content-beast" style="display: none;">
-                    <h3>靈獸使（SPIRIT BEAST SANCTARIST ）</h3>
+                    <h3>🐉 靈獸使｜愛（SPIRIT BEAST SANCTARIST · LOVE）</h3>
                     <p style="text-indent: 0;">愛，是一種願意為他人付出的力量。</p>
                     <p style="text-indent: 0;">在聖術師之中，有一群人擁有著特別純粹的心。他們深知自己被拉比所愛，也因此願意將這份愛延續出去，甚至在重要的人面臨危難時，甘願捨己，守護所愛之人。</p>
                     <p style="text-indent: 0;">對於擁有這份特質的聖術師，拉比會賜予一份特殊的恩典——讓他們在夢境中踏入傳說中的「伊甸園」。</p>
                     <p style="text-indent: 0;">那是一片充滿奇異生命的神祕樂土。</p>
                     <p style="text-indent: 0;">傳說中的龍、鳳凰、麒麟、獨角獸，以及世界各地神話中出現的許多奇異生物，都能在這片樂土中找到牠們的身影。</p>
                     <p style="text-indent: 0;">這些生物被稱為「靈獸」。</p>
-                    <p style="text-indent: 0;">在伊甸園中，靈獸使聖術師有機會與其中一隻靈獸締結一生的契約。自此，兩個不同的生命將共享靈魂與聖術，成為彼此不可分割的夥伴。</p>
+                    <p style="text-indent: 0;">在伊甸園中，聖術師有機會與其中一隻靈獸締結一生的契約。自此，兩個不同的生命將共享靈魂與聖術，成為彼此不可分割的夥伴。</p>
                     <p style="text-indent: 0;">契約締結後，靈獸的外貌與能力會受到聖術師所屬元素的影響，展現出獨一無二的姿態。當面臨惡魔等強大敵人時，靈獸更能變化為巨大或威猛的戰鬥形態，與主人並肩作戰。</p>
                     <p style="text-indent: 0;">例如，雷之聖術師稻妻凜與一隻白色九尾狐締結契約後，九尾狐的毛髮轉化為金黃色，並獲得使用雷之聖術的能力。</p>
                     <p style="text-indent: 0;">然而，這份契約一生只能締結一次。</p>
@@ -725,7 +772,8 @@
                 }
             </script>
 
-            <h2>世界的裂痕<br><span style="font-size: 1rem; font-family: 'Cinzel', serif; letter-spacing: 0.2em; opacity: 0.8;">THE FRACTURES OF CREATION</span></h2>
+            <!-- ✨ 世界裂痕錨點 ✨ -->
+            <h2 id="section-fractures">世界的裂痕<br><span style="font-size: 1rem; font-family: 'Cinzel', serif; letter-spacing: 0.2em; opacity: 0.8;">THE FRACTURES OF CREATION</span></h2>
             
             <p>在世界誕生之初，六大元素交織出萬物的秩序。</p>
             <p>那是一個原本美好而完整的世界，直到某一天，一場來自黑暗的誘惑，使這份完美出現了第一道裂痕。</p>
@@ -770,7 +818,7 @@
             <p>在這個連記憶都可能被世界修正的時代，他們是少數能夠記住隱藏真相的普通人。</p>
             <blockquote>「沒有聖術的力量，卻被允許記住聖術的存在。」</blockquote>
 
-            <!-- 升級版：結合 whitemagic-logo.png 與 IG 連結的合作洽詢區塊 -->
+            <!-- 合作洽詢區塊 -->
             <div class="contact-box">
                 <h3 style="font-family: 'Cinzel', serif; color: #d4af37; letter-spacing: 0.15em;">讓故事，跨越文字的界線。</h3>
                 <p style="font-family: 'Cinzel', serif; font-size: 0.85rem; color: #aaa; margin-bottom: 25px;">BEYOND THE PAGES, INTO NEW WORLDS.</p>
@@ -778,7 +826,6 @@
                 <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 20px;">而這個宇宙，仍有無限可能等待被看見。我們期待與同樣熱愛故事及藝術創作的夥伴攜手，讓《聖術師》以影視、動畫、漫畫、遊戲、音樂、舞台藝術，或其他富有創意的形式，延伸出更多動人的篇章。</p>
                 <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 30px;">無論您來自影視製作公司、藝術創作團隊，或是對本作品的改編、授權及跨界合作抱有興趣的創作者，我們都誠摯歡迎您的聯繫。讓我們一起，賦予這個宇宙更多被看見的可能。</p>
                 
-                <!-- 點擊 Logo 直接連動 Instagram -->
                 <a href="https://www.instagram.com/whitemagic_studio/" target="_blank" class="contact-logo-link" title="點擊前往 白魔法藝術工作室 Instagram">
                     <img src="whitemagic-logo.png" alt="白魔法藝術工作室 White Magic Art Studio Logo">
                 </a>
@@ -786,9 +833,8 @@
                 <p style="color: #d4af37; font-weight: bold; margin-top: 10px; font-size: 1.1rem; letter-spacing: 0.1em;">合作洽詢｜白魔法藝術工作室</p>
                 <p style="font-family: 'Cinzel', serif; font-size: 0.9rem; color: #ccc; margin-top: 4px; letter-spacing: 0.2em;">WHITE MAGIC ART STUDIO</p>
                 
-                <!-- IG 互動按鈕 -->
                 <a href="https://www.instagram.com/whitemagic_studio/" target="_blank" class="ig-action-btn">
-                    點我聯絡
+                    ✨ 追蹤 Instagram 專頁
                 </a>
             </div>
 
@@ -796,9 +842,9 @@
 
         <!-- 底部返回導覽 -->
         <div class="nav-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 50px; padding-top: 25px;">
-            <a href="toc.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem;">返回目錄</a>
+            <a href="toc.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem;">📖 返回目錄</a>
             <span style="color: #d4af37; font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.1em;">THE SANCTARIST UNIVERSE</span>
-            <a href="index.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem;">返回首頁</a>
+            <a href="index.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem;">🏠 返回首頁</a>
         </div>
     </div>
 
