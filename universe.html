@@ -18,7 +18,7 @@
             float: none !important;
         }
 
-        /* --- 全站金色魔法飄浮光點層（涵蓋整個頁面背景） --- */
+        /* --- 全站金色魔法飄浮光點層 --- */
         .magic-particles {
             position: fixed;
             top: 0;
@@ -72,7 +72,6 @@
             width: auto !important;
             height: auto !important;
             z-index: 2 !important;
-            /* 調整對焦至頂部 10%，確保主角絕對不會被切頭 */
             object-fit: cover !important;
             object-position: center 10% !important;
             filter: brightness(0.85) contrast(1.1);
@@ -89,7 +88,7 @@
             z-index: 3 !important;
         }
 
-        /* Logo 與標題區塊（下移至手部肚子附近，Logo 加大） */
+        /* Logo 與標題區塊 */
         .hero-content {
             position: relative !important;
             z-index: 4 !important;
@@ -99,7 +98,7 @@
         }
 
         .hero-logo {
-            max-width: 520px !important; /* 顯著放大 Logo 尺寸 */
+            max-width: 520px !important;
             width: 95% !important;
             height: auto !important;
             filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.9));
@@ -111,7 +110,7 @@
             50% { transform: translateY(-8px); }
         }
 
-        /* 內容主容器：半透明黑底，讓後方金色粒子隱約透出 */
+        /* 內容主容器 */
         .book-container {
             background: rgba(12, 12, 12, 0.88) !important;
             backdrop-filter: blur(5px);
@@ -181,9 +180,20 @@
             letter-spacing: 0.1em;
         }
 
+        /* 一般段落維持左右對齊與首行縮進 */
         .universe-content p {
             margin-bottom: 1.8em;
             text-indent: 2em;
+        }
+
+        /* 專為置中短句設計的樣式（取消首行縮進，確保完美置中） */
+        .universe-content p.center-text {
+            text-align: center;
+            text-indent: 0;
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            margin: 35px 0;
+            letter-spacing: 0.1em;
         }
 
         .universe-content blockquote {
@@ -323,7 +333,7 @@
 </head>
 <body>
 
-    <!-- 全站金色魔法飄浮光點層（置於最底層，貫穿閱讀區與首頁） -->
+    <!-- 全站金色魔法飄浮光點層 -->
     <div class="magic-particles" id="particles"></div>
 
     <!-- 滿版動態影片頁首橫幅 -->
@@ -335,7 +345,6 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <img src="logo-main.png" alt="聖術師 THE SANCTARIST 總 Logo" class="hero-logo">
-            <!-- 新增中文燙金質感大字「聖術師宇宙觀」與下方英文對照 -->
             <div style="margin-top: 18px;">
                 <div style="font-family: 'Cinzel', serif, sans-serif; font-size: 1.4rem; color: #d4af37; font-weight: bold; letter-spacing: 0.3em; text-shadow: 0 0 15px rgba(212,175,55,0.6);">聖術師宇宙觀</div>
                 <div style="font-family: 'Cinzel', serif, sans-serif; color: #d8cebc; letter-spacing: 0.45em; font-size: 0.85rem; margin-top: 5px; opacity: 0.9;">THE SANCTARIST UNIVERSE</div>
@@ -365,7 +374,9 @@
             <p>然而，無論身處哪一個世界，無論人們如何稱呼祂，有一件事始終不曾改變——</p>
             <p>祂依然是那位愛著人類的神。</p>
             <p>而祂的愛，始終如一，直到永恆。</p>
-            <p style="text-align: center; font-family: 'Cinzel', serif; color: #d4af37; margin: 30px 0;">歡迎來到——《聖術師》宇宙。<br>THE SANCTARIST UNIVERSE</p>
+            
+            <!-- 使用專屬 center-text 確保置中對齊完美工整 -->
+            <p class="center-text">歡迎來到——《聖術師》宇宙。<br><span style="font-size: 0.9rem; letter-spacing: 0.2em; opacity: 0.9;">THE SANCTARIST UNIVERSE</span></p>
 
             <p>在世界誕生之初，神創造了天地萬物，並以六種神聖元素建立世界的秩序。</p>
             <p>雷、水、土、風、火、木。</p>
@@ -379,7 +390,7 @@
 
             <h2>六大神聖元素與互動魔法陣<br><span style="font-size: 1rem; font-family: 'Cinzel', serif; letter-spacing: 0.2em; opacity: 0.8;">THE SIX SACRED ELEMENTS</span></h2>
             
-            <p style="text-align: center; font-size: 0.95rem; color: #bcaea0; margin-bottom: 10px;">✨ 游標移至下方魔法陣以喚醒元素神力，點擊解鎖流派詳細資訊 ✨</p>
+            <p style="text-align: center; text-indent: 0; font-size: 0.95rem; color: #bcaea0; margin-bottom: 10px;">✨ 游標移至下方魔法陣以喚醒元素神力，點擊解鎖流派詳細資訊 ✨</p>
 
             <!-- 放大版魔法陣互動區塊 -->
             <div class="magic-circle-container">
@@ -412,7 +423,7 @@
             </div>
 
             <script>
-                // 自動生成魔法光點特效（數量與流動感提升）
+                // 自動生成魔法光點特效
                 const particlesContainer = document.getElementById('particles');
                 for (let i = 0; i < 40; i++) {
                     const particle = document.createElement('div');
@@ -514,7 +525,7 @@
             <p>隨著拉比完成贖罪祭，一「神之靈」降臨世間，讓聖術師與元素之間的關係迎來前所未有的轉變。</p>
             <p>從此，元素不再只是被操控的自然力量，更能回應聖術師內心深處的信念、盼望與愛，以獨一無二的姿態顯現於世。</p>
             <p>後世將這些嶄新的聖術形式歸納為三大類型：</p>
-            <p style="text-align: center; color: #d4af37; font-weight: bold;">術器使、元素使、靈獸使。</p>
+            <p class="center-text" style="font-weight: bold; color: #d4af37;">術器使、元素使、靈獸使。</p>
 
             <h3>🛡️ 術器使｜信（ARTIFACT SANCTARIST · FAITH）</h3>
             <p>當一個人選擇將信任交託給拉比，那份看不見的信念，便有可能凝聚成真實的形體。</p>
@@ -577,7 +588,7 @@
             <p>它能修正惡魔造成的漏洞，卻無法修正人類自己做出的選擇。</p>
             <p>當一個人出於自己的意志選擇傷害、背叛，甚至主動接受黑暗的誘惑，這些行為所造成的後果，便不再是世界能夠輕易抹除的異常。</p>
             <p>而當擁有神聖元素之力的聖術師，選擇背離原本守護世界的使命，轉而投向黑暗時，他們便有了另一個稱呼——</p>
-            <p style="text-align: center; color: #d4af37; font-weight: bold;">巫師（Sorcerers）。</p>
+            <p class="center-text" style="font-weight: bold;">巫師（Sorcerers）。</p>
             <p>對聖術師而言，最令人畏懼的，或許從來不只是惡魔本身。</p>
             <p>而是那些明明擁有選擇的自由，卻決定讓黑暗進入自己生命的人。</p>
             <p>世界能夠修復黑暗留下的裂痕，卻無法抹去人心親自做出的選擇。</p>
