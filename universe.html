@@ -186,7 +186,7 @@
             text-indent: 2em;
         }
 
-        /* 專為置中短句設計的樣式（取消首行縮進，確保完美置中） */
+        /* 專為置中短句設計的樣式 */
         .universe-content p.center-text {
             text-align: center;
             text-indent: 0;
@@ -203,6 +203,96 @@
             background: rgba(212, 175, 55, 0.05);
             font-style: italic;
             color: #eae0cc;
+        }
+
+        /* --- 三欄式卡牌展示區塊 (Card Showcase) --- */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .showcase-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #111;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+        }
+
+        .showcase-card img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 9/16;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: brightness(0.7) contrast(1.1);
+        }
+
+        /* 滑鼠懸停效果：放大、發光、其餘卡牌變暗 */
+        .showcase-grid:hover .showcase-card:not(:hover) {
+            transform: scale(0.95);
+            filter: brightness(0.4) blur(1px);
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            border-color: #d4af37;
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.7);
+            z-index: 2;
+        }
+
+        .showcase-card:hover img {
+            transform: scale(1.08);
+            filter: brightness(1) contrast(1.15);
+        }
+
+        .showcase-card.active {
+            border-color: #d4af37;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+        }
+
+        .showcase-card.active img {
+            filter: brightness(1) contrast(1.15);
+        }
+
+        /* 卡牌下方文字說明動態切換容器 */
+        .showcase-panel {
+            background: rgba(18, 18, 18, 0.95);
+            border: 1px solid #d4af37;
+            border-radius: 10px;
+            padding: 35px;
+            margin-top: 30px;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .showcase-panel h3 {
+            color: #d4af37;
+            margin-top: 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 12px;
+            letter-spacing: 0.1em;
+        }
+
+        /* RWD 響應式調整：手機版改為單欄或三欄縮小 */
+        @media (max-width: 768px) {
+            .showcase-grid {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+                margin: 30px auto;
+            }
         }
 
         /* 放大版互動魔法陣 */
@@ -299,11 +389,6 @@
             animation: fadeIn 0.4s ease;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .element-modal h4 {
             color: #d4af37;
             margin-top: 0;
@@ -375,7 +460,6 @@
             <p>祂依然是那位愛著人類的神。</p>
             <p>而祂的愛，始終如一，直到永恆。</p>
             
-            <!-- 使用專屬 center-text 確保置中對齊完美工整 -->
             <p class="center-text">歡迎來到——《聖術師》宇宙。<br><span style="font-size: 0.9rem; letter-spacing: 0.2em; opacity: 0.9;">THE SANCTARIST UNIVERSE</span></p>
 
             <p>在世界誕生之初，神創造了天地萬物，並以六種神聖元素建立世界的秩序。</p>
@@ -497,7 +581,7 @@
             <p>身為神，祂擁有創造萬物的權柄，不受六大元素的限制，因為祂本身就是一切元素力量的源頭。</p>
             <p>身為人，祂親身經歷人類的喜怒哀樂，感受過飢餓、疲憊與悲傷，也深知友情的珍貴、憐憫的溫柔，以及失去所愛之人的痛苦。</p>
             <p>祂並非高高在上地俯視人間的苦難，而是親自走入這個充滿裂痕的世界，與人們一同生活。</p>
-            <p>祂更以聖術師的身分行走世間，成為唯一一位能夠同時運用六大元素之力的聖術師。祂與當時的聖術師並肩作戰，對抗侵蝕世界的黑暗，也在一次次的同行與教導中，讓跟隨祂的聖術師們逐漸明白——</p>
+            <p>祂更以聖術師的身分行走世間，成為唯一一位能夠同時運用六大元素之力的聖術師.祂與當時的聖術師並肩作戰，對抗侵蝕世界的黑暗，也在一次次的同行與教導中，讓跟隨祂的聖術師們逐漸明白——</p>
             <p>聖術真正的意義，不僅在於力量本身，更在於如何運用這份力量去愛與守護。</p>
 
             <p>當黑暗逐漸侵蝕祂所創造的世界，拉比選擇以自己作為代價，施展了改變世界命運的偉大聖術——「贖罪祭」。</p>
@@ -527,38 +611,83 @@
             <p>後世將這些嶄新的聖術形式歸納為三大類型：</p>
             <p class="center-text" style="font-weight: bold; color: #d4af37;">術器使、元素使、靈獸使。</p>
 
-            <h3>🛡️ 術器使｜信（ARTIFACT SANCTARIST · FAITH）</h3>
-            <p>當一個人選擇將信任交託給拉比，那份看不見的信念，便有可能凝聚成真實的形體。</p>
-            <p>術器使能將自己對拉比的信任具現化，創造出專屬於自己的神奇術器。每一把術器都獨一無二，不僅擁有不同的外觀與特性，更能協助持有者將自身的元素聖術發揮得更加出色。</p>
-            <p>然而，術器並非單純為了戰鬥而存在。</p>
-            <p>它的誕生，往往源自聖術師生命中某個重要的時刻——或許是一場試煉、一次抉擇，又或是一段讓他決定信任拉比的經歷。</p>
-            <p>因此，術器的名字通常與那段故事息息相關，成為持有者與拉比之間獨一無二的見證。</p>
-            <blockquote>信，是將看不見的信任，化為握得住的力量。</blockquote>
+            <p style="text-align: center; text-indent: 0; font-size: 0.95rem; color: #bcaea0; margin: 30px 0 10px 0;">✨ 點擊下方卡牌，解鎖三大類型聖術師的深度設定與故事 ✨</p>
 
-            <h3>✨ 元素使｜望（ELEMENTAL SANCTARIST · HOPE）</h3>
-            <p>每個人的心中，都可能藏著一個尚未實現的願望。</p>
-            <p>或許是想守護重要的人、改變曾經犯下的錯誤，又或是盼望有一天，自己能成為更好的人。</p>
-            <p>元素使，是能將這份盼望託付給拉比，並使其化為獨特元素力量的聖術師。</p>
-            <p>與單純操控元素不同，元素使的力量會依照持有者心中深刻的盼望，發展出專屬的形態與能力。這些能力不僅反映出聖術師所渴望的未來，也承載著他們與拉比之間的故事。</p>
-            <p>因此，即使同樣繼承雷元素，兩位元素使所展現的聖術，也可能截然不同。</p>
-            <p>例如，雷之聖術師克里斯・安德烈，曾因自己的過錯而深感懊悔。他向拉比尋求幫助，盼望你的力量不再傷害家人，而能為他們創造更加美好的世界。</p>
-            <p>這份盼望最終化為他獨有的聖術——「雷之演算法」。</p>
-            <blockquote>望，是相信尚未實現的未來，終有一天能夠成真。</blockquote>
+            <!-- 三欄式卡牌展示區塊 (Card Showcase) -->
+            <div class="showcase-grid">
+                <div class="showcase-card active" id="card-artifact" onclick="selectType('artifact')">
+                    <img src="type-artifact.jpg" alt="術器使">
+                </div>
+                <div class="showcase-card" id="card-elemental" onclick="selectType('elemental')">
+                    <img src="type-elemental.jpg" alt="元素使">
+                </div>
+                <div class="showcase-card" id="card-beast" onclick="selectType('beast')">
+                    <img src="type-beast.jpg" alt="靈獸使">
+                </div>
+            </div>
 
-            <h3>🐉 靈獸使｜愛（SPIRIT BEAST SANCTARIST · LOVE）</h3>
-            <p>愛，是一種願意為他人付出的力量。</p>
-            <p>在聖術師之中，有一群人擁有著特別純粹的心。他們深知自己被拉比所愛，也因此願意將這份愛延續出去，甚至在重要的人面臨危難時，甘願捨己，守護所愛之人。</p>
-            <p>對於擁有這份特質的聖術師，拉比會賜予一份特殊的恩典——讓他們在夢境中踏入傳說中的「伊甸園」。</p>
-            <p>那是一片充滿奇異生命的神祕樂土。</p>
-            <p>傳說中的龍、鳳凰、麒麟、獨角獸，以及世界各地神話中出現的許多奇異生物，都能在這片樂土中找到牠們的身影。</p>
-            <p>這些生物被稱為「靈獸」。</p>
-            <p>在伊甸園中，聖術師有機會與其中一隻靈獸締結一生的契約。自此，兩個不同的生命將共享靈魂與聖術，成為彼此不可分割的夥伴。</p>
-            <p>契約締結後，靈獸的外貌與能力會受到聖術師所屬元素的影響，展現出獨一無二的姿態。當面臨惡魔等強大敵人時，靈獸更能變化為巨大或威猛的戰鬥形態，與主人並肩作戰。</p>
-            <p>例如，雷之聖術師稻妻凜與一隻白色九尾狐締結契約後，九尾狐的毛髮轉化為金黃色，並獲得使用雷之聖術的能力。</p>
-            <p>然而，這份契約一生只能締結一次。</p>
-            <p>當靈獸使的生命走到盡頭，與之共享靈魂的靈獸也將隨之消失。</p>
-            <p>或許，人類歷史中那些關於神獸的傳說，正是某個時代的聖術師與靈獸，曾經共同留下的足跡。</p>
-            <blockquote>愛，是因為知道自己被深深愛著，所以願意將生命與力量分享給另一個生命。</blockquote>
+            <!-- 動態切換的內容面板 -->
+            <div id="showcase-panel" class="showcase-panel">
+                <!-- 預設顯示術器使 -->
+                <div id="content-artifact">
+                    <h3>🛡️ 術器使｜信（ARTIFACT SANCTARIST · FAITH）</h3>
+                    <p style="text-indent: 0;">當一個人選擇將信任交託給拉比，那份看不見的信念，便有可能凝聚成真實的形體。</p>
+                    <p style="text-indent: 0;">術器使能將自己對拉比的信任具現化，創造出專屬於自己的神奇術器。每一把術器都獨一無二，不僅擁有不同的外觀與特性，更能協助持有者將自身的元素聖術發揮得更加出色。</p>
+                    <p style="text-indent: 0;">然而，術器並非單純為了戰鬥而存在。</p>
+                    <p style="text-indent: 0;">它的誕生，往往源自聖術師生命中某個重要的時刻——或許是一場試煉、一次抉擇，又或是一段讓他決定信任拉比的經歷。</p>
+                    <p style="text-indent: 0;">因此，術器的名字通常與那段故事息息相關，成為持有者與拉比之間獨一無二的見證。</p>
+                    <blockquote>信，是將看不見的信任，化為握得住的力量。</blockquote>
+                </div>
+                <div id="content-elemental" style="display: none;">
+                    <h3>✨ 元素使｜望（ELEMENTAL SANCTARIST · HOPE）</h3>
+                    <p style="text-indent: 0;">每個人的心中，都可能藏著一個尚未實現的願望。</p>
+                    <p style="text-indent: 0;">或許是想守護重要的人、改變曾經犯下的錯誤，又或是盼望有一天，自己能成為更好的人。</p>
+                    <p style="text-indent: 0;">元素使，是能將這份盼望託付給拉比，並使其化為獨特元素力量的聖術師。</p>
+                    <p style="text-indent: 0;">與單純操控元素不同，元素使的力量會依照持有者心中深刻的盼望，發展出專屬的形態與能力。這些能力不僅反映出聖術師所渴望的未來，也承載著他們與拉比之間的故事。</p>
+                    <p style="text-indent: 0;">因此，即使同樣繼承雷元素，兩位元素使所展現的聖術，也可能截然不同。</p>
+                    <p style="text-indent: 0;">例如，雷之聖術師克里斯・安德烈，曾因自己的過錯而深感懊悔。他向拉比尋求幫助，盼望你的力量不再傷害家人，而能為他們創造更加美好的世界。</p>
+                    <p style="text-indent: 0;">這份盼望最終化為他獨有的聖術——「雷之演算法」。</p>
+                    <blockquote>望，是相信尚未實現的未來，終有一天能夠成真。</blockquote>
+                </div>
+                <div id="content-beast" style="display: none;">
+                    <h3>🐉 靈獸使｜愛（SPIRIT BEAST SANCTARIST · LOVE）</h3>
+                    <p style="text-indent: 0;">愛，是一種願意為他人付出的力量。</p>
+                    <p style="text-indent: 0;">在聖術師之中，有一群人擁有著特別純粹的心。他們深知自己被拉比所愛，也因此願意將這份愛延續出去，甚至在重要的人面臨危難時，甘願捨己，守護所愛之人。</p>
+                    <p style="text-indent: 0;">對於擁有這份特質的聖術師，拉比會賜予一份特殊的恩典——讓他們在夢境中踏入傳說中的「伊甸園」。</p>
+                    <p style="text-indent: 0;">那是一片充滿奇異生命的神祕樂土。</p>
+                    <p style="text-indent: 0;">傳說中的龍、鳳凰、麒麟、獨角獸，以及世界各地神話中出現的許多奇異生物，都能在這片樂土中找到牠們的身影。</p>
+                    <p style="text-indent: 0;">這些生物被稱為「靈獸」。</p>
+                    <p style="text-indent: 0;">在伊甸園中，聖術師有機會與其中一隻靈獸締結一生的契約。自此，兩個不同的生命將共享靈魂與聖術，成為彼此不可分割的夥伴。</p>
+                    <p style="text-indent: 0;">契約締結後，靈獸的外貌與能力會受到聖術師所屬元素的影響，展現出獨一無二的姿態。當面臨惡魔等強大敵人時，靈獸更能變化為巨大或威猛的戰鬥形態，與主人並肩作戰。</p>
+                    <p style="text-indent: 0;">例如，雷之聖術師稻妻凜與一隻白色九尾狐締結契約後，九尾狐的毛髮轉化為金黃色，並獲得使用雷之聖術的能力。</p>
+                    <p style="text-indent: 0;">然而，這份契約一生只能締結一次。</p>
+                    <p style="text-indent: 0;">當靈獸使的生命走到盡頭，與之共享靈魂的靈獸也將隨之消失。</p>
+                    <p style="text-indent: 0;">或許，人類歷史中那些關於神獸的傳說，正是某個時代的聖術師與靈獸，曾經共同留下的足跡。</p>
+                    <blockquote>愛，是因為知道自己被深深愛著，所以願意將生命與力量分享給另一個生命。</blockquote>
+                </div>
+            </div>
+
+            <script>
+                // 卡牌點擊切換互動邏輯
+                function selectType(type) {
+                    // 隱藏所有內容
+                    document.getElementById('content-artifact').style.display = 'none';
+                    document.getElementById('content-elemental').style.display = 'none';
+                    document.getElementById('content-beast').style.display = 'none';
+
+                    // 移除所有卡牌 active 樣式
+                    document.getElementById('card-artifact').classList.remove('active');
+                    document.getElementById('card-elemental').classList.remove('active');
+                    document.getElementById('card-beast').classList.remove('active');
+
+                    // 顯示對應內容並加上 active 樣式
+                    document.getElementById('content-' + type).style.display = 'block';
+                    document.getElementById('card-' + type).classList.add('active');
+
+                    // 讓面板平滑捲動到視野中（若需要）
+                    // document.getElementById('showcase-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            </script>
 
             <h2>世界的裂痕<br><span style="font-size: 1rem; font-family: 'Cinzel', serif; letter-spacing: 0.2em; opacity: 0.8;">THE FRACTURES OF CREATION</span></h2>
             
