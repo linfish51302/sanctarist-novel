@@ -139,7 +139,7 @@
             color: #eae0cc;
         }
 
-        /* --- 互動魔法陣與懸停浮現效果 --- */
+        /* --- 互動魔法陣與懸停浮現特效 --- */
         .magic-circle-container {
             position: relative;
             width: 100%;
@@ -161,9 +161,9 @@
             animation: circleBreath 6s ease-in-out infinite;
         }
 
-        /* 當滑鼠懸停在整個魔法陣容器時：法陣發亮、旋轉 */
+        /* 當滑鼠懸停在整個魔法陣容器時：法陣發光、旋轉 */
         .magic-circle-container:hover .magic-circle-img {
-            filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.9));
+            filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.95));
             transform: rotate(4deg) scale(1.02);
         }
 
@@ -172,30 +172,50 @@
             50% { transform: scale(1.02); filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.7)); }
         }
 
-        /* 六大元素熱點按鈕：平時微隱透明，當滑鼠懸停於容器時浮現 */
+        /* 六大元素熱點按鈕：平時完全隱形透明 (opacity: 0)，滑鼠移入法陣瞬間華麗浮現 */
         .element-hotspot {
             position: absolute;
             background: rgba(15, 15, 15, 0.95);
             border: 1px solid #d4af37;
             color: #d4af37;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
+            padding: 8px 14px;
+            border-radius: 10px;
+            text-align: center;
             cursor: pointer;
             box-shadow: 0 0 12px rgba(0,0,0,0.8);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0.3;          /* 平時微微隱藏 */
-            transform: scale(0.9);
+            opacity: 0;            /* 平時完全看不見 */
+            visibility: hidden;    /* 避免滑鼠沒碰到時誤觸 */
+            transform: scale(0.8);
             z-index: 5;
         }
 
-        /* 關鍵特效：當滑鼠移入魔法陣容器，六元素金色字體瞬間華麗浮現！ */
+        /* 國字大字與英文質感小字排版 */
+        .element-hotspot .cn-text {
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: block;
+            line-height: 1.2;
+            letter-spacing: 0.1em;
+        }
+
+        .element-hotspot .en-text {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            display: block;
+            opacity: 0.85;
+            letter-spacing: 0.15em;
+            margin-top: 2px;
+        }
+
+        /* 關鍵特效：當滑鼠移入魔法陣容器，六元素按鈕瞬間浮現！ */
         .magic-circle-container:hover .element-hotspot {
             opacity: 1;
+            visibility: visible;
             transform: scale(1);
         }
 
+        /* 點擊或懸停按鈕時發光特效 */
         .element-hotspot:hover {
             background: #d4af37 !important;
             color: #121212 !important;
@@ -203,13 +223,13 @@
             box-shadow: 0 0 25px rgba(212, 175, 55, 1) !important;
         }
 
-        /* 元素按鈕精準座標（對應 magic-circle.png 圖騰位置） */
-        .hotspot-lightning { top: 44%; left: 2%; }
-        .hotspot-wind      { top: 18%; left: 28%; }
-        .hotspot-water     { top: 18%; right: 25%; }
-        .hotspot-wood      { top: 44%; right: 2%; }
-        .hotspot-fire      { bottom: 18%; right: 26%; }
-        .hotspot-earth     { bottom: 18%; left: 26%; }
+        /* 元素按鈕精準座標（已將風與水位置互換：左上水、右上風） */
+        .hotspot-lightning { top: 44%; left: 2%; }   /* 左側雷 */
+        .hotspot-water     { top: 18%; left: 28%; }  /* 上方左側：水 (已互換) */
+        .hotspot-wind      { top: 18%; right: 25%; } /* 上方右側：風 (已互換) */
+        .hotspot-wood      { top: 44%; right: 2%; }  /* 右側木 */
+        .hotspot-fire      { bottom: 18%; right: 26%; }/* 右下火 */
+        .hotspot-earth     { bottom: 18%; left: 26%; } /* 左下土 */
 
         /* 元素資訊彈窗 */
         .element-modal {
@@ -302,18 +322,30 @@
 
             <h2>六大神聖元素與互動魔法陣<br><span style="font-size: 1rem; font-family: 'Cinzel', serif; letter-spacing: 0.2em; opacity: 0.8;">THE SIX SACRED ELEMENTS</span></h2>
             
-            <p style="text-align: center; font-size: 0.95rem; color: #bcaea0; margin-bottom: 10px;">✨ 請將滑鼠移至下方魔法陣上，喚醒法陣光芒與六大元素字體，再點擊元素解鎖詳細資訊 ✨</p>
+            <p style="text-align: center; font-size: 0.95rem; color: #bcaea0; margin-bottom: 10px;">✨ 游標移至下方魔法陣以喚醒元素神力，點擊解鎖流派詳細資訊 ✨</p>
 
-            <!-- 魔法陣互動區塊（滑鼠懸停即浮現元素字） -->
+            <!-- 魔法陣互動區塊（平時完全無文字，滑鼠懸停即亮起並浮現六大元素） -->
             <div class="magic-circle-container">
                 <img src="magic-circle.png" alt="聖術師神祕魔法陣" class="magic-circle-img">
                 
-                <button class="element-hotspot hotspot-lightning" onclick="showElement('lightning')">⚡ 雷之聖術師</button>
-                <button class="element-hotspot hotspot-wind"      onclick="showElement('wind')">◌ 風之聖術師</button>
-                <button class="element-hotspot hotspot-water"     onclick="showElement('water')">◈ 水之聖術師</button>
-                <button class="element-hotspot hotspot-wood"      onclick="showElement('wood')">❧ 木之聖術師</button>
-                <button class="element-hotspot hotspot-fire"      onclick="showElement('fire')">🔥 火之聖術師</button>
-                <button class="element-hotspot hotspot-earth"     onclick="showElement('earth')">◆ 土之聖術師</button>
+                <button class="element-hotspot hotspot-lightning" onclick="showElement('lightning')">
+                    <span class="cn-text">雷</span><span class="en-text">LIGHTNING</span>
+                </button>
+                <button class="element-hotspot hotspot-water" onclick="showElement('water')">
+                    <span class="cn-text">水</span><span class="en-text">WATER</span>
+                </button>
+                <button class="element-hotspot hotspot-wind" onclick="showElement('wind')">
+                    <span class="cn-text">風</span><span class="en-text">WIND</span>
+                </button>
+                <button class="element-hotspot hotspot-wood" onclick="showElement('wood')">
+                    <span class="cn-text">木</span><span class="en-text">WOOD</span>
+                </button>
+                <button class="element-hotspot hotspot-fire" onclick="showElement('fire')">
+                    <span class="cn-text">火</span><span class="en-text">FIRE</span>
+                </button>
+                <button class="element-hotspot hotspot-earth" onclick="showElement('earth')">
+                    <span class="cn-text">土</span><span class="en-text">EARTH</span>
+                </button>
             </div>
 
             <!-- 動態元素資訊彈窗 -->
@@ -496,7 +528,7 @@
                 <h3 style="font-family: 'Cinzel', serif; color: #d4af37; letter-spacing: 0.15em;">讓故事，跨越文字的界線。</h3>
                 <p style="font-family: 'Cinzel', serif; font-size: 0.85rem; color: #aaa; margin-bottom: 20px;">BEYOND THE PAGES, INTO NEW WORLDS.</p>
                 <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 20px;">我們相信，一個好的故事，不應只停留在文字之中。《聖術師 The Sanctarist》以六大元素為起點，交織出橫跨不同國度、世代與命運的奇幻宇宙。在這個世界裡，我們不只描繪超凡的力量與冒險，更希望透過每一段故事，探索信念、盼望、愛，以及人性之中的光明與掙扎。</p>
-                <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 20px;">而這個宇宙，仍有無限可能等待被看見。我們期待與同樣熱愛故事及藝術創作的夥伴攜手，讓《聖術師》以影視、動畫、漫畫, 遊戲、音樂、舞台藝術，或其他富有創意的形式，延伸出更多動人的篇章。</p>
+                <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 20px;">而這個宇宙，仍有無限可能等待被看見。我們期待與同樣熱愛故事及藝術創作的夥伴攜手，讓《聖術師》以影視、動畫、漫畫、遊戲、音樂、舞台藝術，或其他富有創意的形式，延伸出更多動人的篇章。</p>
                 <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 25px;">無論您來自影視製作公司、藝術創作團隊，或是對本作品的改編、授權及跨界合作抱有興趣的創作者，我們都誠摯歡迎您的聯繫。讓我們一起，賦予這個宇宙更多被看見的可能。</p>
                 
                 <p style="color: #d4af37; font-weight: bold; margin-top: 15px;">合作洽詢｜白魔法藝術工作室<br>WHITE MAGIC ART STUDIO</p>
