@@ -18,7 +18,7 @@
             float: none !important;
         }
 
-        /* 滿版動態影片頁首橫幅（絕對獨立在最上方，絕不左右並排） */
+        /* 滿版動態影片頁首橫幅 */
         .hero-banner {
             position: relative !important;
             width: 100vw !important;
@@ -80,7 +80,7 @@
             50% { transform: translateY(-8px); }
         }
 
-        /* 內容主容器：強制單欄置中、純黑質感背景、取消任何背景圖片 */
+        /* 內容主容器：純黑質感底，單欄置中 */
         .book-container {
             background: #141414 !important;
             background-image: none !important;
@@ -139,7 +139,7 @@
             color: #eae0cc;
         }
 
-        /* 互動魔法陣專屬樣式 */
+        /* --- 互動魔法陣與懸停浮現效果 --- */
         .magic-circle-container {
             position: relative;
             width: 100%;
@@ -149,6 +149,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
         }
 
         .magic-circle-img {
@@ -156,13 +157,14 @@
             height: 100%;
             object-fit: contain;
             filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
-            transition: filter 0.5s ease, transform 0.5s ease;
+            transition: filter 0.6s ease, transform 0.6s ease;
             animation: circleBreath 6s ease-in-out infinite;
         }
 
+        /* 當滑鼠懸停在整個魔法陣容器時：法陣發亮、旋轉 */
         .magic-circle-container:hover .magic-circle-img {
-            filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.8));
-            transform: rotate(3deg);
+            filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.9));
+            transform: rotate(4deg) scale(1.02);
         }
 
         @keyframes circleBreath {
@@ -170,10 +172,10 @@
             50% { transform: scale(1.02); filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.7)); }
         }
 
-        /* 六大元素熱點按鈕 */
+        /* 六大元素熱點按鈕：平時微隱透明，當滑鼠懸停於容器時浮現 */
         .element-hotspot {
             position: absolute;
-            background: rgba(18, 18, 18, 0.95);
+            background: rgba(15, 15, 15, 0.95);
             border: 1px solid #d4af37;
             color: #d4af37;
             padding: 6px 14px;
@@ -182,17 +184,23 @@
             font-size: 0.85rem;
             cursor: pointer;
             box-shadow: 0 0 12px rgba(0,0,0,0.8);
-            transition: all 0.3s ease;
-            opacity: 0.95;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0.3;          /* 平時微微隱藏 */
+            transform: scale(0.9);
             z-index: 5;
         }
 
-        .element-hotspot:hover {
-            background: #d4af37;
-            color: #121212;
-            transform: scale(1.1);
+        /* 關鍵特效：當滑鼠移入魔法陣容器，六元素金色字體瞬間華麗浮現！ */
+        .magic-circle-container:hover .element-hotspot {
             opacity: 1;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.9);
+            transform: scale(1);
+        }
+
+        .element-hotspot:hover {
+            background: #d4af37 !important;
+            color: #121212 !important;
+            transform: scale(1.15) !important;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 1) !important;
         }
 
         /* 元素按鈕精準座標（對應 magic-circle.png 圖騰位置） */
@@ -262,7 +270,7 @@
         </div>
     </header>
 
-    <!-- 世界觀內文主容器（純黑質感底，單欄置中） -->
+    <!-- 世界觀內文主容器 -->
     <div class="book-container">
         <div class="universe-content">
             
@@ -294,9 +302,9 @@
 
             <h2>六大神聖元素與互動魔法陣<br><span style="font-size: 1rem; font-family: 'Cinzel', serif; letter-spacing: 0.2em; opacity: 0.8;">THE SIX SACRED ELEMENTS</span></h2>
             
-            <p style="text-align: center; font-size: 0.95rem; color: #bcaea0; margin-bottom: 10px;">✨ 點擊下方魔法陣圖騰對應位置的元素按鈕，即可解鎖對應的聖術師流派與詳細資訊 ✨</p>
+            <p style="text-align: center; font-size: 0.95rem; color: #bcaea0; margin-bottom: 10px;">✨ 請將滑鼠移至下方魔法陣上，喚醒法陣光芒與六大元素字體，再點擊元素解鎖詳細資訊 ✨</p>
 
-            <!-- 魔法陣互動區塊 -->
+            <!-- 魔法陣互動區塊（滑鼠懸停即浮現元素字） -->
             <div class="magic-circle-container">
                 <img src="magic-circle.png" alt="聖術師神祕魔法陣" class="magic-circle-img">
                 
@@ -488,7 +496,7 @@
                 <h3 style="font-family: 'Cinzel', serif; color: #d4af37; letter-spacing: 0.15em;">讓故事，跨越文字的界線。</h3>
                 <p style="font-family: 'Cinzel', serif; font-size: 0.85rem; color: #aaa; margin-bottom: 20px;">BEYOND THE PAGES, INTO NEW WORLDS.</p>
                 <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 20px;">我們相信，一個好的故事，不應只停留在文字之中。《聖術師 The Sanctarist》以六大元素為起點，交織出橫跨不同國度、世代與命運的奇幻宇宙。在這個世界裡，我們不只描繪超凡的力量與冒險，更希望透過每一段故事，探索信念、盼望、愛，以及人性之中的光明與掙扎。</p>
-                <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 20px;">而這個宇宙，仍有無限可能等待被看見。我們期待與同樣熱愛故事及藝術創作的夥伴攜手，讓《聖術師》以影視、動畫、漫畫、遊戲、音樂、舞台藝術，或其他富有創意的形式，延伸出更多動人的篇章。</p>
+                <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 20px;">而這個宇宙，仍有無限可能等待被看見。我們期待與同樣熱愛故事及藝術創作的夥伴攜手，讓《聖術師》以影視、動畫、漫畫, 遊戲、音樂、舞台藝術，或其他富有創意的形式，延伸出更多動人的篇章。</p>
                 <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 25px;">無論您來自影視製作公司、藝術創作團隊，或是對本作品的改編、授權及跨界合作抱有興趣的創作者，我們都誠摯歡迎您的聯繫。讓我們一起，賦予這個宇宙更多被看見的可能。</p>
                 
                 <p style="color: #d4af37; font-weight: bold; margin-top: 15px;">合作洽詢｜白魔法藝術工作室<br>WHITE MAGIC ART STUDIO</p>
