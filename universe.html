@@ -18,15 +18,15 @@
             float: none !important;
         }
 
-        /* --- 魔法動態飄浮光點層 --- */
+        /* --- 全站金色魔法飄浮光點層（涵蓋整個頁面背景） --- */
         .magic-particles {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh;
+            height: 100%;
             pointer-events: none;
-            z-index: 2;
+            z-index: 1;
             overflow: hidden;
         }
 
@@ -34,18 +34,18 @@
             position: absolute;
             background: radial-gradient(circle, rgba(212,175,55,1) 0%, rgba(212,175,55,0) 70%);
             border-radius: 50%;
-            animation: floatUp 6s ease-in-out infinite;
+            animation: floatUp 7s ease-in-out infinite;
             opacity: 0;
         }
 
         @keyframes floatUp {
-            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
-            30% { opacity: 0.8; }
-            70% { opacity: 0.6; }
-            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+            0% { transform: translateY(105vh) scale(0.4); opacity: 0; }
+            30% { opacity: 0.7; }
+            70% { opacity: 0.5; }
+            100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
         }
 
-        /* 滿版動態影片頁首橫幅（徹底消除下方色塊，改用完美漸層過渡） */
+        /* 滿版動態影片頁首橫幅 */
         .hero-banner {
             position: relative !important;
             width: 100vw !important;
@@ -71,14 +71,14 @@
             min-height: 100% !important;
             width: auto !important;
             height: auto !important;
-            z-index: 1 !important;
-            /* 調整影片對焦位置，避免主角被切頭，完美呈現頭部與肚子手部 */
+            z-index: 2 !important;
+            /* 調整對焦至頂部 10%，確保主角絕對不會被切頭 */
             object-fit: cover !important;
-            object-position: center 25% !important;
-            filter: brightness(0.8) contrast(1.1);
+            object-position: center 10% !important;
+            filter: brightness(0.85) contrast(1.1);
         }
 
-        /* 無縫漸層過渡：完美消除交界處色塊 */
+        /* 無縫漸層過渡 */
         .hero-overlay {
             position: absolute !important;
             top: 0 !important;
@@ -89,20 +89,20 @@
             z-index: 3 !important;
         }
 
-        /* Logo 與標題區塊（下移至主角肚子與手部周圍，放大尺寸） */
+        /* Logo 與標題區塊（下移至手部肚子附近，Logo 加大） */
         .hero-content {
             position: relative !important;
             z-index: 4 !important;
             text-align: center !important;
             padding: 0 20px !important;
-            margin-top: 12vh; /* 將整體文字與 Logo 往下帶到肚子與手部位置 */
+            margin-top: 15vh; 
         }
 
         .hero-logo {
-            max-width: 440px !important; /* 放大 Logo 尺寸 */
-            width: 90% !important;
+            max-width: 520px !important; /* 顯著放大 Logo 尺寸 */
+            width: 95% !important;
             height: auto !important;
-            filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.85));
+            filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.9));
             animation: logoFloat 4s ease-in-out infinite;
         }
 
@@ -111,16 +111,17 @@
             50% { transform: translateY(-8px); }
         }
 
-        /* 內容主容器：純黑質感底，單欄置中 */
+        /* 內容主容器：半透明黑底，讓後方金色粒子隱約透出 */
         .book-container {
-            background: #0c0c0c !important;
-            background-image: none !important;
-            border: none !important;
-            box-shadow: none !important;
-            padding: 40px 50px 80px 50px !important;
+            background: rgba(12, 12, 12, 0.88) !important;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(212, 175, 55, 0.25) !important;
+            border-radius: 12px !important;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9) !important;
+            padding: 60px 50px !important;
             max-width: 900px !important;
             width: 90% !important;
-            margin: 0 auto !important;
+            margin: 40px auto 80px auto !important;
             position: relative !important;
             z-index: 10 !important;
             float: none !important;
@@ -135,7 +136,7 @@
             text-align: justify;
         }
 
-        /* --- 新增：獨立的高質感燙金標題區塊（你相信多元宇宙嗎？） --- */
+        /* 質感燙金大標題：「你相信多元宇宙嗎？」 */
         .universe-title-section {
             text-align: center;
             margin: 20px 0 60px 0;
@@ -194,7 +195,7 @@
             color: #eae0cc;
         }
 
-        /* --- 放大版互動魔法陣（平常靜止，滑鼠移入時發光、放大） --- */
+        /* 放大版互動魔法陣 */
         .magic-circle-container {
             position: relative;
             width: 100%;
@@ -220,7 +221,7 @@
             transform: rotate(4deg) scale(1.06);
         }
 
-        /* 六大元素熱點按鈕：平時完全隱形透明 */
+        /* 六大元素熱點按鈕 */
         .element-hotspot {
             position: absolute;
             background: rgba(15, 15, 15, 0.95);
@@ -322,7 +323,7 @@
 </head>
 <body>
 
-    <!-- 魔法動態飄浮光點層（營造明顯魔法感） -->
+    <!-- 全站金色魔法飄浮光點層（置於最底層，貫穿閱讀區與首頁） -->
     <div class="magic-particles" id="particles"></div>
 
     <!-- 滿版動態影片頁首橫幅 -->
@@ -334,7 +335,11 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <img src="logo-main.png" alt="聖術師 THE SANCTARIST 總 Logo" class="hero-logo">
-            <p style="font-family: 'Cinzel', serif; color: #d4af37; letter-spacing: 0.4em; font-size: 0.95rem; margin-top: 15px; opacity: 0.95; text-shadow: 0 0 10px rgba(212,175,55,0.5);">THE SANCTARIST UNIVERSE</p>
+            <!-- 新增中文燙金質感大字「聖術師宇宙觀」與下方英文對照 -->
+            <div style="margin-top: 18px;">
+                <div style="font-family: 'Cinzel', serif, sans-serif; font-size: 1.4rem; color: #d4af37; font-weight: bold; letter-spacing: 0.3em; text-shadow: 0 0 15px rgba(212,175,55,0.6);">聖術師宇宙觀</div>
+                <div style="font-family: 'Cinzel', serif, sans-serif; color: #d8cebc; letter-spacing: 0.45em; font-size: 0.85rem; margin-top: 5px; opacity: 0.9;">THE SANCTARIST UNIVERSE</div>
+            </div>
         </div>
     </header>
 
@@ -407,16 +412,16 @@
             </div>
 
             <script>
-                // 自動生成魔法光點特效
+                // 自動生成魔法光點特效（數量與流動感提升）
                 const particlesContainer = document.getElementById('particles');
-                for (let i = 0; i < 30; i++) {
+                for (let i = 0; i < 40; i++) {
                     const particle = document.createElement('div');
                     particle.classList.add('particle');
                     particle.style.left = `${Math.random() * 100}%`;
-                    particle.style.width = `${Math.random() * 4 + 2}px`;
+                    particle.style.width = `${Math.random() * 5 + 2}px`;
                     particle.style.height = particle.style.width;
-                    particle.style.animationDuration = `${Math.random() * 4 + 4}s`;
-                    particle.style.animationDelay = `${Math.random() * 5}s`;
+                    particle.style.animationDuration = `${Math.random() * 5 + 4}s`;
+                    particle.style.animationDelay = `${Math.random() * 6}s`;
                     particlesContainer.appendChild(particle);
                 }
 
