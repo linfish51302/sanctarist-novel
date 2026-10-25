@@ -6,66 +6,71 @@
     <title>聖術師宇宙觀 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 全站基礎設定 */
+        /* 強制覆蓋全站樣式：全黑質感背景、置中單欄上下流動 */
         body {
-            background-color: #121212;
-            color: #d8cebc;
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
+            background-color: #0c0c0c !important;
+            color: #d8cebc !important;
+            font-family: sans-serif !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow-x: hidden !important;
+            display: block !important;
+            float: none !important;
         }
 
-        /* 滿版動態影片頁首橫幅 */
+        /* 滿版動態影片頁首橫幅（絕對獨立在最上方，絕不左右並排） */
         .hero-banner {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            margin-bottom: 40px;
+            position: relative !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            min-height: 600px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            overflow: hidden !important;
+            margin: 0 0 50px 0 !important;
+            left: 0 !important;
+            right: 0 !important;
             border-bottom: 2px solid rgba(212, 175, 55, 0.5);
             box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+            clear: both !important;
         }
 
         .hero-banner video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 1;
-            object-fit: cover;
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            min-width: 100% !important;
+            min-height: 100% !important;
+            width: auto !important;
+            height: auto !important;
+            z-index: 1 !important;
+            object-fit: cover !important;
             filter: brightness(0.75) contrast(1.1);
         }
 
         .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(10,10,10,0.3) 30%, rgba(18,18,18,0.95) 100%);
-            z-index: 2;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.2) 30%, rgba(12,12,12,0.98) 100%) !important;
+            z-index: 2 !important;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 3;
-            text-align: center;
-            padding: 0 20px;
+            position: relative !important;
+            z-index: 3 !important;
+            text-align: center !important;
+            padding: 0 20px !important;
         }
 
         .hero-logo {
-            max-width: 380px;
-            width: 85%;
-            height: auto;
+            max-width: 380px !important;
+            width: 85% !important;
+            height: auto !important;
             filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.8));
             animation: logoFloat 4s ease-in-out infinite;
         }
@@ -75,19 +80,22 @@
             50% { transform: translateY(-8px); }
         }
 
-        /* 內容主容器 */
+        /* 內容主容器：強制單欄置中、純黑質感背景、取消任何背景圖片 */
         .book-container {
-            background: linear-gradient(135deg, rgba(18, 18, 18, 0.92), rgba(10, 10, 10, 0.98)), 
-                        url('cover2.png') no-repeat center center;
-            background-size: cover;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
-            padding: 60px 50px;
-            max-width: 900px;
-            margin: 0 auto 60px auto;
-            position: relative;
-            z-index: 10;
+            background: #141414 !important;
+            background-image: none !important;
+            border: 1px solid rgba(212, 175, 55, 0.3) !important;
+            border-radius: 12px !important;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.1) !important;
+            padding: 60px 50px !important;
+            max-width: 900px !important;
+            width: 90% !important;
+            margin: 0 auto 80px auto !important;
+            position: relative !important;
+            z-index: 10 !important;
+            float: none !important;
+            display: block !important;
+            clear: both !important;
         }
 
         .universe-content {
@@ -165,7 +173,7 @@
         /* 六大元素熱點按鈕 */
         .element-hotspot {
             position: absolute;
-            background: rgba(18, 18, 18, 0.9);
+            background: rgba(18, 18, 18, 0.95);
             border: 1px solid #d4af37;
             color: #d4af37;
             padding: 6px 14px;
@@ -175,7 +183,7 @@
             cursor: pointer;
             box-shadow: 0 0 12px rgba(0,0,0,0.8);
             transition: all 0.3s ease;
-            opacity: 0.9;
+            opacity: 0.95;
             z-index: 5;
         }
 
@@ -187,7 +195,7 @@
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.9);
         }
 
-        /* 元素按鈕精準座標 */
+        /* 元素按鈕精準座標（對應 magic-circle.png 圖騰位置） */
         .hotspot-lightning { top: 44%; left: 2%; }
         .hotspot-wind      { top: 18%; left: 28%; }
         .hotspot-water     { top: 18%; right: 25%; }
@@ -198,7 +206,7 @@
         /* 元素資訊彈窗 */
         .element-modal {
             display: none;
-            background: rgba(20, 20, 20, 0.95);
+            background: rgba(20, 20, 20, 0.98);
             border: 1px solid #d4af37;
             border-radius: 8px;
             padding: 25px;
@@ -249,12 +257,12 @@
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <img src="logo-main.jpg" alt="聖術師 THE SANCTARIST 總 Logo" class="hero-logo">
+            <img src="logo-main.png" alt="聖術師 THE SANCTARIST 總 Logo" class="hero-logo">
             <p style="font-family: 'Cinzel', serif; color: #d4af37; letter-spacing: 0.4em; font-size: 0.9rem; margin-top: 15px; opacity: 0.9;">THE SANCTARIST UNIVERSE</p>
         </div>
     </header>
 
-    <!-- 世界觀內文主容器 -->
+    <!-- 世界觀內文主容器（純黑質感底，單欄置中） -->
     <div class="book-container">
         <div class="universe-content">
             
@@ -290,7 +298,7 @@
 
             <!-- 魔法陣互動區塊 -->
             <div class="magic-circle-container">
-                <img src="magic-circle.jpg" alt="聖術師神祕魔法陣" class="magic-circle-img">
+                <img src="magic-circle.png" alt="聖術師神祕魔法陣" class="magic-circle-img">
                 
                 <button class="element-hotspot hotspot-lightning" onclick="showElement('lightning')">⚡ 雷之聖術師</button>
                 <button class="element-hotspot hotspot-wind"      onclick="showElement('wind')">◌ 風之聖術師</button>
