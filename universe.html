@@ -234,7 +234,6 @@
             filter: brightness(0.7) contrast(1.1);
         }
 
-        /* 滑鼠懸停效果：放大、發光、其餘卡牌變暗 */
         .showcase-grid:hover .showcase-card:not(:hover) {
             transform: scale(0.95);
             filter: brightness(0.4) blur(1px);
@@ -261,7 +260,6 @@
             filter: brightness(1) contrast(1.15);
         }
 
-        /* 卡牌下方文字說明動態切換容器 */
         .showcase-panel {
             background: rgba(18, 18, 18, 0.95);
             border: 1px solid #d4af37;
@@ -286,7 +284,6 @@
             letter-spacing: 0.1em;
         }
 
-        /* RWD 響應式調整：手機版改為單欄或三欄縮小 */
         @media (max-width: 768px) {
             .showcase-grid {
                 grid-template-columns: 1fr;
@@ -369,7 +366,6 @@
             box-shadow: 0 0 30px rgba(212, 175, 55, 1) !important;
         }
 
-        /* 元素精準座標 */
         .hotspot-lightning { top: 43%; left: -2%; }  
         .hotspot-water     { top: 12%; left: 26%; }  
         .hotspot-wind      { top: 12%; right: 23%; } 
@@ -377,7 +373,6 @@
         .hotspot-fire      { bottom: 12%; right: 24%; }
         .hotspot-earth     { bottom: 12%; left: 24%; } 
 
-        /* 元素資訊彈窗 */
         .element-modal {
             display: none;
             background: rgba(20, 20, 20, 0.98);
@@ -406,13 +401,62 @@
             font-size: 1rem;
         }
 
+        /* --- 升級版白魔法藝術工作室互動合作區塊 --- */
         .contact-box {
-            background: rgba(18, 18, 18, 0.9);
+            background: rgba(18, 18, 18, 0.92);
             border: 1px solid rgba(212, 175, 55, 0.5);
-            border-radius: 8px;
-            padding: 30px;
-            margin-top: 50px;
+            border-radius: 12px;
+            padding: 40px 30px;
+            margin-top: 60px;
             text-align: center;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-logo-link {
+            display: inline-block;
+            text-decoration: none;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .contact-logo-link img {
+            max-width: 140px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.5));
+            transition: filter 0.4s ease, transform 0.4s ease;
+        }
+
+        .contact-logo-link:hover img {
+            transform: scale(1.08);
+            filter: drop-shadow(0 0 25px rgba(212, 175, 55, 1)) brightness(1.15);
+        }
+
+        .ig-action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+
+        .ig-action-btn:hover {
+            background: #d4af37;
+            color: #121212;
+            transform: scale(1.06);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
         }
     </style>
 </head>
@@ -581,7 +625,7 @@
             <p>身為神，祂擁有創造萬物的權柄，不受六大元素的限制，因為祂本身就是一切元素力量的源頭。</p>
             <p>身為人，祂親身經歷人類的喜怒哀樂，感受過飢餓、疲憊與悲傷，也深知友情的珍貴、憐憫的溫柔，以及失去所愛之人的痛苦。</p>
             <p>祂並非高高在上地俯視人間的苦難，而是親自走入這個充滿裂痕的世界，與人們一同生活。</p>
-            <p>祂更以聖術師的身分行走世間，成為唯一一位能夠同時運用六大元素之力的聖術師.祂與當時的聖術師並肩作戰，對抗侵蝕世界的黑暗，也在一次次的同行與教導中，讓跟隨祂的聖術師們逐漸明白——</p>
+            <p>祂更以聖術師的身分行走世間，成為唯一一位能夠同時運用六大元素之力的聖術師。祂與當時的聖術師並肩作戰，對抗侵蝕世界的黑暗，也在一次次的同行與教導中，讓跟隨祂的聖術師們逐漸明白——</p>
             <p>聖術真正的意義，不僅在於力量本身，更在於如何運用這份力量去愛與守護。</p>
 
             <p>當黑暗逐漸侵蝕祂所創造的世界，拉比選擇以自己作為代價，施展了改變世界命運的偉大聖術——「贖罪祭」。</p>
@@ -628,7 +672,6 @@
 
             <!-- 動態切換的內容面板 -->
             <div id="showcase-panel" class="showcase-panel">
-                <!-- 預設顯示術器使 -->
                 <div id="content-artifact">
                     <h3>🛡️ 術器使｜信（ARTIFACT SANCTARIST · FAITH）</h3>
                     <p style="text-indent: 0;">當一個人選擇將信任交託給拉比，那份看不見的信念，便有可能凝聚成真實的形體。</p>
@@ -668,24 +711,17 @@
             </div>
 
             <script>
-                // 卡牌點擊切換互動邏輯
                 function selectType(type) {
-                    // 隱藏所有內容
                     document.getElementById('content-artifact').style.display = 'none';
                     document.getElementById('content-elemental').style.display = 'none';
                     document.getElementById('content-beast').style.display = 'none';
 
-                    // 移除所有卡牌 active 樣式
                     document.getElementById('card-artifact').classList.remove('active');
                     document.getElementById('card-elemental').classList.remove('active');
                     document.getElementById('card-beast').classList.remove('active');
 
-                    // 顯示對應內容並加上 active 樣式
                     document.getElementById('content-' + type).style.display = 'block';
                     document.getElementById('card-' + type).classList.add('active');
-
-                    // 讓面板平滑捲動到視野中（若需要）
-                    // document.getElementById('showcase-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }
             </script>
 
@@ -716,8 +752,9 @@
             <p>然而，修正法則並非無所不能。</p>
             <p>它能修正惡魔造成的漏洞，卻無法修正人類自己做出的選擇。</p>
             <p>當一個人出於自己的意志選擇傷害、背叛，甚至主動接受黑暗的誘惑，這些行為所造成的後果，便不再是世界能夠輕易抹除的異常。</p>
-            <p>而當擁有神聖元素之力的聖術師，選擇背離原本守護世界的使命，轉而投向黑暗時，他們便有了另一個稱呼——</p>
-            <p class="center-text" style="font-weight: bold;">巫師（Sorcerers）。</p>
+            
+            <p>而當擁有神聖元素之力的聖術師，選擇背離原本守護世界的使命，轉而投向黑暗時，他們便有了另一個稱呼——<span style="color: #d4af37; font-weight: bold; font-family: 'Cinzel', serif;">巫師（Sorcerers）</span>。</p>
+            
             <p>對聖術師而言，最令人畏懼的，或許從來不只是惡魔本身。</p>
             <p>而是那些明明擁有選擇的自由，卻決定讓黑暗進入自己生命的人。</p>
             <p>世界能夠修復黑暗留下的裂痕，卻無法抹去人心親自做出的選擇。</p>
@@ -733,16 +770,26 @@
             <p>在這個連記憶都可能被世界修正的時代，他們是少數能夠記住隱藏真相的普通人。</p>
             <blockquote>「沒有聖術的力量，卻被允許記住聖術的存在。」</blockquote>
 
-            <!-- 合作邀約區塊 -->
+            <!-- 升級版：結合 whitemagic-logo.png 與 IG 連結的合作洽詢區塊 -->
             <div class="contact-box">
                 <h3 style="font-family: 'Cinzel', serif; color: #d4af37; letter-spacing: 0.15em;">讓故事，跨越文字的界線。</h3>
-                <p style="font-family: 'Cinzel', serif; font-size: 0.85rem; color: #aaa; margin-bottom: 20px;">BEYOND THE PAGES, INTO NEW WORLDS.</p>
+                <p style="font-family: 'Cinzel', serif; font-size: 0.85rem; color: #aaa; margin-bottom: 25px;">BEYOND THE PAGES, INTO NEW WORLDS.</p>
                 <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 20px;">我們相信，一個好的故事，不應只停留在文字之中。《聖術師 The Sanctarist》以六大元素為起點，交織出橫跨不同國度、世代與命運的奇幻宇宙。在這個世界裡，我們不只描繪超凡的力量與冒險，更希望透過每一段故事，探索信念、盼望、愛，以及人性之中的光明與掙扎。</p>
                 <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 20px;">而這個宇宙，仍有無限可能等待被看見。我們期待與同樣熱愛故事及藝術創作的夥伴攜手，讓《聖術師》以影視、動畫、漫畫、遊戲、音樂、舞台藝術，或其他富有創意的形式，延伸出更多動人的篇章。</p>
-                <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 25px;">無論您來自影視製作公司、藝術創作團隊，或是對本作品的改編、授權及跨界合作抱有興趣的創作者，我們都誠摯歡迎您的聯繫。讓我們一起，賦予這個宇宙更多被看見的可能。</p>
+                <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 30px;">無論您來自影視製作公司、藝術創作團隊，或是對本作品的改編、授權及跨界合作抱有興趣的創作者，我們都誠摯歡迎您的聯繫。讓我們一起，賦予這個宇宙更多被看見的可能。</p>
                 
-                <p style="color: #d4af37; font-weight: bold; margin-top: 15px;">合作洽詢｜白魔法藝術工作室<br>WHITE MAGIC ART STUDIO</p>
-                <p style="font-size: 0.9rem; color: #ccc; margin-top: 5px;">【聯絡我們｜CONTACT US】</p>
+                <!-- 點擊 Logo 直接連動 Instagram -->
+                <a href="https://www.instagram.com/whitemagic_studio/" target="_blank" class="contact-logo-link" title="點擊前往 白魔法藝術工作室 Instagram">
+                    <img src="whitemagic-logo.png" alt="白魔法藝術工作室 White Magic Art Studio Logo">
+                </a>
+                
+                <p style="color: #d4af37; font-weight: bold; margin-top: 10px; font-size: 1.1rem; letter-spacing: 0.1em;">合作洽詢｜白魔法藝術工作室</p>
+                <p style="font-family: 'Cinzel', serif; font-size: 0.9rem; color: #ccc; margin-top: 4px; letter-spacing: 0.2em;">WHITE MAGIC ART STUDIO</p>
+                
+                <!-- IG 互動按鈕 -->
+                <a href="https://www.instagram.com/whitemagic_studio/" target="_blank" class="ig-action-btn">
+                    ✨ 追蹤 Instagram 專頁
+                </a>
             </div>
 
         </div>
