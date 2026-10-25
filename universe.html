@@ -6,18 +6,29 @@
     <title>聖術師宇宙觀 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* --- 頁首動態影片橫幅專屬樣式 --- */
+        /* 全站基礎設定 */
+        body {
+            background-color: #121212;
+            color: #d8cebc;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* 滿版動態影片頁首橫幅 */
         .hero-banner {
             position: relative;
-            width: 100%;
-            height: 75vh;
-            min-height: 500px;
+            width: 100vw;
+            height: 100vh;
+            min-height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            border-bottom: 2px solid rgba(212, 175, 55, 0.4);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            margin-bottom: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.5);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.9);
         }
 
         .hero-banner video {
@@ -31,7 +42,7 @@
             height: auto;
             z-index: 1;
             object-fit: cover;
-            filter: brightness(0.7) contrast(1.1);
+            filter: brightness(0.75) contrast(1.1);
         }
 
         .hero-overlay {
@@ -40,7 +51,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.85) 100%);
+            background: linear-gradient(to bottom, rgba(10,10,10,0.3) 30%, rgba(18,18,18,0.95) 100%);
             z-index: 2;
         }
 
@@ -52,10 +63,10 @@
         }
 
         .hero-logo {
-            max-width: 320px;
-            width: 80%;
+            max-width: 380px;
+            width: 85%;
             height: auto;
-            filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6));
+            filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.8));
             animation: logoFloat 4s ease-in-out infinite;
         }
 
@@ -64,17 +75,17 @@
             50% { transform: translateY(-8px); }
         }
 
-        /* --- 閱讀與內容主容器 --- */
+        /* 內容主容器 */
         .book-container {
-            background: linear-gradient(135deg, rgba(18, 18, 18, 0.9), rgba(10, 10, 10, 0.95)), 
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.92), rgba(10, 10, 10, 0.98)), 
                         url('cover2.png') no-repeat center center;
             background-size: cover;
             border: 1px solid rgba(212, 175, 55, 0.4);
             border-radius: 12px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
-            padding: 50px 40px;
+            padding: 60px 50px;
             max-width: 900px;
-            margin: -60px auto 40px auto;
+            margin: 0 auto 60px auto;
             position: relative;
             z-index: 10;
         }
@@ -88,7 +99,7 @@
 
         .universe-content h2 {
             font-family: 'Cinzel', serif;
-            color: var(--gold-accent);
+            color: #d4af37;
             text-align: center;
             font-size: 1.8rem;
             margin-top: 60px;
@@ -99,7 +110,7 @@
         }
 
         .universe-content h3 {
-            color: var(--gold-accent);
+            color: #d4af37;
             font-size: 1.3rem;
             margin-top: 35px;
             margin-bottom: 15px;
@@ -112,7 +123,7 @@
         }
 
         .universe-content blockquote {
-            border-left: 3px solid var(--gold-accent);
+            border-left: 3px solid #d4af37;
             margin: 25px 0;
             padding: 10px 20px;
             background: rgba(212, 175, 55, 0.05);
@@ -120,7 +131,7 @@
             color: #eae0cc;
         }
 
-        /* --- 互動魔法陣專屬樣式 --- */
+        /* 互動魔法陣專屬樣式 */
         .magic-circle-container {
             position: relative;
             width: 100%;
@@ -151,12 +162,12 @@
             50% { transform: scale(1.02); filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.7)); }
         }
 
-        /* 六大元素熱點按鈕 (精準對應 magic-circle.jpg 上的六個元素圖騰位置) */
+        /* 六大元素熱點按鈕 */
         .element-hotspot {
             position: absolute;
             background: rgba(18, 18, 18, 0.9);
-            border: 1px solid var(--gold-accent);
-            color: var(--gold-accent);
+            border: 1px solid #d4af37;
+            color: #d4af37;
             padding: 6px 14px;
             border-radius: 20px;
             font-family: 'Cinzel', serif;
@@ -169,26 +180,26 @@
         }
 
         .element-hotspot:hover {
-            background: var(--gold-accent);
+            background: #d4af37;
             color: #121212;
             transform: scale(1.1);
             opacity: 1;
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.9);
         }
 
-        /* 座標設定 (對應圖片四周圖騰) */
-        .hotspot-lightning { top: 44%; left: 2%; }   /* 左側雷電 */
-        .hotspot-wind      { top: 18%; left: 28%; }  /* 上方風紋 */
-        .hotspot-water     { top: 18%; right: 25%; } /* 右上水卷 */
-        .hotspot-wood      { top: 44%; right: 2%; }  /* 右側葉片 */
-        .hotspot-fire      { bottom: 18%; right: 26%; }/* 右下火焰 */
-        .hotspot-earth     { bottom: 18%; left: 26%; } /* 左下大地符號 */
+        /* 元素按鈕精準座標 */
+        .hotspot-lightning { top: 44%; left: 2%; }
+        .hotspot-wind      { top: 18%; left: 28%; }
+        .hotspot-water     { top: 18%; right: 25%; }
+        .hotspot-wood      { top: 44%; right: 2%; }
+        .hotspot-fire      { bottom: 18%; right: 26%; }
+        .hotspot-earth     { bottom: 18%; left: 26%; }
 
-        /* 元素資訊彈窗面板 */
+        /* 元素資訊彈窗 */
         .element-modal {
             display: none;
             background: rgba(20, 20, 20, 0.95);
-            border: 1px solid var(--gold-accent);
+            border: 1px solid #d4af37;
             border-radius: 8px;
             padding: 25px;
             margin: 25px 0;
@@ -202,7 +213,7 @@
         }
 
         .element-modal h4 {
-            color: var(--gold-accent);
+            color: #d4af37;
             margin-top: 0;
             font-size: 1.2rem;
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
@@ -213,7 +224,7 @@
             float: right;
             background: none;
             border: none;
-            color: var(--gold-accent);
+            color: #d4af37;
             cursor: pointer;
             font-size: 1rem;
         }
@@ -230,10 +241,7 @@
 </head>
 <body>
 
-    <!-- 魔法漂浮光點背景 -->
-    <div class="magic-particles"></div>
-
-    <!-- 頁首動態影片橫幅與總 Logo 亮點 -->
+    <!-- 滿版動態影片頁首橫幅 -->
     <header class="hero-banner">
         <video autoplay muted loop playsinline>
             <source src="hero-video.mp4" type="video/mp4">
@@ -242,13 +250,12 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <img src="logo-main.jpg" alt="聖術師 THE SANCTARIST 總 Logo" class="hero-logo">
-            <p style="font-family: 'Cinzel', serif; color: var(--gold-accent); letter-spacing: 0.4em; font-size: 0.9rem; margin-top: 15px; opacity: 0.9;">THE SANCTARIST UNIVERSE</p>
+            <p style="font-family: 'Cinzel', serif; color: #d4af37; letter-spacing: 0.4em; font-size: 0.9rem; margin-top: 15px; opacity: 0.9;">THE SANCTARIST UNIVERSE</p>
         </div>
     </header>
 
+    <!-- 世界觀內文主容器 -->
     <div class="book-container">
-        
-        <!-- 內文區 -->
         <div class="universe-content">
             
             <p>你相信多元宇宙嗎？</p>
@@ -265,7 +272,7 @@
             <p>然而，無論身處哪一個世界，無論人們如何稱呼祂，有一件事始終不曾改變——</p>
             <p>祂依然是那位愛著人類的神。</p>
             <p>而祂的愛，始終如一，直到永恆。</p>
-            <p style="text-align: center; font-family: 'Cinzel', serif; color: var(--gold-accent); margin: 30px 0;">歡迎來到——《聖術師》宇宙。<br>THE SANCTARIST UNIVERSE</p>
+            <p style="text-align: center; font-family: 'Cinzel', serif; color: #d4af37; margin: 30px 0;">歡迎來到——《聖術師》宇宙。<br>THE SANCTARIST UNIVERSE</p>
 
             <p>在世界誕生之初，神創造了天地萬物，並以六種神聖元素建立世界的秩序。</p>
             <p>雷、水、土、風、火、木。</p>
@@ -285,7 +292,6 @@
             <div class="magic-circle-container">
                 <img src="magic-circle.jpg" alt="聖術師神祕魔法陣" class="magic-circle-img">
                 
-                <!-- 六大元素點擊按鈕 -->
                 <button class="element-hotspot hotspot-lightning" onclick="showElement('lightning')">⚡ 雷之聖術師</button>
                 <button class="element-hotspot hotspot-wind"      onclick="showElement('wind')">◌ 風之聖術師</button>
                 <button class="element-hotspot hotspot-water"     onclick="showElement('water')">◈ 水之聖術師</button>
@@ -294,7 +300,7 @@
                 <button class="element-hotspot hotspot-earth"     onclick="showElement('earth')">◆ 土之聖術師</button>
             </div>
 
-            <!-- 動態元素資訊彈窗面板 -->
+            <!-- 動態元素資訊彈窗 -->
             <div id="element-modal" class="element-modal">
                 <button class="close-modal" onclick="closeModal()">✕ 關閉</button>
                 <div id="element-modal-content"></div>
@@ -390,7 +396,7 @@
             <p>隨著拉比完成贖罪祭，一「神之靈」降臨世間，讓聖術師與元素之間的關係迎來前所未有的轉變。</p>
             <p>從此，元素不再只是被操控的自然力量，更能回應聖術師內心深處的信念、盼望與愛，以獨一無二的姿態顯現於世。</p>
             <p>後世將這些嶄新的聖術形式歸納為三大類型：</p>
-            <p style="text-align: center; color: var(--gold-accent); font-weight: bold;">術器使、元素使、靈獸使。</p>
+            <p style="text-align: center; color: #d4af37; font-weight: bold;">術器使、元素使、靈獸使。</p>
 
             <h3>🛡️ 術器使｜信（ARTIFACT SANCTARIST · FAITH）</h3>
             <p>當一個人選擇將信任交託給拉比，那份看不見的信念，便有可能凝聚成真實的形體。</p>
@@ -406,7 +412,7 @@
             <p>元素使，是能將這份盼望託付給拉比，並使其化為獨特元素力量的聖術師。</p>
             <p>與單純操控元素不同，元素使的力量會依照持有者心中深刻的盼望，發展出專屬的形態與能力。這些能力不僅反映出聖術師所渴望的未來，也承載著他們與拉比之間的故事。</p>
             <p>因此，即使同樣繼承雷元素，兩位元素使所展現的聖術，也可能截然不同。</p>
-            <p>例如，雷之聖術師克里斯・安德烈，曾因自己的過錯而深感懊悔。他向拉比尋求幫助，盼望自己的力量不再傷害家人，而能為他們創造更加美好的世界。</p>
+            <p>例如，雷之聖術師克里斯・安德烈，曾因自己的過錯而深感懊悔。他向拉比尋求幫助，盼望你的力量不再傷害家人，而能為他們創造更加美好的世界。</p>
             <p>這份盼望最終化為他獨有的聖術——「雷之演算法」。</p>
             <blockquote>望，是相信尚未實現的未來，終有一天能夠成真。</blockquote>
 
@@ -453,7 +459,7 @@
             <p>它能修正惡魔造成的漏洞，卻無法修正人類自己做出的選擇。</p>
             <p>當一個人出於自己的意志選擇傷害、背叛，甚至主動接受黑暗的誘惑，這些行為所造成的後果，便不再是世界能夠輕易抹除的異常。</p>
             <p>而當擁有神聖元素之力的聖術師，選擇背離原本守護世界的使命，轉而投向黑暗時，他們便有了另一個稱呼——</p>
-            <p style="text-align: center; color: var(--gold-accent); font-weight: bold;">巫師（Sorcerers）。</p>
+            <p style="text-align: center; color: #d4af37; font-weight: bold;">巫師（Sorcerers）。</p>
             <p>對聖術師而言，最令人畏懼的，或許從來不只是惡魔本身。</p>
             <p>而是那些明明擁有選擇的自由，卻決定讓黑暗進入自己生命的人。</p>
             <p>世界能夠修復黑暗留下的裂痕，卻無法抹去人心親自做出的選擇。</p>
@@ -471,13 +477,13 @@
 
             <!-- 合作邀約區塊 -->
             <div class="contact-box">
-                <h3 style="font-family: 'Cinzel', serif; color: var(--gold-accent); letter-spacing: 0.15em;">讓故事，跨越文字的界線。</h3>
+                <h3 style="font-family: 'Cinzel', serif; color: #d4af37; letter-spacing: 0.15em;">讓故事，跨越文字的界線。</h3>
                 <p style="font-family: 'Cinzel', serif; font-size: 0.85rem; color: #aaa; margin-bottom: 20px;">BEYOND THE PAGES, INTO NEW WORLDS.</p>
                 <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 20px;">我們相信，一個好的故事，不應只停留在文字之中。《聖術師 The Sanctarist》以六大元素為起點，交織出橫跨不同國度、世代與命運的奇幻宇宙。在這個世界裡，我們不只描繪超凡的力量與冒險，更希望透過每一段故事，探索信念、盼望、愛，以及人性之中的光明與掙扎。</p>
                 <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 20px;">而這個宇宙，仍有無限可能等待被看見。我們期待與同樣熱愛故事及藝術創作的夥伴攜手，讓《聖術師》以影視、動畫、漫畫、遊戲、音樂、舞台藝術，或其他富有創意的形式，延伸出更多動人的篇章。</p>
                 <p style="text-align: justify; text-indent: 2em; font-size: 1rem; margin-bottom: 25px;">無論您來自影視製作公司、藝術創作團隊，或是對本作品的改編、授權及跨界合作抱有興趣的創作者，我們都誠摯歡迎您的聯繫。讓我們一起，賦予這個宇宙更多被看見的可能。</p>
                 
-                <p style="color: var(--gold-accent); font-weight: bold; margin-top: 15px;">合作洽詢｜白魔法藝術工作室<br>WHITE MAGIC ART STUDIO</p>
+                <p style="color: #d4af37; font-weight: bold; margin-top: 15px;">合作洽詢｜白魔法藝術工作室<br>WHITE MAGIC ART STUDIO</p>
                 <p style="font-size: 0.9rem; color: #ccc; margin-top: 5px;">【聯絡我們｜CONTACT US】</p>
             </div>
 
@@ -486,7 +492,7 @@
         <!-- 底部返回導覽 -->
         <div class="nav-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 50px; padding-top: 25px;">
             <a href="toc.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem;">📖 返回目錄</a>
-            <span style="color: var(--gold-accent); font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.1em;">THE SANCTARIST UNIVERSE</span>
+            <span style="color: #d4af37; font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.1em;">THE SANCTARIST UNIVERSE</span>
             <a href="index.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem;">🏠 返回首頁</a>
         </div>
     </div>
