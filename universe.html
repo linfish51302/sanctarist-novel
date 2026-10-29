@@ -111,43 +111,40 @@
             50% { transform: translateY(-8px); }
         }
 
-        /* --- 升級版：宇宙觀主標題「精緻金屬飾線」風格 --- */
+        /* --- 修正後的完美置中金屬飾線標題 --- */
         .universe-title-wrapper {
-            margin-top: 20px;
+            margin-top: 25px;
             margin-bottom: 35px;
-            display: inline-block;
-            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .universe-title-main {
-            font-family: 'Cinzel', serif, sans-serif;
-            font-size: 1.6rem;
-            color: #d4af37;
-            font-weight: bold;
-            letter-spacing: 0.35em;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
-            display: inline-block;
-            position: relative;
-            padding: 0 25px;
+        .universe-title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 400px;
         }
 
-        /* 左右精緻金屬飾線與菱形裝飾 */
-        .universe-title-main::before,
-        .universe-title-main::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            width: 45px;
+        .title-line {
+            flex: 1;
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
         }
 
-        .universe-title-main::before {
-            right: 100%;
-        }
-
-        .universe-title-main::after {
-            left: 100%;
+        .universe-title-main {
+            font-family: 'Cinzel', serif, sans-serif;
+            font-size: 1.5rem;
+            color: #d4af37;
+            font-weight: bold;
+            letter-spacing: 0.3em;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+            white-space: nowrap;
         }
 
         .universe-title-sub {
@@ -158,6 +155,7 @@
             margin-top: 6px;
             opacity: 0.85;
             text-transform: uppercase;
+            text-align: center;
         }
 
         /* --- 升級版：無框質感分類導覽列 (Text Nav with English Subtitles) --- */
@@ -581,9 +579,13 @@
         <div class="hero-content">
             <img src="logo-main.png" alt="聖術師 THE SANCTARIST 總 Logo" class="hero-logo">
             
-            <!-- ✨ 宇宙觀主標題（精緻金屬飾線風格） ✨ -->
+            <!-- ✨ 完美置中的精緻金屬飾線標題 ✨ -->
             <div class="universe-title-wrapper">
-                <div class="universe-title-main">聖術師宇宙觀</div>
+                <div class="universe-title-container">
+                    <div class="title-line"></div>
+                    <div class="universe-title-main">聖術師宇宙觀</div>
+                    <div class="title-line"></div>
+                </div>
                 <div class="universe-title-sub">THE SANCTARIST UNIVERSE</div>
             </div>
 
@@ -824,7 +826,7 @@
 </p>
                     <p style="text-indent: 0;">因此，傑西在拉比面前立下誓約，盼望自己有朝一日能成為一位不再受空間限制的守護者，無論所愛之人身在何處，都能及時伸出援手。
 
-這份強烈的盼望與信念，最終化為他獨有的元素使天賦——**「紫電」**。透過將實體分解為電子化的能量，再於另一處空間重新構成，他得以突破距離的限制，實現跨越空間的傳送。</p>
+這份強烈的盼望與信念，最終化為他獨有的元素使天賦——**<span>「紫電」</span>**。透過將實體分解為電子化的能量，再於另一處空間重新構成，他得以突破距離的限制，實現跨越空間的傳送。</p>
                     <blockquote>望，是相信尚未實現的未來，終有一天能夠成真。</blockquote>
                 </div>
                 <div id="content-beast" style="display: none;">
