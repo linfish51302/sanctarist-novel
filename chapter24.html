@@ -63,6 +63,50 @@
             margin-top: 12px;
             opacity: 0.75;
         }
+        /* --- 術器互動微發光與燙金浮現特效 --- */
+        .weapon-interactive-box {
+            text-align: center;
+            margin: 45px auto;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .weapon-artifact-img {
+            max-width: 280px; /* 您可依喜好調整大小 */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.8)) brightness(0.9);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        /* 滑鼠游標懸停時：術器微發光 */
+        .weapon-artifact-img:hover {
+            filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.7)) brightness(1.15);
+            transform: scale(1.03);
+        }
+
+        /* 旁邊浮現的燙金小行字 */
+        .weapon-tooltip-text {
+            font-family: 'Cinzel', serif, sans-serif;
+            font-size: 0.9rem;
+            color: #d4af37;
+            letter-spacing: 0.2em;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+            pointer-events: none;
+        }
+
+        /* 當滑鼠移到圖片上時，燙金字浮現 */
+        .weapon-interactive-box:hover .weapon-tooltip-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
