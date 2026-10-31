@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隱藏角色檔案解鎖 - 聖術師：失落的繼承者</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 角色形象專欄專屬高質感奇幻排版 */
+        .gallery-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gallery-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.15em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .gallery-header p {
+            color: #a39b8b;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+        }
+
+        /* 隱藏角色解鎖成功橫幅特效 */
+        .unlock-banner {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(40, 35, 10, 0.9));
+            border: 1px solid var(--gold-accent);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); }
+            100% { box-shadow: 0 0 35px rgba(212, 175, 55, 0.5); }
+        }
+
+        .unlock-banner h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-accent);
+            font-size: 1.4rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 8px;
+        }
+
+        .unlock-banner p {
+            color: #d8cebc;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* 網格排列：史詩畫廊感 */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .gallery-card {
+            background: rgba(18, 18, 18, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+        }
+
+        /* 隱藏角色的特殊金光邊框與標籤 */
+        .gallery-card.hidden-secret {
+            border-color: rgba(255, 215, 0, 0.8);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
+        }
+
+        .secret-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #d4af37, #aa771c);
+            color: #121212;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.15em;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .gallery-card:hover {
+            border-color: rgba(212, 175, 55, 0.9);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+            transform: translateY(-6px);
+        }
+
+        .gallery-img-box {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            background: #080808;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: sepia(10%) contrast(105%);
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .gallery-card:hover .gallery-img-box img {
+            transform: scale(1.02);
+            filter: sepia(0%) contrast(110%);
+        }
+
+        .gallery-caption {
+            padding: 25px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(18,18,18,0.8), rgba(10,10,10,0.98));
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .gallery-caption h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: var(--gold-accent);
+            margin-bottom: 8px;
+            letter-spacing: 0.1em;
+        }
+
+        .gallery-caption .char-title {
+            font-size: 0.85rem;
+            color: #a39b8b;
+            letter-spacing: 0.15em;
+            margin-bottom: 12px;
+        }
+
+        .view-detail-hint {
+            font-size: 0.75rem;
+            color: var(--gold-accent);
+            opacity: 0.7;
+            letter-spacing: 0.15em;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-card:hover .view-detail-hint {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- 彈出視窗（Modal）高質感暗黑奇幻設計 --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-box {
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(10, 10, 10, 0.98));
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 40px;
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.25);
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: none;
+            border: none;
+            color: var(--gold-accent);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.2);
+        }
+
+        .modal-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--gold-accent);
+            margin-bottom: 5px;
+            letter-spacing: 0.1em;
+        }
+
+        .modal-subtitle {
+            font-size: 0.9rem;
+            color: #a39b8b;
+            letter-spacing: 0.15em;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 15px;
+        }
+
+        .modal-body {
+            color: #e0d6c3;
+            font-size: 1rem;
+            line-height: 2.2;
+            text-align: justify;
+            margin-bottom: 25px;
+        }
+
+        .modal-quote {
+            font-family: 'Cinzel', serif;
+            font-style: italic;
+            color: #ffe875;
+            background: rgba(212, 175, 55, 0.08);
+            border-left: 3px solid var(--gold-accent);
+            padding: 15px 20px;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            border-radius: 0 6px 6px 0;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.05);
+        }
+
+        /* 快捷按鈕列樣式 */
+        .quick-nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 魔法漂浮光點背景 -->
+    <div class="magic-particles"></div>
+
+    <div class="book-container gallery-container">
+        <!-- 頂部 Logo -->
+        <div style="text-align: center; margin-bottom: 30px;">
+            <a href="index.html">
+                <img src="whitemagic-logo.png" alt="白魔法藝術工作室 Logo" style="max-width: 110px; height: auto; filter: drop-shadow(0 0 10px rgba(212,175,55,0.6)); opacity: 0.95;">
+            </a>
+            <p style="font-family: 'Cinzel', serif; color: var(--gold-accent); letter-spacing: 0.35em; font-size: 0.75rem; opacity: 0.75; margin-top: 8px;">WHITE MAGIC ART STUDIO</p>
+        </div>
+
+        <!-- 專欄標題 -->
+        <div class="gallery-header">
+            <h2>角色形象專欄 ✦ 隱藏檔案</h2>
+            <p>SECRET CHARACTER ARCHIVES UNLOCKED</p>
+        </div>
+
+        <!-- 解鎖成功驚喜橫幅 -->
+        <div class="unlock-banner">
+            <h3>✦ 恭喜通關最終章！已成功解鎖隱藏角色檔案 ✦</h3>
+            <p>您已見證史詩的尾聲，兩張傳說中的神祕角色檔案正式對您開放。</p>
+        </div>
+
+        <!-- 角色海報網格 -->
+        <div class="gallery-grid">
+            <!-- 🌟 隱藏角色 1：雷翼-柴克・安德烈 -->
+            <div class="gallery-card hidden-secret" onclick="openModal('zack')">
+                <div class="secret-badge">SECRET 01</div>
+                <div class="gallery-img-box">
+                    <img src="zacknew2.png" alt="柴克・安德烈">
+                </div>
+                <div class="gallery-caption">
+                    <h3>柴克・安德烈</h3>
+                    <div class="char-title">ZACK ANDRE</div>
+                    <div class="view-detail-hint">✦ 點擊觀看隱藏角色檔案</div>
+                </div>
+            </div>
+
+            <!-- 🌟 隱藏角色 2：詹姆斯・安德烈 -->
+            <div class="gallery-card hidden-secret" onclick="openModal('james')">
+                <div class="secret-badge">SECRET 02</div>
+                <div class="gallery-img-box">
+                    <img src="james.png" alt="詹姆斯・安德烈">
+                </div>
+                <div class="gallery-caption">
+                    <h3>詹姆斯・安德烈</h3>
+                    <div class="char-title">JAMES ANDRE</div>
+                    <div class="view-detail-hint">✦ 點擊觀看隱藏角色檔案</div>
+                </div>
+            </div>
+
+            <!-- 1. 克里斯 -->
+            <div class="gallery-card" onclick="openModal('chris')">
+                <div class="gallery-img-box">
+                    <img src="chrisnew.png" alt="克里斯・安德烈">
+                </div>
+                <div class="gallery-caption">
+                    <h3>克里斯・安德烈</h3>
+                    <div class="char-title">CHRIS ANDRE</div>
+                    <div class="view-detail-hint">✦ 點擊觀看角色檔案</div>
+                </div>
+            </div>
+
+            <!-- 2. 安娜 -->
+            <div class="gallery-card" onclick="openModal('anna')">
+                <div class="gallery-img-box">
+                    <img src="annanew.png" alt="安娜・安德烈">
+                </div>
+                <div class="gallery-caption">
+                    <h3>安娜・安德烈</h3>
+                    <div class="char-title">ANNA ANDRE</div>
+                    <div class="view-detail-hint">✦ 點擊觀看角色檔案</div>
+                </div>
+            </div>
+
+            <!-- 3. 雷 -->
+            <div class="gallery-card" onclick="openModal('ray')">
+                <div class="gallery-img-box">
+                    <img src="raynew.png" alt="雷・安德烈">
+                </div>
+                <div class="gallery-caption">
+                    <h3>雷・安德烈</h3>
+                    <div class="char-title">RAY ANDRE</div>
+                    <div class="view-detail-hint">✦ 點擊觀看角色檔案</div>
+                </div>
+            </div>
+
+            <!-- 4. 傑西 -->
+            <div class="gallery-card" onclick="openModal('jesse')">
+                <div class="gallery-img-box">
+                    <img src="jessenew.png" alt="傑西・約爾森">
+                </div>
+                <div class="gallery-caption">
+                    <h3>傑西・約爾森</h3>
+                    <div class="char-title">JESSE JORGENSEN</div>
+                    <div class="view-detail-hint">✦ 點擊觀看角色檔案</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 質感快捷導覽列 -->
+        <div class="quick-nav-bar">
+            <a href="toc.html" class="magical-btn" style="padding: 12px 25px; font-size: 0.9rem;">📖 返回小說目錄</a>
+            <a href="character-gallery.html" class="magical-btn" style="padding: 12px 25px; font-size: 0.9rem; background: rgba(212, 175, 55, 0.15);">✦ 查看標準角色專欄</a>
+            <a href="index.html" class="magical-btn" style="padding: 12px 25px; font-size: 0.9rem;">🏠 回到首頁</a>
+        </div>
+    </div>
+
+    <!-- 彈出視窗結構 -->
+    <div class="modal-overlay" id="characterModal" onclick="outsideClose(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-title" id="modalTitle">角色名稱</div>
+            <div class="modal-subtitle" id="modalSubtitle">身分與類型</div>
+            <div class="modal-body" id="modalBody">詳細敘述文字...</div>
+            <div class="modal-quote" id="modalQuote">「角色經典台詞」</div>
+        </div>
+    </div>
+
+    <!-- 互動控制 JavaScript -->
+    <script>
+        const characterData = {
+            zack: {
+                title: "柴克・安德烈",
+                subtitle: "ZACK ANDRE ｜ 雷翼・雷之術器使",
+                body: "原本只是熱愛籃球與射箭的普通高中生，卻因家族隱藏十五年的祕密，被捲入聖術世界，最終覺醒為這個世代首位翼聖術師——「雷翼」。他的術器是黑金長弓「迦勒」，弓身刻有金色紋路與天使羽翼般的裝飾。這個名字源自他曾經失去的朋友，也是他初次認識信仰與愛的重要見證。在與拉比重逢後，柴克終於找回失落的信心，並將這份信任具象化為屬於自己的術器。經歷魔神之戰後，柴克明白真正的力量並非來自自身的天賦，而是願意相信、守護與他同行的人。如今，他決定尋找其餘五翼與散落世界的撒旦碎片，踏上屬於自己的旅程。",
+                quote: "「你曾經失落的信仰，如今終於重新找回來了。」——拉比"
+            },
+            james: {
+                title: "詹姆斯・安德烈",
+                subtitle: "JAMES ANDRE ｜ 雷之元素使",
+                body: "安德烈家族出身的強大聖術師，擁有獨特的元素天賦「星雷」。年少時受到家族對雷翼預言的執著所牽連，卻始終珍視家人，也不曾因此憎恨自己的父親。在妻子瑞秋的陪伴下，他領悟了星雷真正的模樣——無數溫暖的金黃色光芒，如繁星般照亮黑暗。對詹姆斯而言，這份力量不只是為了戰鬥，更是為了守護那些他所珍惜的人。十五年前，為了封印魔神，他以生命為代價施展禁術，將未竟的使命託付給下一代。直到魔神遭到壓制，他才終於得以與家人重逢，親眼見證孩子們的成長。他留給柴克的，不是雷翼的力量，而是讓兒子自由成長、親自選擇未來的機會。",
+                quote: "「當你想我的時候，就抬頭看看夜空吧。」"
+            },
+            chris: {
+                title: "克里斯・安德烈",
+                subtitle: "CHRIS ANDRE ｜ 雷之元素使",
+                body: "柴克的哥哥，擁有出色的科技天賦與靈活的思考方式。他的元素使天賦「雷之演算法」，能讓自身進入電子化狀態，與數位系統互相連結。看似輕鬆幽默的外表下，藏著對家人深厚的責任感。",
+                quote: "「聖術不是只有力量，還要看你怎麼使用它。」"
+            },
+            anna: {
+                title: "安娜・安德烈",
+                subtitle: "ANNA ANDRE ｜ 雷之術器使",
+                body: "安德烈家的女兒，個性果斷、勇敢，面對危險從不輕易退縮。以媽媽-瑞秋為模範學習。她的術器是黑金雙頭劍「艾連」，能以精準而凌厲的攻勢迎戰敵人。比起空談，她更習慣用行動保護重要的人，是家族中可靠的戰鬥力量。",
+                quote: "「我不是因為知道事情最後一定會變好才去堅持；我是因為選擇相信，所以決定怎麼活。」"
+            },
+            ray: {
+                title: "雷・安德烈",
+                subtitle: "RAY ANDRE ｜ 雷之術器使",
+                body: "詹姆斯・安德烈同父異母的弟弟，也是柴克從未真正熟悉的叔叔。他的母親來自日本雷之聖術名門家庭，使他也有強大的聖術血統。以黑色菱形術器「阿法」操控強大的金色雷電，擁有豐富的戰鬥經驗。外表冷峻、不善表達情感，卻始終默默履行對哥哥的承諾，守護安德烈一家。",
+                quote: "「最誘人的謊言不是說假話，而是扭曲真理；但要記住，安德烈家永遠以家人為榮。」"
+            },
+            jesse: {
+                title: "傑西・約爾森",
+                subtitle: "JESSE JORGENSEN ｜ 雷之元素使",
+                body: "約爾森家族的家主，也是十五年前重大事件的親歷者。他的元素使天賦「紫電」能夠帶人穿梭各種空間，左手佩戴象徵家主身分的「鳴之戒」。沉穩、謹慎且重視承諾的他，始終守護著一段不願輕易提起的過去。",
+                quote: "「信仰從來不是用來逃避苦難與悲劇，而是給我們在經歷毀滅性的痛苦之後，依然能勇敢活下去的力量。」"
+            }
+        };
+
+        function openModal(charKey) {
+            const data = characterData[charKey];
+            if (!data) return;
+
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalSubtitle').innerText = data.subtitle;
+            document.getElementById('modalBody').innerText = data.body;
+            document.getElementById('modalQuote').innerText = data.quote;
+
+            document.getElementById('characterModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; // 背景禁止滾動
+        }
+
+        function closeModal() {
+            document.getElementById('characterModal').classList.remove('active');
+            document.body.style.overflow = 'auto'; // 恢復背景滾動
+        }
+
+        function outsideClose(event) {
+            if (event.target.id === 'characterModal') {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
