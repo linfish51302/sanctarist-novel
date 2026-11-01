@@ -6,15 +6,15 @@
     <title>聖術師 - 失落的繼承者 | 官方小說網站</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 書本容器 (.book-container) 設定：以 cover2.png 作為精裝書封面底圖 */
+        /* 書本容器 (.book-container) 設定：以您的全新史詩封面作為精裝書封面底圖 */
         .book-container {
-            background: linear-gradient(135deg, rgba(18, 18, 18, 0.75), rgba(10, 10, 10, 0.85)), 
-                        url('cover2.png') no-repeat center center;
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.6), rgba(10, 10, 10, 0.75)), 
+                        url('cover3.png') no-repeat center center;
             background-size: cover;
             border: 1px solid rgba(212, 175, 55, 0.4);
             border-radius: 12px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
-            padding: 40px 30px;
+            padding: 50px 30px;
             max-width: 800px;
             margin: 40px auto;
             position: relative;
@@ -29,15 +29,20 @@
         /* 史詩級小說簡介文字 */
         .novel-intro {
             max-width: 540px;
-            margin: 0 auto 20px auto;
+            margin: 0 auto 25px auto;
             font-size: 0.95rem;
             color: #f0e6d2;
             opacity: 0.95;
             line-height: 2.1;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.95);
             text-align: justify;
             position: relative;
             z-index: 3;
+            background: rgba(12, 12, 12, 0.45);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(4px);
         }
 
         /* --- 完美同尺寸疊合的互動標題區塊 --- */
@@ -56,7 +61,6 @@
         .logo-stack {
             position: relative;
             width: 100%;
-            /* 依據你的原始圖片寬高比調整，若圖是正方形或長方形可適當設定，這裡用 auto 撐開 */
         }
 
         /* 背景魔法陣 (star.png) 與 前方標題 (lostheir.png) 共用尺寸與絕對定位 */
@@ -123,13 +127,17 @@
             z-index: 2;
             max-width: 400px;
             margin: 0 auto;
+            background: rgba(12, 12, 12, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            backdrop-filter: blur(4px);
         }
         .nav-title {
             font-family: 'Cinzel', serif;
             color: var(--gold-accent);
             font-size: 0.9rem;
             letter-spacing: 0.3em;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             opacity: 0.85;
             text-transform: uppercase;
         }
@@ -139,7 +147,7 @@
             margin: 0;
         }
         .nav-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .nav-links a {
             display: inline-block;
@@ -182,9 +190,9 @@
                 <p style="font-family: 'Cinzel', serif; color: var(--gold-accent); letter-spacing: 0.35em; font-size: 0.75rem; opacity: 0.75; margin-top: 6px;">WHITE MAGIC ART STUDIO</p>
             </div>
             
-            <!-- 史詩級小說簡介文字（文字上移，完整露出柴克的臉） -->
+            <!-- 史詩級小說簡介文字（加上微透光底色讓新封面上的文字更清晰易讀） -->
             <p class="novel-intro">
-                當滾滾雷聲劃破夜空時，你可曾想過，那或許不是暴雨將至的預兆，而是ㄧ群隱密的人正在黑夜中為你與惡魔浴血奮戰？當滔天巨浪洶湧翻騰時，你可曾想過，那或許不是惡劣的天氣所致，而是他們正乘風破浪，為了守護這座世界而奔赴戰場？在他們之中，有人能憑藉意念撫平致命的傷口，有人能徒手移山倒海。他們從不公開現身，卻曾在歷史的陰影裡悄悄扭轉了無數文明的命運。其真實身份早已湮沒在歲月的塵埃中，唯有一個古老的稱呼流傳至今——<span class="gold-breathe">聖術師</span>。
+                當滾滾雷聲劃破夜空時，你可曾想過，那或許不是暴雨將至的預兆，而是ㄧ群隱密的人正在黑夜中為你與惡魔浴血奮戰？當滔天巨浪洶湧翻騰時，你可曾想過，那或許不是惡劣的天氣所致，而是他們正乘風破浪，為了守護這座世界而奔赴戰場？在他們之中，有人能憑藉意念撫平致命的傷口，有人能徒手移山倒海。他們從不公開現身，卻曾在歷史的陰影裡悄悄扭轉了無數文明的命運。其真實身份早已湮沒在歲月的塵埃中，唯有一個古老的稱呼流傳至今——聖術師。
             </p>
 
             <!-- 完美對齊的互動式圖層疊合區塊（點擊直接進入序章） -->
@@ -198,7 +206,7 @@
                 </div>
 
                 <!-- 點擊提示 -->
-                <div class="click-hint">✦ 點 擊 標 題 翻 開 序 章 ✦</div>
+                <div class="click-hint">✦ 點 擊 以 上 標 題 翻 開 序 章 ✦</div>
             </div>
 
         </div>
