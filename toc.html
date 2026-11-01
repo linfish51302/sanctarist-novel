@@ -6,18 +6,33 @@
     <title>完整章節目錄 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 將目錄頁的書本容器背景調亮，完整透出 cover4.png */
+        /* 將目錄頁的書本容器底圖亮度調整約 60%（暗化遮罩設為 0.7），營造神祕暗黑感 */
         .book-container {
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.25), rgba(5, 5, 5, 0.45)), 
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.70), rgba(5, 5, 5, 0.82)), 
                         url('cover4.png') no-repeat center center;
             background-size: cover;
             border: 1px solid rgba(212, 175, 55, 0.4);
             border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(212, 175, 55, 0.15);
             padding: 40px;
             max-width: 800px;
             margin: 40px auto;
             position: relative;
+        }
+
+        /* 標題圖片 (logo2.png) 專屬微光與置中樣式 */
+        .toc-title-img {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 5px auto;
+            filter: drop-shadow(0 0 15px rgba(212,175,55,0.6));
+            transition: transform 0.3s ease;
+        }
+        .toc-title-img:hover {
+            transform: scale(1.02);
+            filter: drop-shadow(0 0 20px rgba(255,232,117,0.8));
         }
 
         /* 增強章節清單項目懸停微光特效 */
@@ -38,18 +53,24 @@
 
     <div class="book-container">
         <!-- 頂部 Logo -->
-        <div style="text-align: center; margin-bottom: 25px;">
+        <div style="text-align: center; margin-bottom: 20px;">
             <a href="index.html">
                 <img src="whitemagic-logo.png" alt="Logo" style="max-width: 100px; height: auto; opacity: 0.95; filter: drop-shadow(0 0 12px rgba(212,175,55,0.8));">
             </a>
         </div>
 
-        <h2 style="font-size: 1.8rem; margin-bottom: 5px; text-align: center; font-family: 'Cinzel', serif; color: var(--gold-accent); text-shadow: 0 2px 8px rgba(0,0,0,0.95);">聖術師：失落的繼承者</h2>
-        <h3 style="font-size: 1.2rem; margin-bottom: 25px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em; text-shadow: 0 2px 8px rgba(0,0,0,0.95);">完整章節目錄</h3>
+        <!-- 將文字標題替換為 logo2.png 圖片標題 -->
+        <div style="text-align: center; margin-bottom: 15px;">
+            <a href="index.html" style="text-decoration: none;">
+                <img src="logo2.png" alt="聖術師：失落的繼承者" class="toc-title-img">
+            </a>
+        </div>
+
+        <h3 style="font-size: 1.1rem; margin-bottom: 25px; color: var(--gold-accent); text-align: center; letter-spacing: 0.25em; text-shadow: 0 2px 8px rgba(0,0,0,0.95);">完整章節目錄</h3>
 
         <div class="divider" style="text-align: center; color: var(--gold-accent); margin-bottom: 25px; text-shadow: 0 0 8px rgba(255,232,117,0.8);">✦ ✦ ✦</div>
 
-        <!-- 章節清單：完全移除黑色底框，讓封面背景大面積呈現 -->
+        <!-- 章節清單：透明無邊框，完美襯托 60% 亮度的神祕底圖 -->
         <ul class="chapter-list" style="list-style: none; padding: 0 10px; background: transparent; max-width: 520px; margin: 0 auto; line-height: 2.4; font-size: 1.05rem;">
             <li style="margin-bottom: 12px; border-bottom: 1px dashed rgba(212,175,55,0.3); padding-bottom: 6px;"><a href="prologue.html" style="color: var(--gold-accent); text-decoration: none; text-shadow: 0 2px 6px rgba(0,0,0,0.9);">序章｜血祭封印</a></li>
             <li style="margin-bottom: 8px;"><a href="chapter1.html" style="color: #f0e6d2; text-decoration: none; text-shadow: 0 2px 6px rgba(0,0,0,0.9);">01 耀眼的明星</a></li>
