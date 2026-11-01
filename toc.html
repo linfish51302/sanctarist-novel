@@ -6,10 +6,10 @@
     <title>完整章節目錄 - 聖術師：失落的繼承者</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 將目錄頁的書本容器 (.book-container) 底圖套用 cover2.png */
+        /* 將目錄頁的書本容器 (.book-container) 底圖套用全新 cover3.png */
         .book-container {
-            background: linear-gradient(135deg, rgba(18, 18, 18, 0.92), rgba(10, 10, 10, 0.95)), 
-                        url('cover2.png') no-repeat center center;
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.85), rgba(10, 10, 10, 0.92)), 
+                        url('cover3.png') no-repeat center center;
             background-size: cover;
             border: 1px solid rgba(212, 175, 55, 0.4);
             border-radius: 12px;
@@ -18,6 +18,16 @@
             max-width: 800px;
             margin: 40px auto;
             position: relative;
+        }
+
+        /* 增強章節清單項目的可讀性與懸停微光特效 */
+        .chapter-list li a {
+            transition: all 0.3s ease;
+        }
+        .chapter-list li a:hover {
+            color: var(--gold-accent) !important;
+            text-shadow: 0 0 10px rgba(255, 232, 117, 0.6);
+            padding-left: 6px;
         }
     </style>
 </head>
@@ -30,17 +40,17 @@
         <!-- 頂部 Logo -->
         <div style="text-align: center; margin-bottom: 25px;">
             <a href="index.html">
-                <img src="whitemagic-logo.png" alt="Logo" style="max-width: 100px; height: auto; opacity: 0.9;">
+                <img src="whitemagic-logo.png" alt="Logo" style="max-width: 100px; height: auto; opacity: 0.9; filter: drop-shadow(0 0 10px rgba(212,175,55,0.6));">
             </a>
         </div>
 
-        <h2 style="font-size: 1.8rem; margin-bottom: 5px; text-align: center;">聖術師：失落的繼承者</h2>
-        <h3 style="font-size: 1.2rem; margin-bottom: 30px; color: var(--gold-accent); text-align: center;">完整章節目錄</h3>
+        <h2 style="font-size: 1.8rem; margin-bottom: 5px; text-align: center; font-family: 'Cinzel', serif; color: var(--gold-accent);">聖術師：失落的繼承者</h2>
+        <h3 style="font-size: 1.2rem; margin-bottom: 30px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em;">完整章節目錄</h3>
 
         <div class="divider" style="text-align: center; color: var(--gold-accent); margin-bottom: 30px;">✦ ✦ ✦</div>
 
         <!-- 章節清單 -->
-        <ul style="list-style: none; padding: 0; max-width: 500px; margin: 0 auto; line-height: 2.4; font-size: 1.05rem;">
+        <ul class="chapter-list" style="list-style: none; padding: 0; max-width: 500px; margin: 0 auto; line-height: 2.4; font-size: 1.05rem;">
             <li style="margin-bottom: 12px; border-bottom: 1px dashed rgba(212,175,55,0.2); padding-bottom: 6px;"><a href="prologue.html" style="color: var(--gold-accent); text-decoration: none;">序章｜血祭封印</a></li>
             <li style="margin-bottom: 8px;"><a href="chapter1.html" style="color: var(--text-color); text-decoration: none;">01 耀眼的明星</a></li>
             <li style="margin-bottom: 8px;"><a href="chapter2.html" style="color: var(--text-color); text-decoration: none;">02 東湖教會</a></li>
@@ -54,19 +64,19 @@
             <li style="margin-bottom: 8px;"><a href="chapter10.html" style="color: var(--text-color); text-decoration: none;">10 黑水</a></li>
             <li style="margin-bottom: 8px;"><a href="chapter11.html" style="color: var(--text-color); text-decoration: none;">11 父親？</a></li>
             <li style="margin-bottom: 8px;"><a href="chapter12.html" style="color: var(--text-color); text-decoration: none;">12 柴克的父母</a></li>
-             <li style="margin-bottom: 8px;"><a href="chapter13.html" style="color: var(--text-color); text-decoration: none;">13 雷光與火焰</a></li>
+            <li style="margin-bottom: 8px;"><a href="chapter13.html" style="color: var(--text-color); text-decoration: none;">13 雷光與火焰</a></li>
             <li style="margin-bottom: 8px;"><a href="chapter14.html" style="color: var(--text-color); text-decoration: none;">14 寇德薩拉</a></li>
             <li style="margin-bottom: 8px;"><a href="chapter15.html" style="color: var(--text-color); text-decoration: none;">15 火炬之房</a></li>
-           <li style="margin-bottom: 8px;"><a href="chapter16.html" style="color: var(--text-color); text-decoration: none;">16 記憶迴廊</a></li>
-           <li style="margin-bottom: 8px;"><a href="chapter17.html" style="color: var(--text-color); text-decoration: none;">17 記憶的深處</a></li>
+            <li style="margin-bottom: 8px;"><a href="chapter16.html" style="color: var(--text-color); text-decoration: none;">16 記憶迴廊</a></li>
+            <li style="margin-bottom: 8px;"><a href="chapter17.html" style="color: var(--text-color); text-decoration: none;">17 記憶的深處</a></li>
             <li style="margin-bottom: 8px;"><a href="chapter18.html" style="color: var(--text-color); text-decoration: none;">18 紐澤西事件</a></li>
-           <li style="margin-bottom: 8px;"><a href="chapter19.html" style="color: var(--text-color); text-decoration: none;">19 守門天使</a></li>
-           <li style="margin-bottom: 8px;"><a href="chapter20.html" style="color: var(--text-color); text-decoration: none;">20 安德烈之劍</a></li>
-           <li style="margin-bottom: 8px;"><a href="chapter21.html" style="color: var(--text-color); text-decoration: none;">21 家譜中被抹去的名字</a></li>
-           <li style="margin-bottom: 8px;"><a href="chapter22.html" style="color: var(--text-color); text-decoration: none;">22 為了與祢相遇</a></li>
+            <li style="margin-bottom: 8px;"><a href="chapter19.html" style="color: var(--text-color); text-decoration: none;">19 守門天使</a></li>
+            <li style="margin-bottom: 8px;"><a href="chapter20.html" style="color: var(--text-color); text-decoration: none;">20 安德烈之劍</a></li>
+            <li style="margin-bottom: 8px;"><a href="chapter21.html" style="color: var(--text-color); text-decoration: none;">21 家譜中被抹去的名字</a></li>
+            <li style="margin-bottom: 8px;"><a href="chapter22.html" style="color: var(--text-color); text-decoration: none;">22 為了與祢相遇</a></li>
             <li style="margin-bottom: 8px;"><a href="chapter23.html" style="color: var(--text-color); text-decoration: none;">23 失落的繼承者</a></li>
-             <li style="margin-bottom: 8px;"><a href="chapter24.html" style="color: var(--text-color); text-decoration: none;">24 曙光</a></li>
-             <li style="margin-bottom: 8px;"><a href="chapter25.html" style="color: var(--text-color); text-decoration: none;">25 重逢</a></li>
+            <li style="margin-bottom: 8px;"><a href="chapter24.html" style="color: var(--text-color); text-decoration: none;">24 曙光</a></li>
+            <li style="margin-bottom: 8px;"><a href="chapter25.html" style="color: var(--text-color); text-decoration: none;">25 重逢</a></li>
             <li style="margin-bottom: 8px;"><a href="chapter26.html" style="color: var(--text-color); text-decoration: none;">最終章 全新的旅途</a></li>
             <li><a href="#" style="color: var(--text-color); text-decoration: none; font-size: 0.95rem; opacity: 0.8;">後記：來自遠方的客人（預備中）</a></li>
         </ul>
