@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>後記：來自遠方的客人 - 聖術師：失落的繼承者</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 閱讀頁面專屬排版優化：呼應全站風格，使用神秘暗黑微光底圖 */
+        .book-container {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.82), rgba(10, 10, 10, 0.90)), 
+                        url('cover4.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85), 0 0 25px rgba(212, 175, 55, 0.15);
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .novel-content {
+            line-height: 2.2;
+            font-size: 1.1rem;
+            color: #d8cebc;
+            text-align: justify;
+        }
+
+        .novel-content p {
+            margin-bottom: 1.8em;
+            text-indent: 2em;
+        }
+
+        /* --- 內文中段的高質感插圖樣式 --- */
+        .chapter-illustration {
+            max-width: 100%;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .chapter-illustration img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15);
+            filter: sepia(8%) contrast(105%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .chapter-illustration img:hover {
+            transform: scale(1.01);
+            filter: sepia(0%) contrast(110%);
+        }
+
+        .illustration-caption {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 0.25em;
+            margin-top: 12px;
+            opacity: 0.75;
+        }
+
+        /* --- 下一部作品預告專區（精裝書立體展示風格） --- */
+        .next-book-section {
+            margin-top: 60px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(30, 25, 10, 0.8), rgba(12, 12, 12, 0.95));
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .next-book-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+        }
+
+        .next-book-title-tag {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-accent);
+            font-size: 0.85rem;
+            letter-spacing: 0.35em;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .next-book-heading {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: #ffe875;
+            letter-spacing: 0.2em;
+            margin-bottom: 25px;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+
+        .book-mockup-container {
+            max-width: 280px;
+            margin: 0 auto 25px auto;
+            position: relative;
+            transition: transform 0.5s ease;
+        }
+
+        .book-mockup-container:hover {
+            transform: scale(1.03) translateY(-5px);
+        }
+
+        .book-mockup-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #121212;
+            background: linear-gradient(135deg, #d4af37, #f3e5ab);
+            padding: 10px 35px;
+            border-radius: 30px;
+            letter-spacing: 0.3em;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+            margin-top: 10px;
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); }
+            100% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.7); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 魔法漂浮光點背景 -->
+    <div class="magic-particles"></div>
+
+    <div class="book-container">
+        <!-- 頂部：白魔法工作室 Logo -->
+        <div style="text-align: center; margin-bottom: 25px;">
+            <a href="index.html">
+                <img src="whitemagic-logo.png" alt="白魔法藝術工作室 Logo" style="max-width: 110px; height: auto; filter: drop-shadow(0 0 10px rgba(212,175,55,0.6)); opacity: 0.95;">
+            </a>
+            <p style="font-family: 'Cinzel', serif; color: var(--gold-accent); letter-spacing: 0.35em; font-size: 0.75rem; opacity: 0.75; margin-top: 8px;">WHITE MAGIC ART STUDIO</p>
+        </div>
+
+        <!-- 章節標題 -->
+        <h2 style="font-size: 1.6rem; margin-bottom: 5px; text-align: center; letter-spacing: 0.1em; font-family: 'Cinzel', serif; color: var(--gold-accent);">後記</h2>
+        <h3 style="font-size: 1.3rem; margin-bottom: 40px; color: var(--gold-accent); text-align: center; letter-spacing: 0.15em;">來自遠方的客人</h3>
+
+        <!-- 小說內文區 -->
+        <div class="novel-content">
+            
+            <p>美國・猶他州・鹽湖城・東湖地下教會</p>
+            <p>午後的陽光灑落在鹽湖城郊外一座廢棄的舊變電場上。</p>
+            <p>這座看似早已荒廢的建築，依舊靜靜佇立在城市的一隅。沒有人會想到，在它的地底深處，竟隱藏著一座聖術師的地下教會。</p>
+            <p>而此刻，教會的交誼室裡，一場持續了將近整個下午的談話，正逐漸接近尾聲。</p>
+            <p>桌上擺著兩杯咖啡。</p>
+            <p>其中一杯早已見底，另一杯卻幾乎沒怎麼動過。</p>
+            <p>「等一下！」</p>
+            <p>坐在傑西對面的青年突然挺直身子。</p>
+            <p>「所以後來呢？」</p>
+            <p>傑西・約爾森放下咖啡杯。</p>
+            <p>「什麼後來？」</p>
+            <p>「撒旦碎片啊！」</p>
+            <p>青年忍不住向前傾身。</p>
+            <p>「你剛才說柴克從魔神那裡拿到了碎片，可是還沒告訴我，他最後把那東西藏到哪裡去了。」</p>
+            <p>「小子。」</p>
+            <p>傑西壓低聲音。</p>
+            <p>「你能不能小聲一點？」</p>
+            <p>青年愣了一下，連忙露出歉意的笑容。</p>
+            <p>「抱歉、抱歉！我只是太好奇了。」</p>
+            <p>傑西無奈地搖頭。</p>
+            <p>「我真不知道自己為什麼會跟你聊這麼多。」</p>
+            <p>他靠回椅背，望著眼前這名年輕人。</p>
+            <p>「要不是看在你也是聖術師，而且難得有人對翼聖術師的事情這麼感興趣，我才不會把這些告訴你。」</p>
+            <p>「我知道。」</p>
+            <p>「你最好真的知道。」</p>
+            <p>傑西伸出食指，神情稍微嚴肅起來。</p>
+            <p>「這些事情不是能隨便拿出去講的，明白嗎？」</p>
+            <p>「明白，牧師。」</p>
+            <p>青年認真地點頭。</p>
+            <p>傑西望著他，終於忍不住笑了。</p>
+            <p>眼前這名青年約莫二十四歲，穿著簡單的休閒服，腳邊放著一只略顯沉重的背包。</p>
+            <p>從外表看來，他與一般的大學生並沒有太大差別。</p>
+            <p>只是那雙深棕色的眼睛，總讓傑西有種說不上來的熟悉感。</p>
+
+            <!-- 🌟 插圖 1 -->
+            <div class="chapter-illustration">
+                <img src="afterword-1.png" alt="後記插圖一">
+                <div class="illustration-caption">✦ EPILOGUE ARTWORK I ✦</div>
+            </div>
+
+            <p>他們今天才第一次見面。</p>
+            <p>然而，從青年踏進東湖教會的那一刻起，傑西便莫名對他產生一份親切感。</p>
+            <p>不是因為對方特別健談。</p>
+            <p>而是某種難以解釋的感覺。</p>
+            <p>彷彿兩人早已認識許久。</p>
+            <p>也正因如此，傑西才會破例與他分享三年前發生在鹽湖城的那段往事。</p>
+            <p>從魔神降臨，到安德烈一家如何面對危機。</p>
+            <p>從柴克第一次接觸聖術世界，到他終於覺醒為真正的雷翼聖術師。</p>
+            <p>那些原本隨著時間逐漸沉澱的記憶，竟在今天重新變得鮮明。</p>
+            <p>「好吧。」</p>
+            <p>傑西重新端起咖啡杯。</p>
+            <p>「既然都說到這裡了，我就把最後的事情告訴你。」</p>
+            <p>青年立刻坐直。</p>
+            <p>傑西忍不住笑了。</p>
+            <p>「你還真有精神。」</p>
+            <p>「因為那可是撒旦碎片耶！」</p>
+            <p>青年理所當然地回答。</p>
+            <p>「我怎麼可能不好奇？」</p>
+            <p>「總之……」</p>
+            <p>傑西稍微整理思緒。</p>
+            <p>「後來，柴克認為這個世界上，只有一個地方適合保管那塊碎片。」</p>
+            <p>青年微微皺眉。</p>
+            <p>「哪裡？」</p>
+            <p>傑西看著他。</p>
+            <p>「寇德薩拉。」</p>
+            <p>青年怔住。</p>
+            <p>「等等……你說的是那個存放聖物的寇德薩拉？」</p>
+            <p>「沒錯。」</p>
+            <p>「可是，那不是聖術師最重要的聖地之一嗎？」</p>
+            <p>「所以我才說，柴克這小子有時候真的很敢想。」</p>
+            <p>傑西笑著搖頭。</p>
+            <p>「據說他在做出決定以前，還特地詢問過拉比。」</p>
+            <p>聽見這個名字，青年臉上的笑容稍稍收斂。</p>
+            <p>「拉比怎麼說？」</p>
+            <p>「柴克說祂沒有明確贊成，但也沒有阻止。」</p>
+            <p>青年若有所思地點頭。</p>
+            <p>「原來如此……」</p>
+            <p>「於是，他便帶著克里斯和安娜，再次前往寇德薩拉。」</p>
+            <p>傑西停頓片刻。</p>
+            <p>「有趣的是，這一次，他們竟然沒有經歷先前的那些試煉。」</p>
+            <p>「什麼意思？」</p>
+            <p>「他們直接穿過聖牆，抵達主殿。」</p>
+            <p>「直接進去？」</p>
+            <p>「對。我們猜想，可能是因為三兄妹先前已經通過試煉，所以聖地才允許他們再次進入。」</p>
+            <p>青年低下頭，似乎正在思索什麼。</p>
+            <p>傑西繼續說道：</p>
+            <p>「而且，柴克還在那裡見到了他的老朋友。」</p>
+            <p>「老朋友？」</p>
+            <p>「迦勒。」</p>
+            <p>青年抬起頭。</p>
+            <p>「就是那位已經成為基路伯的天使？」</p>
+            <p>「沒錯。」</p>
+            <p>「那他們應該很高興吧？」</p>
+            <p>傑西臉上的笑容忽然變得有些微妙。</p>
+            <p>「這個嘛……」</p>
+            <p>「怎麼了？」</p>
+            <p>「如果你以為那是一場溫馨的重逢，可就錯了。」</p>
+            <p>傑西忍不住笑出聲。</p>
+            <p>「聽說迦勒一看到柴克帶來的東西，臉色立刻就變了。」</p>
+            <p>「他非常反對把撒旦碎片藏在寇德薩拉。」</p>
+            <p>青年挑起眉毛。</p>
+            <p>「連迦勒都反對？」</p>
+            <p>「何止反對，他們還吵了一架！」</p>
+            <p>「真的假的？」</p>
+            <p>「當然是真的。」</p>
+            <p>傑西攤開雙手。</p>
+            <p>「柴克認為，寇德薩拉既然能保管那麼多重要聖物，應該也有能力隔絕撒旦碎片的影響。」</p>
+            <p>「但迦勒認為，那種東西根本不應該出現在聖地裡。」</p>
+            <p>青年沉吟片刻。</p>
+            <p>「這樣聽起來……雙方好像都有道理。」</p>
+            <p>「是啊。」</p>
+            <p>傑西點頭。</p>
+            <p>「最後還是克里斯出面協調。他們討論了很久，迦勒才勉強答應，讓柴克把碎片放進聖地的地窖。」</p>
+            <p>青年似乎鬆了一口氣。</p>
+            <p>「那就好。」</p>
+            <p>「不過……」</p>
+            <p>傑西忍住笑意。</p>
+            <p>「迦勒還特別強調了一件事。」</p>
+            <p>「什麼事？」</p>
+            <p>傑西挺直身子，刻意模仿對方嚴肅的語氣。</p>
+            <p>「我可不會替你看守那個骯髒的東西！」</p>
+            <p>青年先是一愣，隨即忍不住笑了出來。</p>
+            <p>「哈哈哈！這也太有個性了吧！」</p>
+            <p>「你看吧！」</p>
+            <p>傑西也跟著笑了。</p>
+            <p>「這就是那位忠心天使的堅持。」</p>
+            <p>交誼室裡響起一陣笑聲。</p>
+            <p>然而，當笑聲逐漸平息，青年卻忽然開口：</p>
+            <p>「不過……約爾森牧師。」</p>
+            <p>「嗯？」</p>
+            <p>青年微微歪頭，嘴角仍帶著笑意。</p>
+            <p>「你就這樣把碎片的藏匿地點告訴我……」</p>
+            <p>他停頓了一下。</p>
+            <p>「難道不怕我哪天真的跑去把它偷出來嗎？」</p>
+            <p>祈禱室裡安靜了一瞬。</p>
+            <p>傑西望著他。</p>
+            <p>隨即笑了。</p>
+            <p>「你這小子，還真敢開玩笑。」</p>
+            <p>他伸出一根手指。</p>
+            <p>「首先，想進入寇德薩拉，必須有翼聖術師陪同。」</p>
+            <p>接著，又伸出第二根。</p>
+            <p>「再來，就算真的進去了，也還有三道試煉等著你。」</p>
+            <p>「如果心術不正，跑去那裡純粹就是自找麻煩。」</p>
+            <p>青年沒有立即回答。</p>
+            <p>只是靜靜望著傑西。</p>
+            <p>那雙深棕色的眼睛裡，似乎閃過一絲難以察覺的情緒。</p>
+            <p>傑西原本還想補充什麼，卻突然發現一件奇怪的事。</p>
+            <p>青年的眼睛，正在改變。</p>
+            <p>原本深棕色的瞳孔，竟逐漸浮現幽綠色的光芒。</p>
+
+            <!-- 🌟 插圖 2 -->
+            <div class="chapter-illustration">
+                <img src="afterword-2.png" alt="後記插圖二">
+                <div class="illustration-caption">✦ EPILOGUE ARTWORK II ✦</div>
+            </div>
+
+            <p>「……等等。」</p>
+            <p>傑西下意識坐直身子。</p>
+            <p>那雙眼睛……</p>
+            <p>他似乎曾經在某些古老的聖術記載裡見過。</p>
+            <p>「這是……」</p>
+            <p>傑西皺起眉頭。</p>
+            <p>「木瞳？」</p>
+            <p>青年沒有否認。</p>
+            <p>那抹幽綠色光芒在他的瞳孔深處緩緩流轉，卻沒有任何張揚的聖術波動。</p>
+            <p>傑西的神情逐漸變得驚訝。</p>
+            <p>「只有繼承木之力的聖術師，才會擁有這種眼睛。」</p>
+            <p>他忽然想到什麼。</p>
+            <p>「你該不會正在讀我的心吧？」</p>
+            <p>青年怔了一下，連忙笑著擺手。</p>
+            <p>「不、不用擔心！」</p>
+            <p>他眨了眨眼睛。</p>
+            <p>綠色光芒隨即褪去，瞳孔重新恢復成原本的深棕色。</p>
+            <p>「我的木瞳術，沒辦法直接讀取別人的思想。」</p>
+            <p>「那你剛才在做什麼？」</p>
+            <p>青年微微一笑。</p>
+            <p>「我只能感知對方真正的情緒。」</p>
+            <p>他稍微停頓。</p>
+            <p>「也正因為這樣，我能察覺一個人說話時，是否隱瞞了真相。」</p>
+            <p>傑西望著他。</p>
+            <p>青年接著說：</p>
+            <p>「而你今天告訴我的這些事情……」</p>
+            <p>他的神情逐漸認真起來。</p>
+            <p>「我沒有感覺到任何欺瞞。」</p>
+            <p>傑西沉默片刻。</p>
+            <p>隨即笑著搖頭。</p>
+            <p>「真是方便的聖術啊。」</p>
+            <p>「有時候確實很方便。」</p>
+            <p>「不過，你應該知道，這種能力不能隨便對別人使用吧？」</p>
+            <p>青年點頭。</p>
+            <p>「我知道。」</p>
+            <p>他稍微低下頭。</p>
+            <p>「抱歉，牧師。沒有事先告訴你。」</p>
+            <p>傑西擺了擺手。</p>
+            <p>「算了，至少你願意坦白。」</p>
+            <p>他重新端起咖啡杯，卻沒有立刻喝下。</p>
+            <p>「而且，說真的……」</p>
+            <p>傑西看著眼前的青年。</p>
+            <p>「今天跟你聊了這麼多，我也很高興。」</p>
+            <p>青年微微一怔。</p>
+            <p>「三年前發生的那些事情，雖然現在想起來還是覺得不可思議，但有機會重新整理一次，倒也不錯。」</p>
+            <p>傑西笑了笑。</p>
+            <p>「謝謝你願意聽我這個老頭子說故事。」</p>
+            <p>青年立刻搖頭。</p>
+            <p>「不。」</p>
+            <p>他望著傑西，語氣突然變得格外慎重。</p>
+            <p>「應該是我謝謝你。」</p>
+            <p>「你今天告訴我的每一件事……」</p>
+            <p>他停頓片刻。</p>
+            <p>「對我都有很大的幫助。」</p>
+            <p>傑西望著他。</p>
+            <p>那一瞬間，他忽然察覺到，眼前這名青年似乎並不只是單純對翼聖術師感興趣。</p>
+            <p>他像是在尋找某個答案。</p>
+            <p>一個對他而言，非常重要的答案。</p>
+            <p>「小子。」</p>
+            <p>傑西緩緩開口。</p>
+            <p>「你該不會……也認識其他翼聖術師吧？」</p>
+            <p>青年怔了一下。</p>
+            <p>隨即露出有些微妙的笑容。</p>
+            <p>「嗯……」</p>
+            <p>他想了想。</p>
+            <p>「某種程度上……」</p>
+            <p>傑西等待著他的回答。</p>
+            <p>青年卻只是輕輕搖頭。</p>
+            <p>「不算吧。」</p>
+            <p>「這是什麼意思？」</p>
+            <p>「沒什麼。」</p>
+            <p>青年笑了笑，沒有繼續解釋。</p>
+            <p>「不過……」</p>
+            <p>他重新看向傑西。</p>
+            <p>「如果有機會，我真的很想親自見見柴克。」</p>
+            <p>「喔？」</p>
+            <p>「我有很多問題，想當面問他。」</p>
+            <p>傑西思索片刻。</p>
+            <p>「那恐怕有點可惜。」</p>
+            <p>青年微微一怔。</p>
+            <p>「為什麼？」</p>
+            <p>「柴克現在不在美國。」</p>
+            <p>「不在美國？」</p>
+            <p>「嗯。他叔叔帶著三兄妹去東京了。」</p>
+            <p>「日本？」</p>
+            <p>「恩。」</p>
+            <p>傑西靠回椅背。</p>
+            <p>「他叔叔的老家發生一點事。」</p>
+            <p>青年低下頭，若有所思。</p>
+            <p>傑西看著他。</p>
+            <p>「不過，我相信你們總有一天會見面的。」</p>
+            <p>青年抬起頭。</p>
+            <p>「畢竟，這個世界說大不大，說小也不小。」</p>
+            <p>傑西笑著說。</p>
+            <p>青年也跟著笑了。</p>
+            <p>「希望如此。」</p>
+            <p>傑西忽然想起什麼。</p>
+            <p>「對了，你是大四生吧？」</p>
+            <p>「對。」</p>
+            <p>青年點頭。</p>
+            <p>「這學期結束就要畢業了。」</p>
+            <p>傑西看了看牆上的時鐘。</p>
+            <p>「那你今天應該還有其他行程吧？」</p>
+            <p>青年低頭看向手錶。</p>
+            <p>下一瞬間，猛然睜大眼睛。</p>
+            <p>「哇！」</p>
+            <p>他立刻站起身。</p>
+            <p>「時間竟然這麼晚了！」</p>
+            <p>傑西忍不住笑了。</p>
+            <p>「怎麼？聊得太開心，忘記時間了？」</p>
+            <p>「完全忘記了！」</p>
+            <p>青年連忙抓起背包。</p>
+            <p>「我真的該走了，我的學校離猶他州還有一段距離呢。」</p>
+            <p>「那確實該出發了。」</p>
+            <p>傑西也跟著站起身。</p>
+            <p>兩人走出交誼室，沿著走廊朝教會大門走去。</p>
+            <p>午後的陽光已經開始變得柔和。</p>
+            <p>遠處傳來幾名聖術師交談的聲音。</p>
+            <p>青年走到門口，轉身向傑西微微鞠躬。</p>
+            <p>「今天真的非常謝謝你，牧師。」</p>
+            <p>「不客氣。」</p>
+            <p>傑西伸出手。</p>
+            <p>「希望有機會再見。」</p>
+            <p>青年也伸出手，與他握了握。</p>
+
+            <!-- 🌟 插圖 3 -->
+            <div class="chapter-illustration">
+                <img src="afterword-3.png" alt="後記插圖三">
+                <div class="illustration-caption">✦ EPILOGUE ARTWORK III ✦</div>
+            </div>
+
+            <p>「一定會的。」</p>
+            <p>傑西望著他。</p>
+            <p>就在青年準備離開時，忽然想起一件事。</p>
+            <p>「等等！」</p>
+            <p>青年停下腳步。</p>
+            <p>「嗯？」</p>
+            <p>傑西忍不住笑了。</p>
+            <p>「我們聊了一整個下午……」</p>
+            <p>他搖搖頭。</p>
+            <p>「我竟然還不知道你叫什麼名字。」</p>
+            <p>青年怔了一下。</p>
+            <p>隨即笑了。</p>
+            <p>「啊，對耶！」</p>
+            <p>他將背包往肩上調整了一下。</p>
+            <p>「你可以叫我霍爾。」</p>
+            <p>「霍爾……」</p>
+            <p>傑西輕聲重複。</p>
+            <p>他望著青年，忽然問道：</p>
+            <p>「你應該不是美國人吧？」</p>
+            <p>青年微微一怔。</p>
+            <p>隨即露出驚訝的笑容。</p>
+            <p>「哇喔！約爾森牧師，你的直覺也太準了吧？」</p>
+            <p>「所以我猜對了？」</p>
+            <p>「對啊！」</p>
+            <p>青年笑著回答。</p>
+            <p>「我還以為自己的美式口音已經練得很不錯了。」</p>
+            <p>傑西也笑了。</p>
+            <p>「那你是哪裡人？」</p>
+            <p>「台灣。」</p>
+            <p>「原來如此。」</p>
+            <p>傑西點了點頭。</p>
+            <p>「難怪我總覺得，你的口音有些不一樣。」</p>
+            <p>青年笑而不語。</p>
+            <p>傑西忽然又問：</p>
+            <p>「那麼，霍爾。」</p>
+            <p>「嗯？」</p>
+            <p>「你的中文名字呢？」</p>
+            <p>青年安靜了一瞬。</p>
+            <p>他似乎想起了什麼。</p>
+            <p>那雙深棕色的眼睛裡，閃過一絲難以言喻的情緒。</p>
+            <p>隨後，他露出一抹淡淡的笑容。</p>
+            <p>「我的中文名字啊……」</p>
+            <p>他重新望向傑西。</p>
+            <p>「梁景皓。」</p>
+            <p>青年一字一頓地說。</p>
+            <p>「我叫梁景皓。」</p>
+            <p>傑西微微一怔。</p>
+            <p>「梁……景皓？」</p>
+            <p>青年笑著點頭。</p>
+            <p>「沒錯。」</p>
+            <p>他向傑西揮了揮手。</p>
+            <p>「那麼，牧師。」</p>
+            <p>「我們有緣再見。」</p>
+            <p>傑西也抬起手。</p>
+            <p>「一路平安，霍爾。」</p>
+            <p>青年轉身離開，穿過通往主堂的走廊。</p>
+            <p>午後的陽光透過主堂高處那扇巨大的拱形圓窗，斜斜灑落在石板地面上。</p>
+            <p>他從光影間走過，沿著通往地面的階梯拾級而上。</p>
+            <p>不久後，舊變電場的大門再次開啟。</p>
+            <p>青年走入鹽湖城午後的陽光中，稍稍調整肩上的背包，隨即邁開步伐。</p>
+            <p>他的身影逐漸遠去，最後融入街道。</p>
+            <p>傑西仍站在地下教會的主堂裡，靜靜望著他離開的方向。</p>
+            <p>不知為什麼，他始終覺得，今天這場看似偶然的相遇，並不只是一次普通的拜訪。</p>
+            <p>那個青年身上，似乎藏著某種尚未展露的力量。</p>
+            <p>還有一份難以言喻的使命感。</p>
+            <p>「梁景皓……」</p>
+            <p>傑西輕聲重複那個名字。</p>
+            <p>隨即微微一笑。</p>
+            <p>「真是個有趣的孩子。」</p>
+            <p>他轉身準備走回教會。</p>
+            <p>卻又忍不住回頭，看了一眼青年離開的方向。</p>
+            <p>或許有一天，這個年輕人也會成為一位不得了的聖術師。</p>
+            <p>傑西輕輕搖頭，笑著走回教會。</p>
+            <p>而遠方的街道上，青年仍繼續向前。</p>
+            <p>他想起傑西剛才說過的那些故事。</p>
+            <p>金色雷翼。</p>
+            <p>撒旦碎片。</p>
+            <p>寇德薩拉。</p>
+            <p>還有那位曾經親自詢問拉比，最終選擇承擔使命的少年。</p>
+            <p>青年微微垂下眼簾。</p>
+            <p>不知為何，那些他努力逃避、以為早已拋在身後的往事，竟隨著今天的談話，再次浮上心頭。</p>
+            <p>他沉默了片刻。</p>
+            <p>隨後，抬起頭，望向遠方。</p>
+            <p>他不知道自己何時才能見到那位金色雷翼。</p>
+            <p>但他相信，終有一天，他們會相遇。</p>
+            <p>或許就在某個意想不到的地方。</p>
+            <p>或許就在另一場冒險的起點。</p>
+            <p>午後的風吹過鹽湖城。</p>
+            <p>一位來自台灣的青年，帶著剛剛聽見的故事，走向屬於自己的未來。</p>
+
+            <!-- 🌟 插圖 4 -->
+            <div class="chapter-illustration">
+                <img src="afterword-4.png" alt="後記插圖四">
+                <div class="illustration-caption">✦ EPILOGUE ARTWORK IV ✦</div>
+            </div>
+
+        </div>
+
+        <!-- 🌟 下一本小說預告區塊 (精裝書立體展示 + COMING SOON) -->
+        <div class="next-book-section">
+            <div class="next-book-title-tag">✦ NEXT ADVENTURE ✦</div>
+            <div class="next-book-heading">聖術師：返鄉</div>
+            
+            <div class="book-mockup-container">
+                <!-- 請將 woodcover.png 放置於網站根目錄 -->
+                <img src="woodcover.png" alt="聖術師：返鄉 書本封面">
+            </div>
+
+            <div class="coming-soon-badge">COMING SOON</div>
+        </div>
+
+        <!-- 底部返回導覽 -->
+        <div class="nav-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 50px; padding-top: 25px; gap: 10px;">
+            <a href="chapter26.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem; flex-shrink: 0;">← 上一章 (最終章)</a>
+            <span style="color: var(--gold-accent); font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.1em; text-align: center;">AFTERWORD</span>
+            <a href="toc.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem; flex-shrink: 0;">返回目錄 📖</a>
+        </div>
+    </div>
+
+</body>
+</html>
