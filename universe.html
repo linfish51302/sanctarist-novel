@@ -165,7 +165,7 @@
             flex-wrap: wrap;
             gap: 35px;
             margin-top: 15px;
-            max-width: 850px;
+            max-width: 920px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -495,76 +495,19 @@
             font-size: 1rem;
         }
 
-        /* 合作洽詢區塊 */
-        .contact-box {
-            background: rgba(18, 18, 18, 0.92);
-            border: 1px solid rgba(212, 175, 55, 0.5);
-            border-radius: 12px;
-            padding: 40px 30px;
-            margin-top: 60px;
-            text-align: center;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-logo-link {
-            display: inline-block;
-            text-decoration: none;
-            transition: transform 0.4s ease, filter 0.4s ease;
-        }
-
-        .contact-logo-link img {
-            max-width: 140px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.5));
-            transition: filter 0.4s ease, transform 0.4s ease;
-        }
-
-        .contact-logo-link:hover img {
-            transform: scale(1.08);
-            filter: drop-shadow(0 0 25px rgba(212, 175, 55, 1)) brightness(1.15);
-        }
-
-        .ig-action-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid #d4af37;
-            color: #d4af37;
-            padding: 12px 28px;
-            border-radius: 30px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.95rem;
-            letter-spacing: 0.15em;
-            text-decoration: none;
-            margin-top: 20px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
-        }
-
-        .ig-action-btn:hover {
-            background: #d4af37;
-            color: #121212;
-            transform: scale(1.06);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
-        }
-
-        /* --- 🌟 底部「返回作品宇宙」四部曲書本選擇區塊 🌟 --- */
+        /* --- 🌟 探索聖術師宇宙作品（倒數第二個欄位，位於烙印者下方、合作洽詢上方） 🌟 --- */
         .universe-return-section {
-            margin-top: 70px;
+            margin-top: 65px;
             padding-top: 40px;
             border-top: 1px solid rgba(212, 175, 55, 0.3);
             text-align: center;
+            scroll-margin-top: 40px;
         }
 
         .universe-return-title {
             font-family: 'Cinzel', serif;
             color: #d4af37;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             letter-spacing: 0.15em;
             margin-bottom: 10px;
             text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
@@ -584,7 +527,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            margin-bottom: 35px;
+            margin-bottom: 20px;
         }
 
         .book-item {
@@ -683,6 +626,64 @@
             background: rgba(10, 10, 10, 0.4);
         }
 
+        /* 合作洽詢區塊（最後一個欄位） */
+        .contact-box {
+            background: rgba(18, 18, 18, 0.92);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 12px;
+            padding: 40px 30px;
+            margin-top: 60px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-logo-link {
+            display: inline-block;
+            text-decoration: none;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .contact-logo-link img {
+            max-width: 140px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.5));
+            transition: filter 0.4s ease, transform 0.4s ease;
+        }
+
+        .contact-logo-link:hover img {
+            transform: scale(1.08);
+            filter: drop-shadow(0 0 25px rgba(212, 175, 55, 1)) brightness(1.15);
+        }
+
+        .ig-action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+
+        .ig-action-btn:hover {
+            background: #d4af37;
+            color: #121212;
+            transform: scale(1.06);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+        }
+
         /* 響應式微調：手機版改為2x2網格 */
         @media (max-width: 768px) {
             .books-grid {
@@ -722,7 +723,7 @@
                 <div class="universe-title-sub">THE SANCTARIST UNIVERSE</div>
             </div>
 
-            <!-- 無框質感導覽列 -->
+            <!-- 無框質感導覽列（新增探索聖術師系列作品跳轉按鈕） -->
             <nav class="hero-nav-bar">
                 <a href="#section-elements" class="hero-nav-item">
                     <span class="cn-title">六大元素</span>
@@ -739,6 +740,10 @@
                 <a href="#section-fractures" class="hero-nav-item">
                     <span class="cn-title">反派勢力</span>
                     <span class="en-title">VILLAIN</span>
+                </a>
+                <a href="#section-works" class="hero-nav-item">
+                    <span class="cn-title">探索聖術師系列作品</span>
+                    <span class="en-title">SERIES WORKS</span>
                 </a>
             </nav>
         </div>
@@ -843,7 +848,7 @@
                     },
                     wood: {
                         title: "❧ 木之聖術師｜WOOD SANCTARIST",
-                        text: "擅長治療與心靈聖術，能夠治癒傷痛、恢復生命的活力，甚至觸及人類心靈深處的世界。<br><br>木之聖術師更擁有與生俱來的特殊天賦「木瞳」，不僅具有超乎常人的視力，部分聖術師還能藉此展現讀心、記憶讀取等獨特的心靈能力。<br><br><blockquote>木，是孕育生命的根源，也是洞察心靈的眼睛。</blockquote>"
+                        text: "擅長治療與心靈聖術，能夠治癒傷痛、恢復生命的活力，甚至觸及人類心靈深處的世界。<br><br>木之聖術師更擁有與生俱來的特殊天賦「木瞳」，不僅具有超乎常人的視力與透視能量的能力，部分聖術師還能藉此展現讀心、記憶讀取等獨特的心靈能力。<br><br><blockquote>木，是孕育生命的根源，也是洞察心靈的眼睛。</blockquote>"
                     },
                     wind: {
                         title: "◌ 風之聖術師｜WIND SANCTARIST",
@@ -1037,7 +1042,47 @@
             <p>在這個連記憶都可能被世界修正的時代，他們是少數能夠記住隱藏真相的普通人。</p>
             <blockquote>「沒有聖術的力量，卻被允許記住聖術的存在。」</blockquote>
 
-            <!-- 合作洽詢區塊 -->
+            <!-- ✨ 倒數第二個欄位：探索聖術師宇宙作品（位於烙印者下方、合作洽詢上方） ✨ -->
+            <div class="universe-return-section" id="section-works">
+                <div class="universe-return-title">探索聖術師宇宙作品</div>
+                <div class="universe-return-subtitle">CHOOSE YOUR CHAPTER IN THE SANCTARIST UNIVERSE</div>
+                
+                <div class="books-grid">
+                    <!-- 1. 失落的繼承者 (已解鎖) -->
+                    <a href="https://linfish51302.github.io/sanctarist-novel/index.html" class="book-item unlocked">
+                        <img src="4.png" alt="聖術師：失落的繼承者" loading="lazy">
+                        <div class="book-title-tag">失落的繼承者</div>
+                    </a>
+
+                    <!-- 2. 返鄉 (已解鎖) -->
+                    <a href="https://linfish51302.github.io/sanctartist-homecoming/" class="book-item unlocked">
+                        <img src="5.png" alt="聖術師：返鄉" loading="lazy">
+                        <div class="book-title-tag">返鄉</div>
+                    </a>
+
+                    <!-- 3. 假面舞者 (上鎖狀態) -->
+                    <div class="book-item locked">
+                        <img src="2.png" alt="聖術師：假面舞者" loading="lazy">
+                        <div class="lock-overlay">
+                            <span class="lock-icon">🔒</span>
+                            <span class="lock-text">敬請期待</span>
+                        </div>
+                        <div class="book-title-tag">假面舞者</div>
+                    </div>
+
+                    <!-- 4. 冰王子 (上鎖狀態) -->
+                    <div class="book-item locked">
+                        <img src="3.png" alt="聖術師：冰王子" loading="lazy">
+                        <div class="lock-overlay">
+                            <span class="lock-icon">🔒</span>
+                            <span class="lock-text">敬請期待</span>
+                        </div>
+                        <div class="book-title-tag">冰王子</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 合作洽詢區塊（最後一個欄位） -->
             <div class="contact-box">
                 <h3 style="font-family: 'Cinzel', serif; color: #d4af37; letter-spacing: 0.15em;">讓故事，跨越文字的界線。</h3>
                 <p style="font-family: 'Cinzel', serif; font-size: 0.85rem; color: #aaa; margin-bottom: 25px;">BEYOND THE PAGES, INTO NEW WORLDS.</p>
@@ -1057,50 +1102,9 @@
                 </a>
             </div>
 
-            <!-- ✨ 底部「回到作品宇宙」四連書卡（圖片副檔名全數為 .png） ✨ -->
-            <div class="universe-return-section">
-                <div class="universe-return-title">探索聖術師宇宙作品</div>
-                <div class="universe-return-subtitle">CHOOSE YOUR CHAPTER IN THE SANCTARIST UNIVERSE</div>
-                
-                <div classs="books-grid">
-                <div class="books-grid">
-                    <!-- 1. 失落的繼承者 (已解鎖)[cite: 6] -->
-                    <a href="https://linfish51302.github.io/sanctarist-novel/index.html" class="book-item unlocked">
-                        <img src="4.png" alt="聖術師：失落的繼承者" loading="lazy">
-                        <div class="book-title-tag">失落的繼承者</div>
-                    </a>
-
-                    <!-- 2. 返鄉 (已解鎖)[cite: 7] -->
-                    <a href="https://linfish51302.github.io/sanctartist-homecoming/" class="book-item unlocked">
-                        <img src="5.png" alt="聖術師：返鄉" loading="lazy">
-                        <div class="book-title-tag">返鄉</div>
-                    </a>
-
-                    <!-- 3. 假面舞者 (上鎖狀態)[cite: 4] -->
-                    <div class="book-item locked">
-                        <img src="2.png" alt="聖術師：假面舞者" loading="lazy">
-                        <div class="lock-overlay">
-                            <span class="lock-icon">🔒</span>
-                            <span class="lock-text">敬請期待</span>
-                        </div>
-                        <div class="book-title-tag">假面舞者</div>
-                    </div>
-
-                    <!-- 4. 冰王子 (上鎖狀態)[cite: 5] -->
-                    <div class="book-item locked">
-                        <img src="3.png" alt="聖術師：冰王子" loading="lazy">
-                        <div class="lock-overlay">
-                            <span class="lock-icon">🔒</span>
-                            <span class="lock-text">敬請期待</span>
-                        </div>
-                        <div class="book-title-tag">冰王子</div>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
-        <!-- 底部導覽列（已移除返回目錄與返回首頁，僅保留精緻品牌標誌字樣） -->
+        <!-- 底部導覽列 -->
         <div class="nav-footer" style="display: flex; justify-content: center; align-items: center; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 40px; padding-top: 25px;">
             <span style="color: #d4af37; font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.2em;">THE SANCTARIST UNIVERSE · WHITE MAGIC ART STUDIO</span>
         </div>
