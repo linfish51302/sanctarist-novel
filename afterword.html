@@ -117,28 +117,39 @@
             color: var(--gold-accent);
             letter-spacing: 0.2em;
             margin-top: 5px;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             opacity: 0.8;
         }
 
-        /* 純燙金呼吸燈閃爍效果的 COMING SOON 字樣 */
-        .coming-soon-text {
-            font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
+        /* 可點擊立即觀看的純燙金呼吸燈連結按鈕 */
+        .watch-now-link {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 1.25rem;
             font-weight: bold;
             background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 0.35em;
+            letter-spacing: 0.22em;
             margin-top: 10px;
+            padding: 10px 24px;
+            border-radius: 999px;
+            border: 1px solid rgba(212, 175, 55, 0.65);
+            box-shadow: 0 0 18px rgba(212, 175, 55, 0.25);
             animation: breathingGlow 3s infinite ease-in-out;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .watch-now-link:hover {
+            transform: translateY(-3px) scale(1.04);
+            border-color: rgba(255, 232, 117, 0.95);
+            box-shadow: 0 0 28px rgba(255, 220, 100, 0.65);
         }
 
         @keyframes breathingGlow {
-            0% { opacity: 0.4; filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.2)); }
+            0% { opacity: 0.55; filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.2)); }
             50% { opacity: 1; filter: drop-shadow(0 0 15px rgba(255, 220, 100, 0.8)); }
-            100% { opacity: 0.4; filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.2)); }
+            100% { opacity: 0.55; filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.2)); }
         }
 
         /* --- 彈出視窗（Modal）高質感暗黑奇幻設計 --- */
@@ -636,18 +647,21 @@
 
         </div>
 
-        <!-- 🌟 下一本小說預告區塊 (去背書本立體展示 + 點擊彈出大綱 + 純金呼吸燈) -->
+        <!-- 🌟 下一本小說預告區塊 (去背書本立體展示 + 點擊彈出大綱 + 點擊即可馬上觀看) -->
         <div class="next-book-section">
             <div class="next-book-title-tag">✦ NEXT ADVENTURE ✦</div>
             <div class="next-book-heading">聖術師：返鄉</div>
             
             <div class="book-mockup-container" onclick="openModal()">
-                <!-- 請確保 woodcover.jpg 為去背圖檔 -->
                 <img src="woodcover.png" alt="聖術師：返鄉 書本封面">
             </div>
             <div class="click-book-hint">✦ 點 擊 書 本 觀 看 故 事 大 綱 ✦</div>
 
-            <div class="coming-soon-text">COMING SOON</div>
+            <div>
+                <a href="https://linfish51302.github.io/sanctartist-homecoming/" class="watch-now-link">
+                    ✦ 點擊即可馬上觀看 ✦
+                </a>
+            </div>
         </div>
 
         <!-- 底部返回導覽 -->
