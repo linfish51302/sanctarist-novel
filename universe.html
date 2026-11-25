@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>聖術師宇宙觀 - 聖術師：失落的繼承者</title>
+    <title>聖術師宇宙觀</title>
     <link rel="stylesheet" href="style.css">
     <style>
         /* 強制覆蓋全站樣式：全黑質感背景、置中單欄上下流動 */
@@ -518,8 +518,25 @@
             color: #bcaea0;
             font-size: 0.75rem;
             letter-spacing: 0.3em;
-            margin-bottom: 35px;
+            margin-bottom: 18px;
             opacity: 0.8;
+        }
+
+        /* 閱讀順序建議提示列 */
+        .reading-order-tip {
+            display: inline-block;
+            margin: 0 auto 30px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.38);
+            color: #f0e6d2;
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+        }
+
+        .reading-order-tip strong {
+            color: #ffe875;
         }
 
         /* 四本作品精緻書本網格排版 */
@@ -540,6 +557,27 @@
             display: block;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+        }
+
+        /* 建議首讀書本高亮與徽章 */
+        .book-item.recommended {
+            border-color: rgba(255, 232, 117, 0.75);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.75), 0 0 18px rgba(212, 175, 55, 0.25);
+        }
+
+        .recommended-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            z-index: 3;
+            padding: 3px 9px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.95), rgba(150, 114, 24, 0.95));
+            color: #111;
+            font-size: 0.72rem;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
         }
 
         .book-item img {
@@ -723,7 +761,7 @@
                 <div class="universe-title-sub">THE SANCTARIST UNIVERSE</div>
             </div>
 
-            <!-- 無框質感導覽列（新增探索聖術師系列作品跳轉按鈕） -->
+            <!-- 無框質感導覽列 -->
             <nav class="hero-nav-bar">
                 <a href="#section-elements" class="hero-nav-item">
                     <span class="cn-title">六大元素</span>
@@ -1046,10 +1084,12 @@
             <div class="universe-return-section" id="section-works">
                 <div class="universe-return-title">探索聖術師宇宙作品</div>
                 <div class="universe-return-subtitle">CHOOSE YOUR CHAPTER IN THE SANCTARIST UNIVERSE</div>
+                <div class="reading-order-tip">✦ 閱讀建議：建議先看<strong>《聖術師：失落的繼承者》</strong>，再接續<strong>《聖術師：返鄉》</strong>體驗更完整 ✦</div>
                 
                 <div class="books-grid">
-                    <!-- 1. 失落的繼承者 (已解鎖) -->
-                    <a href="https://linfish51302.github.io/sanctarist-novel/index.html" class="book-item unlocked">
+                    <!-- 1. 失落的繼承者 (已解鎖・建議首讀) -->
+                    <a href="https://linfish51302.github.io/sanctarist-novel/index.html" class="book-item unlocked recommended">
+                        <span class="recommended-badge">建議先看</span>
                         <img src="4.png" alt="聖術師：失落的繼承者" loading="lazy">
                         <div class="book-title-tag">失落的繼承者</div>
                     </a>
