@@ -32,6 +32,23 @@
             text-indent: 2em;
         }
 
+        /* 燙金色時間與地點樣式 */
+        .novel-content p.scene-time-location {
+            text-indent: 0;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, #ffe875 0%, #f3e5ab 45%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+            margin-top: 2.4em;
+            margin-bottom: 2em;
+        }
+
+        .novel-content p.scene-time-location:first-child {
+            margin-top: 0;
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,6 +103,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
+            <p class="scene-time-location">東湖地下教會，二一三號病房。</p>
             <p>滴。</p>
             <p>滴。</p>
             <p>滴。</p>
@@ -300,7 +318,7 @@
             <p>「後來，墮落天使進入世界。人類的罪、恐懼與仇恨，成了牠們能夠利用的力量。」</p>
             <p>黑色陰影逐漸浮現在六道光芒之間。</p>
             <p>「惡魔，也因此出現了。」</p>
-            <p>柴克安靜地看着。</p>
+            <p>柴克安靜地看著。</p>
             <p>「所以，神揀選了一些人。」</p>
             <p>六道模糊的人影，出現在光芒之中。</p>
             <p>「祂將創造世界的六種力量交給他們，讓他們能夠對抗黑暗。」</p>
@@ -517,7 +535,7 @@
             <p>柴克低頭望著十字架。</p>
             <p>「但是，曾經有一位聖術師，同時掌握了六種聖術。」</p>
             <p>「誰？」</p>
-            <p>「他是我們族類的至尊即最偉大的老師，我們稱呼他為拉比。」</p>
+            <p>「他是我們族類的至尊暨最偉大的老師，我們稱呼他為拉比。」</p>
             <p>柴克皺起眉頭。</p>
             <p>傑西望著他。</p>
             <p>「其實，你也認識他。」</p>
@@ -659,7 +677,7 @@
             <p>他停頓片刻。</p>
             <p>「他希望你知道，自己保護的究竟是什麼。」</p>
             <p>房間裡沒有人說話。</p>
-            <p>柴克低着頭。</p>
+            <p>柴克低著頭。</p>
             <p>十字架靜靜躺在他的掌心。</p>
             <p>「所以……」</p>
             <p>他的聲音很輕。</p>
@@ -953,8 +971,7 @@
                 <img src="chapter5-3.png" alt="第五章插圖">
                 <div class="illustration-caption">✦ CHAPTER V ARTWORK ✦</div>
             </div>
-            <p></p>
-            <p>走廊裡。</p>
+            <p class="scene-time-location">走廊裡。</p>
             <p>傑西輕輕關上二一三號病房的門。</p>
             <p>牆邊，仍站著一名男人。</p>
             <p>黑色大衣。</p>
