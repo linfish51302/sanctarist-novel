@@ -32,6 +32,13 @@
             text-indent: 2em;
         }
 
+        /* 時間、地點與轉場關鍵字專屬金色高亮 */
+        .scene-transition {
+            color: var(--gold-accent);
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,7 +93,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
-            <p>寇德薩拉．主殿門前</p>
+            <p><span class="scene-transition">寇德薩拉．主殿門前</span></p>
             <p>「所以，你在克里斯的記憶裡，被小時候的他攻擊了？」</p>
             <p>安娜轉頭看向柴克，語氣裡帶著幾分不可思議。</p>
             <p>三人離開記憶迴廊後，沿著唯一的長廊繼續前進。</p>
