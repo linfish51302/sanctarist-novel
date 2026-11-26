@@ -32,6 +32,23 @@
             text-indent: 2em;
         }
 
+        /* 燙金色時間與地點樣式 */
+        .novel-content p.scene-time-location {
+            text-indent: 0;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, #ffe875 0%, #f3e5ab 45%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+            margin-top: 2.4em;
+            margin-bottom: 2em;
+        }
+
+        .novel-content p.scene-time-location:first-child {
+            margin-top: 0;
+        }
+
         /* --- 內文結尾的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,7 +103,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
-            <p>美國・紐約・曼哈頓</p>
+            <p class="scene-time-location">美國・紐約・曼哈頓。</p>
             <p>清晨六點四十七分。</p>
             <p>曼哈頓早已甦醒。</p>
             <p>計程車的喇叭聲此起彼落，行人端著咖啡匆忙穿越街口，地下鐵從城市深處轟隆駛過。高樓之間，清晨的陽光逐漸照亮街道，為這座從不真正沉睡的城市揭開新的一天。</p>
@@ -155,9 +172,7 @@
                 <div class="illustration-caption">✦ CHAPTER VII ARTWORK ✦</div>
             </div>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
-            <p>美國・猶他州・鹽湖城・東湖地下教會</p>
+            <p class="scene-time-location">美國・猶他州・鹽湖城・東湖地下教會，訓練室。</p>
             <p>「接下來，是最後一種。」</p>
             <p>克里斯走向訓練場中央。</p>
             <p>安娜、亞當與潔西卡陸續退到場邊，將偌大的訓練空間留給他。</p>
@@ -317,8 +332,7 @@
             <p>那些東西從來不只是興趣。</p>
             <p>克里斯早已將自己理解世界的方式，變成了獨一無二的聖術。</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
+            <p class="scene-time-location">東湖地下教會，訓練室（演算法實戰）。</p>
             <p>「所以……」</p>
             <p>柴克忽然收回視線。</p>
             <p>「我的呢？」</p>
@@ -509,8 +523,7 @@
             <p>直到最後——</p>
             <p>整個世界，只剩下光。</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
+            <p class="scene-time-location">金色霧境。</p>
             <p>霧。</p>
             <p>又是這裡。</p>
             <p>柴克緩緩睜開眼睛。</p>
@@ -613,8 +626,7 @@
             <p>下一瞬間——</p>
             <p>整個世界，碎裂了。</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
+            <p class="scene-time-location">東湖地下教會，訓練室。</p>
             <p>「柴克！」</p>
             <p>他猛然睜開眼睛。</p>
             <p>第一個映入眼簾的，是克里斯焦急的臉。</p>
