@@ -32,6 +32,23 @@
             text-indent: 2em;
         }
 
+        /* 燙金色時間與地點樣式 */
+        .novel-content p.scene-time-location {
+            text-indent: 0;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, #ffe875 0%, #f3e5ab 45%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+            margin-top: 2.4em;
+            margin-bottom: 2em;
+        }
+
+        .novel-content p.scene-time-location:first-child {
+            margin-top: 0;
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,7 +103,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
-            <p>鹽湖城．東湖地下教會</p>
+            <p class="scene-time-location">鹽湖城・東湖地下教會，傑西的辦公室。</p>
             <p>戰鬥結束不到十分鐘，羅尼與潔西卡便帶領其餘還能戰鬥的聖術師前往地面，確認外界的情況。</p>
             <p>地下教會終於恢復安靜。</p>
             <p>然而，沒有人真正感到安全。</p>
@@ -254,7 +271,7 @@
             <p>「妳其實可以留下來。」</p>
             <p>「為什麼？」</p>
             <p>安娜瞇起眼睛。</p>
-            <p>柴克看着她，最後搖頭。</p>
+            <p>柴克看著她，最後搖頭。</p>
             <p>「……沒什麼。」</p>
             <p>「很好。」</p>
             <p>「我已經把你們進去後可能所需要的資料整理成這份手稿，我能額外做的頂多翻譯一些拉丁文傳說，剩下的還得靠你們自己。」</p>
@@ -357,9 +374,7 @@
             <p>紫色雷光再次亮起。</p>
             <p>「我自己去把他帶回來。」</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
-            <p>耶路撒冷</p>
+            <p class="scene-time-location">以色列・耶路撒冷。</p>
             <p>風聲。</p>
             <p>猛烈的風聲。</p>
             <p>柴克睜開眼睛。</p>
@@ -549,9 +564,7 @@
             <p>古老的石面恢復原狀。</p>
             <p>彷彿什麼都沒有發生。</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
-            <p>紐約</p>
+            <p class="scene-time-location">美國・紐約。</p>
             <p>天空早已失去原本的顏色。</p>
             <p>濃重的黑暗籠罩著整座城市。</p>
             <p>雷懸浮在高樓之間。</p>
