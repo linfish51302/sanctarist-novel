@@ -32,6 +32,23 @@
             text-indent: 2em;
         }
 
+        /* 燙金色時間與地點樣式 */
+        .novel-content p.scene-time-location {
+            text-indent: 0;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, #ffe875 0%, #f3e5ab 45%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+            margin-top: 2.4em;
+            margin-bottom: 2em;
+        }
+
+        .novel-content p.scene-time-location:first-child {
+            margin-top: 0;
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,7 +103,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
-            <p>鹽湖城．東湖地下教會</p>
+            <p class="scene-time-location">鹽湖城・東湖地下教會，中央會堂。</p>
             <p>轟——！</p>
             <p>第二聲巨響從地底深處傳來。</p>
             <p>整座地下教會猛然震動，醫療觀察室裡的燈光劇烈閃爍，天花板上的灰塵簌簌落下。</p>
@@ -142,7 +159,7 @@
             <p>「牧師！」</p>
             <p>潔西卡大喊。</p>
             <p>傑西猛然回神。</p>
-            <p>他看了一眼陷入混亂會堂，又望向通往外界的方向。</p>
+            <p>他看了一眼陷入混亂的會堂，又望向通往外界的方向。</p>
             <p>最後咬緊牙關。</p>
             <p>「先守住這裡。」</p>
             <p>「可是雷——」</p>
