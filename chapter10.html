@@ -32,6 +32,23 @@
             text-indent: 2em;
         }
 
+        /* 燙金色時間與地點樣式 */
+        .novel-content p.scene-time-location {
+            text-indent: 0;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, #ffe875 0%, #f3e5ab 45%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+            margin-top: 2.4em;
+            margin-bottom: 2em;
+        }
+
+        .novel-content p.scene-time-location:first-child {
+            margin-top: 0;
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,7 +103,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
-            <p>美國・猶他州・鹽湖城・東湖地下教會</p>
+            <p class="scene-time-location">美國・猶他州・鹽湖城・東湖地下教會，213號客房。</p>
             <p>凌晨兩點十七分。</p>
             <p>213號客房裡，只剩暖氣運轉的低鳴。</p>
             <p>柴克睡得並不安穩。</p>
@@ -106,8 +123,7 @@
             <p>停了一瞬。</p>
             <p>隨後，鞋底的黑色痕跡緩緩濕潤，與地上的水滴融為一體。</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
+            <p class="scene-time-location">東湖地下教會，走廊與中央會堂。</p>
             <p>東湖地下教會深處，更多黑水從排水口、石牆與地磚的縫隙間滲出。</p>
             <p>它們沒有四處漫流，而是沿著走廊朝同一個方向匯聚。</p>
             <p>中央會堂。</p>
@@ -168,8 +184,7 @@
             <p>兩人幾乎同時喊了出來。</p>
             <p>「柴克！」</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
+            <p class="scene-time-location">東湖地下教會，213號客房。</p>
             <p>砰！</p>
             <p>213號房門狠狠撞上牆壁。</p>
             <p>「柴克！」</p>
@@ -223,8 +238,7 @@
             <p>克里斯抬起頭。</p>
             <p>兩人立刻衝出房間。</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
+            <p class="scene-time-location">東湖地下教會，舊變電廠外。</p>
             <p>舊變電廠外，夜風迎面而來。</p>
             <p>克里斯與安娜穿過出口，衝進空地。</p>
             <p>四周一片寂靜。</p>
@@ -282,9 +296,7 @@
             <p>雷已經轉身。</p>
             <p>「走。」</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
-            <p>美國・紐約・廢棄教堂</p>
+            <p class="scene-time-location">美國・紐約，廢棄教堂。</p>
             <p>柴克醒來時，第一個感覺是冷。</p>
             <p>不是雪地那種刺骨的寒冷，而是從石牆與地面緩緩滲出的濕氣。</p>
             <p>他睜開眼睛。</p>
