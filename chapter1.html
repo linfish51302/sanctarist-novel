@@ -32,6 +32,22 @@
             text-indent: 2em;
         }
 
+        /* 燙金色時間與地點樣式 */
+        .novel-content p.scene-time-location {
+            text-indent: 0;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, #ffe875 0%, #f3e5ab 45%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+            margin-bottom: 1.4em;
+        }
+
+        .novel-content p.scene-time-location + p.scene-time-location {
+            margin-bottom: 2em;
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,8 +102,8 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
-            <p>十五年後。</p>
-            <p>美國，猶他州，鹽湖城。</p>
+            <p class="scene-time-location">十五年後。</p>
+            <p class="scene-time-location">美國，猶他州，鹽湖城。</p>
             <p>「飛馬隊！飛馬隊！飛馬隊！」</p>
             <p>震耳欲聾的歡呼聲迴盪在球館裡，數千名觀眾幾乎同時站起身，目光緊盯著球場中央。</p>
             <p>計分板上的時間只剩最後幾秒。</p>
