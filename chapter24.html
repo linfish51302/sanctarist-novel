@@ -32,6 +32,13 @@
             text-indent: 2em;
         }
 
+        /* 時間、地點與轉場關鍵字專屬金色高亮 */
+        .scene-transition {
+            color: var(--gold-accent);
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -63,6 +70,7 @@
             margin-top: 12px;
             opacity: 0.75;
         }
+
         /* --- 術器互動微發光與燙金浮現特效 --- */
         .weapon-interactive-box {
             text-align: center;
@@ -130,7 +138,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
-            <p>美國・猶他州・鹽湖城・東湖教會</p>
+            <p><span class="scene-transition">美國・猶他州・鹽湖城・東湖教會</span></p>
             <p>一道耀眼的金光，驟然從主堂中央綻放。</p>
             <p>原本盤踞在天花板與牆壁上的黑霧，彷彿遭到某股無形的力量驅逐，沿著牆角迅速退散。</p>
             <p>金光穿過長椅之間的走道，照亮了講台，也讓那座幾乎被黑暗吞沒的十字架，重新顯露出輪廓。</p>
@@ -141,11 +149,13 @@
             <p>剛才在森林裡經歷的一切，並不是夢。</p>
             <p>柴克緩緩低下頭。</p>
             <p>一把修長的黑金色長弓，正安靜地握在他的手中。</p>
+
             <!-- 🌟 互動式去背術器展示區塊 -->
             <div class="weapon-interactive-box">
                 <img src="weapon.png" alt="術器-迦勒" class="weapon-artifact-img">
                 <div class="weapon-tooltip-text">信，是將看不見的信任，化為握得住的力量。</div>
             </div>
+
             <p>漆黑的金屬弓身泛著細緻光澤，纖細的金色雕紋沿著上下弓臂蜿蜒延伸。兩端優雅地向外反曲，少量修長的金屬羽片順著弓身線條交錯相融，宛如一對收攏的天使羽翼。</p>
             <p>中央握柄纏繞著深色皮革，金色鏤空飾件精巧地銜接著弓臂與握把。</p>
             <p>沒有多餘的裝飾。</p>
@@ -491,7 +501,7 @@
             <p>下一瞬間——</p>
             <p>主堂裡，再次恢復寂靜。</p>
 
-            <h3 style="color: var(--gold-accent); margin-top: 40px; margin-bottom: 20px;">東湖教會・屋頂</h3>
+            <h3 style="color: var(--gold-accent); margin-top: 40px; margin-bottom: 20px;"><span class="scene-transition">東湖教會・屋頂</span></h3>
             <p>一道紫色雷光，驟然在教會屋頂中央綻放。</p>
             <p>柴克重新站穩時，迎面而來的是一陣強風。</p>
             <p>他下意識握緊迦勒，抬起頭。</p>
@@ -524,7 +534,7 @@
             <p>還有至今仍下落不明的潔西卡，以及其他可能正在等待救援的夥伴。</p>
             <p>如果他們五個人全都追著魔神離開……</p>
             <p>那麼，剩下的鹽湖城呢？</p>
-            <p>柴克深吸了一氣。</p>
+            <p>柴克深吸了一口氣。</p>
             <p>「現在整個鹽湖城都需要我們。」</p>
             <p>眾人安靜下來。</p>
             <p>柴克轉過身，望向哥哥、妹妹，以及身旁的兩位長輩。</p>
@@ -727,7 +737,7 @@
             <p>「那就拜託你了！」</p>
             <p>傑西抬起雙手。</p>
             <p>紫色雷電在掌間迅速交織。</p>
-            <p>柴克深吸了一口气。</p>
+            <p>柴克深吸了一口氣。</p>
             <p>隨即縱身躍下。</p>
             <p>強風猛然灌入耳際。</p>
             <p>屋頂、街道與遠方的建築，迅速在眼前拉開距離。</p>
@@ -749,13 +759,14 @@
             <p>金色雷電沿著他的雙腿逐漸亮起。</p>
             <p>下一瞬間——</p>
             <p>柴克向前衝去。</p>
-             <!-- 🌟 第二張插圖 -->
+
+            <!-- 🌟 第二張插圖 -->
             <div class="chapter-illustration">
                 <img src="chapter24-2.png" alt="第二十四章插圖二">
                 <div class="illustration-caption">✦ CHAPTER XXIV ARTWORK II ✦</div>
             </div>
 
-            <h3 style="color: var(--gold-accent); margin-top: 40px; margin-bottom: 20px;">鹽湖城・北城區</h3>
+            <h3 style="color: var(--gold-accent); margin-top: 40px; margin-bottom: 20px;"><span class="scene-transition">鹽湖城・北城區</span></h3>
             <p>柴克從一棟建築的屋頂，躍向另一棟。</p>
             <p>金色雷電沿著他的四肢流動。</p>
             <p>每當腳掌踏上地面，便有細小的電光向外擴散。</p>
@@ -929,9 +940,9 @@
             <p>「來啊。」</p>
             <p>牠們笑著說。</p>
             <p>「讓我看看，你那把新得到的弓，究竟有什麼本事。」</p>
-            <p>柴克深吸了一口气。</p>
+            <p>柴克深吸了一口氣。</p>
             <p>他迅速舉起迦勒。</p>
-            <p>隨著手指向後拉開，一道纖細的金色弓弦在上下弓臂之間凝聚。</p>
+            <p>隨著手指向後拉開，一道纖細的金光弓弦在上下弓臂之間凝聚。</p>
             <p>雷電沿著指尖交織，形成一支耀眼的金色箭矢。</p>
             <p>柴克瞄準正前方的魔神。</p>
             <p>鬆手。</p>
@@ -967,10 +978,10 @@
             <p>即使找到了真正的魔神……</p>
             <p>他真的能毫不猶豫地射出那一箭嗎？</p>
 
-            <!-- 🌟 第二張插圖 -->
+            <!-- 🌟 第三張插圖 -->
             <div class="chapter-illustration">
-                <img src="chapter24-3.png" alt="第二十四章插圖二">
-                <div class="illustration-caption">✦ CHAPTER XXIV ARTWORK II ✦</div>
+                <img src="chapter24-3.png" alt="第二十四章插圖三">
+                <div class="illustration-caption">✦ CHAPTER XXIV ARTWORK III ✦</div>
             </div>
 
             <p>柴克望著那些熟悉的面容。</p>
@@ -1091,10 +1102,10 @@
             <p style="text-align: center; font-family: 'Cinzel', serif; color: var(--gold-accent);">雷翼。</p>
             <p>真正的「雷之翼」，終於顯現。</p>
 
-            <!-- 🌟 第三張插圖 -->
+            <!-- 🌟 第四張插圖 -->
             <div class="chapter-illustration">
-                <img src="chapter24-4.png" alt="第二十四章插圖三">
-                <div class="illustration-caption">✦ CHAPTER XXIV ARTWORK III ✦</div>
+                <img src="chapter24-4.png" alt="第二十四章插圖四">
+                <div class="illustration-caption">✦ CHAPTER XXIV ARTWORK IV ✦</div>
             </div>
 
             <p>魔神的神情驟然一變。</p>
@@ -1324,10 +1335,10 @@
             <p>陽光灑落在三人的肩上。</p>
             <p>那些曾經籠罩他們的黑暗，彷彿終於在這一刻，徹底遠去。</p>
 
-            <!-- 🌟 第四張插圖 -->
+            <!-- 🌟 第五張插圖 -->
             <div class="chapter-illustration">
-                <img src="chapter24-5.png" alt="第二十四章插圖四">
-                <div class="illustration-caption">✦ CHAPTER XXIV ARTWORK IV ✦</div>
+                <img src="chapter24-5.png" alt="第二十四章插圖五">
+                <div class="illustration-caption">✦ CHAPTER XXIV ARTWORK V ✦</div>
             </div>
 
             <p>不遠處，雷靜靜望著三兄妹。</p>
@@ -1416,7 +1427,6 @@
             <p>那張臉——</p>
             <p>是他們所有人都再熟悉不過的面容。</p>
             <p>而柴克只是怔怔站著。</p>
-            
 
         </div>
 
@@ -1430,4 +1440,3 @@
 
 </body>
 </html>
-           
