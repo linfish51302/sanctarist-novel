@@ -32,6 +32,13 @@
             text-indent: 2em;
         }
 
+        /* 時間、地點與轉場關鍵字專屬金色高亮 */
+        .scene-transition {
+            color: var(--gold-accent);
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,7 +93,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
-            <p>美國・猶他州・鹽湖城・東湖地下教會</p>
+            <p><span class="scene-transition">美國・猶他州・鹽湖城・東湖地下教會</span></p>
             <p>密室裡，一切仍然寂靜。</p>
             <p>直到一道紫色雷光劃破黑暗，落入房間中央。</p>
             <p>雷電並未帶來任何破壞，而是在半空中緩緩散去，凝聚成一道熟悉的身影。</p>
@@ -478,7 +485,7 @@
             <p>她沒有回答，只是靜靜望著他。</p>
             <p>「那時候的我，雖然早已離開安德烈家，卻始終不知道，該如何看待自己的過去。」</p>
             <p>他低頭望著掌心。</p>
-            <p>「我不恨父親.我知道他也曾經努力想逃離那個地方。」</p>
+            <p>「我不恨父親，我知道他也曾經努力想逃離那個地方。」</p>
             <p>「可是，家族曾經對我們做過的事，還是讓我很難相信，自己真的能擁有一段不被預言左右的人生。」</p>
             <p>他沉默片刻。</p>
             <p>「我甚至曾經以為，擁有強大的聖術，就代表必須承擔別人替我決定好的責任。」</p>
@@ -686,8 +693,8 @@
             
             <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
 
-            <p>四個月後</p>
-            <p>美國・猶他州・鹽湖城・安德烈家</p>
+            <p><span class="scene-transition">四個月後</span></p>
+            <p><span class="scene-transition">美國・猶他州・鹽湖城・安德烈家</span></p>
             <p>一輛搬家貨車停在安德烈家門前。</p>
             <p>幾名來自東湖教會的弟兄姊妹正忙著搬運家具，客廳裡堆滿尚未拆封的紙箱。廚房不時傳來餐具碰撞的聲響，偶爾還能聽見克里斯與安娜為了家具該擺在哪裡而爭論。</p>
             <p>陽光穿過嶄新的窗戶，落在剛鋪好的木質地板上。</p>
@@ -1085,7 +1092,7 @@
 
         </div>
 
-<!-- 底部返回導覽與彩蛋解鎖入口 -->
+        <!-- 底部返回導覽與彩蛋解鎖入口 -->
         <div class="nav-footer" style="display: flex; flex-direction: column; align-items: center; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 50px; padding-top: 25px; gap: 15px;">
             
             <!-- 🌟 驚喜解鎖按鈕（讀者讀完最終章後的亮點！） -->
@@ -1100,3 +1107,7 @@
                 <a href="afterword.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem; flex-shrink: 0;">後記</a>
             </div>
         </div>
+    </div>
+
+</body>
+</html>
