@@ -32,6 +32,23 @@
             text-indent: 2em;
         }
 
+        /* 燙金色時間與地點樣式 */
+        .novel-content p.scene-time-location {
+            text-indent: 0;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, #ffe875 0%, #f3e5ab 45%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+            margin-top: 2.4em;
+            margin-bottom: 2em;
+        }
+
+        .novel-content p.scene-time-location:first-child {
+            margin-top: 0;
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,6 +103,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
+            <p class="scene-time-location">白霧之中。</p>
             <p>「柴克……」</p>
             <p>又來了。</p>
             <p>柴克睜開眼睛，發現自己再次置身於那片無邊無際的白霧之中。</p>
@@ -188,6 +206,7 @@
             <p>「只是夢……」</p>
             <p>他用力揉了揉臉，試圖讓自己清醒一點。</p>
             <p>「只是夢。」</p>
+            <p class="scene-time-location">星期日上午，安德烈家。</p>
             <p>床邊的電子鬧鐘顯示著上午九點二十分。</p>
             <p>星期日。</p>
             <p>不用上課，也沒有什麼非得立刻起床的理由。</p>
@@ -287,7 +306,7 @@
             <p>他又看了一會兒，終於關上窗戶。</p>
             <p>「我最近真的該去看醫生了。」</p>
             <p>柴克搖了搖頭，端著馬克杯轉身離開。</p>
-            <p>而在她離開後不久——</p>
+            <p>而在他離開後不久——</p>
             <p>大樹的樹幹後方，一道人影緩緩探出頭來。</p>
             <p>男人身穿黑色過膝大衣，兜帽遮住了部分面容。</p>
             <p>他的目光始終沒有離開那棟房子。</p>
@@ -343,7 +362,7 @@
             <p>「調虎離山……」</p>
             <p>雷立刻轉身，朝來時的方向衝去。</p>
             <p>「柴克！」</p>
-            <p>同時，安德烈家</p>
+            <p class="scene-time-location">同時，安德烈家。</p>
             <p>「現在輪到英國隊的漢斯先生！」</p>
             <p>電視主播激動的聲音迴盪在客廳裡。</p>
             <p>「如果這一箭命中，他將——」</p>
@@ -404,7 +423,7 @@
             <p>「……下面？」</p>
             <p>他蹲下身，試著摸索地板，卻沒有發現任何異狀。</p>
             <p>直到指尖碰觸到舊地毯的邊緣。</p>
-            <p>柴克停。他慢慢掀開地毯。</p>
+            <p>柴克停住。他慢慢掀開地毯。</p>
             <p>底下的木地板上，赫然出現一道極細的縫隙。</p>
             <p>那道縫沿著地板延伸，形成一個方形。</p>
             <p>「不會吧……」</p>
