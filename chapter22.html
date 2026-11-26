@@ -32,6 +32,22 @@
             text-indent: 2em;
         }
 
+        /* 時間、地點與轉場關鍵字專屬金色高亮 */
+        .scene-transition {
+            color: var(--gold-accent);
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        /* 場景轉換分隔線 */
+        .scene-break {
+            text-align: center;
+            color: var(--gold-accent);
+            letter-spacing: 0.5em;
+            margin: 40px 0;
+            opacity: 0.6;
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,7 +102,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
-            <p>美國．猶他州．鹽湖城．東湖地下教會</p>
+            <p><span class="scene-transition">美國．猶他州．鹽湖城．東湖地下教會</span></p>
             <p>意識恢復的瞬間，柴克首先感覺到的，是腳下堅實的地面。</p>
             <p>寇德薩拉那片耀眼的白光已經消失。</p>
             <p>取而代之的，是熟悉的牆壁、辦公桌，以及空氣中淡淡的紙張氣味。</p>
@@ -310,11 +326,13 @@
             <p>「傑西設下的保護結界……」</p>
             <p>他的聲音沉了下來。</p>
             <p>「已經消失了。」</p>
+
             <!-- 🌟 第一張插圖 -->
             <div class="chapter-illustration">
                 <img src="chapter22-1re.png" alt="第二十二章插圖一">
                 <div class="illustration-caption">✦ CHAPTER XXII ARTWORK I ✦</div>
             </div>
+
             <p>安娜臉色驟變。</p>
             <p>下一瞬間，她猛然轉身，朝右側走廊衝去。</p>
             <p>「安娜？！」</p>
@@ -386,8 +404,10 @@
             <p>「你不是一個人。」</p>
             <p>柴克望著他。</p>
             <p>片刻後，重重點頭。</p>
-            <p>＊</p>
-            <p>美國．猶他州．鹽湖城街道</p>
+
+            <div class="scene-break">✦ ✦ ✦</div>
+
+            <p><span class="scene-transition">美國．猶他州．鹽湖城街道</span></p>
             <p>三兄妹離開地下教會時，迎面而來的空氣帶著濃重的焦灼氣味。</p>
             <p>柴克下意識停住腳步。</p>
             <p>眼前的景象，與他記憶中的鹽湖城截然不同。</p>
@@ -489,7 +509,7 @@
             <p>柴克難以置信地望著她。</p>
             <p>「妳在說什麼？！」</p>
             <p>他又看向克里斯。</p>
-            <p>「這太瘋了！你們根本對付不了牠！」</p>
+            <p>「這太瘋狂了！你們根本對付不了牠！」</p>
             <p>克里斯向前一步。</p>
             <p>「柴克！」</p>
             <p>他的聲音比平常嚴厲許多。</p>
@@ -560,11 +580,12 @@
             <p>安娜的身影沿著階梯迅速躍升。</p>
             <p>金色雷光沿著艾連的劍身奔流。</p>
 
-<!-- 🌟 第二張插圖 -->
+            <!-- 🌟 第三張插圖 -->
             <div class="chapter-illustration">
-                <img src="chapter22-3re.png" alt="第二十二章插圖二">
+                <img src="chapter22-3re.png" alt="第二十二章插圖三">
                 <div class="illustration-caption">✦ CHAPTER XXII ARTWORK III ✦</div>
             </div>
+
             <p>魔神抬頭望向她。</p>
             <p>安娜已經來到牠的高度。</p>
             <p>她猛然旋身！</p>
