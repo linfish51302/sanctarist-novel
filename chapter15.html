@@ -32,6 +32,23 @@
             text-indent: 2em;
         }
 
+        /* 燙金色時間與地點樣式 */
+        .novel-content p.scene-time-location {
+            text-indent: 0;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, #ffe875 0%, #f3e5ab 45%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+            margin-top: 2.4em;
+            margin-bottom: 2em;
+        }
+
+        .novel-content p.scene-time-location:first-child {
+            margin-top: 0;
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,7 +103,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
-            <p>寇德薩拉（Cordesala）內部</p>
+            <p class="scene-time-location">寇德薩拉（Cordesala）內部。</p>
             <p>當意識逐漸恢復清晰，安德烈家的三兄妹發現自己已置身於一座陌生的石室。</p>
             <p>那是一個寬闊得令人難以估量的空間。高聳的拱形穹頂向上延伸，潔白的大理石牆面刻滿古老符文，微弱的光芒沿著雕刻的紋路流動，映照在白金與青玉交錯鋪成的地面上。</p>
             <p>這裡似乎已經存在了千百年，卻找不到半點歲月侵蝕的痕跡。石磚光潔如新，牆角沒有灰塵，甚至感覺不到一絲空氣流動。整座石室安靜得出奇，彷彿連時間都被隔絕在外。</p>
@@ -99,7 +116,7 @@
             <p>柴克不服氣地看了她一眼。</p>
             <p>「這名字本來就很難唸好不好。」</p>
             <p>克里斯轉向弟弟，神情認真了幾分。</p>
-            <p>「這裡據說收藏著自神創世以來，曾經出現在世上的各種神聖之物。光是能夠進來，就已經是非常難得的事了。」</p>
+            <p>「這裡據說收藏著自神創世以來，曾經出現在世上的各種神聖之物。光是能夠進來，就已經是非常難得的事。」</p>
             <p>「所以？」</p>
             <p>「所以，基於最基本的尊重，你最好把名字記熟，柴克。」</p>
             <p>柴克撇了撇嘴。</p>
@@ -114,7 +131,7 @@
             <p>廊道兩側排列著高大的石柱，每一根都雕刻著不同的圖案。有翻騰的雷電、燃燒的烈焰，也有遼闊的星辰。石柱上方，細密的金線交織成一片星圖，在穹頂微光的映照下，隨著三人的腳步變換著光澤。</p>
             <p>途中，他們經過一間形似祭壇的石室。</p>
             <p>一塊透明晶石靜靜懸浮在房間中央，沒有任何支撐。晶石內部封存著一簇白色光焰，正緩緩旋轉，偶爾向外迸出細小的光點。</p>
-            <p>柴克忍不住停下腳步，因為眼前的事物讓他想起最近常作的夢，</p>
+            <p>柴克忍不住停下腳步，因為眼前的事物讓他想起最近常做的夢，</p>
             <p>「那又是什麼？」</p>
             <p>克里斯看了一眼手中的譯稿。</p>
             <p>「不知道。不過，應該不是我們要找的東西。」</p>
@@ -595,9 +612,7 @@
             <p>三人的身影逐漸消失在通道深處。</p>
             <p>而在他們身後，那扇沉重的白色石門，依然靜靜矗立著。</p>
             <p>彷彿什麼都不曾發生。</p>
-
-           
-     
+        </div>
 
         <!-- 底部返回導覽 -->
         <div class="nav-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 50px; padding-top: 25px; gap: 10px;">
