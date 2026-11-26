@@ -32,6 +32,23 @@
             text-indent: 2em;
         }
 
+        /* 燙金色時間與地點樣式 */
+        .novel-content p.scene-time-location {
+            text-indent: 0;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, #ffe875 0%, #f3e5ab 45%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+            margin-top: 2.4em;
+            margin-bottom: 2em;
+        }
+
+        .novel-content p.scene-time-location:first-child {
+            margin-top: 0;
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,7 +103,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
-            <p>美國・紐約・廢棄教堂</p>
+            <p class="scene-time-location">美國・紐約，廢棄教堂。</p>
             <p>「柴克——！」</p>
             <p>那聲怒吼將柴克從恍惚中拉了回來。</p>
             <p>下一秒，一隻手猛地扣住他的手腕。</p>
@@ -215,8 +232,7 @@
             <p>「別看他！」</p>
             <p>克里斯用力將他拉向出口。</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
+            <p class="scene-time-location">紐約・廢棄教堂，講壇前。</p>
             <p>講壇前。</p>
             <p>男人低下頭。</p>
             <p>地磚上，散落著幾滴鮮血。</p>
@@ -268,8 +284,7 @@
             <p>「讓這個世界重新想起恐懼。」</p>
             <p>黑霧轟然衝向穹頂。</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
+            <p class="scene-time-location">紐約・廢棄教堂，前庭。</p>
             <p>柴克與克里斯剛衝出教堂，便被眼前的景象震住。</p>
             <p>前庭已經成了戰場。</p>
             <p>東湖地下教會的聖術師正在與惡魔交戰。</p>
@@ -332,9 +347,7 @@
             <p>雷光落下。</p>
             <p>柴克只覺得腳下突然失去支撐，整個世界瞬間被紫色吞沒。</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
-            <p>教堂內。</p>
+            <p class="scene-time-location">紐約・廢棄教堂，教堂內。</p>
             <p>「安娜！」</p>
             <p>雷從半空落下。</p>
             <p>阿法射出金雷，轟開兩頭逼近的惡魔。</p>
@@ -349,8 +362,7 @@
             <p>「走。」</p>
             <p>兩人朝出口衝去。</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
+            <p class="scene-time-location">紐約・廢棄教堂，前庭撤退。</p>
             <p>前庭上空，紫色雷光一道接著一道落下。</p>
             <p>聖術師們陸續消失在光芒之中。</p>
             <p>安娜率先衝出教堂，雷緊跟在後。</p>
@@ -384,9 +396,7 @@
             <p>兩人的身影消失。</p>
             <p>下一秒，黑霧徹底吞沒整座前庭。</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
-            <p>美國・猶他州・鹽湖城・舊變電廠(東湖地下教會門口)</p>
+            <p class="scene-time-location">美國・猶他州・鹽湖城・舊變電廠（東湖地下教會門口）。</p>
             <p>滋——啪！</p>
             <p>紫色雷光落下。</p>
             <p>柴克踉蹌著站穩。</p>
@@ -544,7 +554,7 @@
             <p>他低頭看向自己的掌心。</p>
             <p>那道細小的傷口仍然存在。</p>
             <p>而他腦海裡，卻是另一個畫面。</p>
-            <p>地下室裡，雷拿著那張泛黃的合照，說起詹姆斯年輕時的模樣。</p>
+            <p>地下室裡，雷拿著那張泛黃合照，說起詹姆斯年輕時的模樣。</p>
             <p>最優秀的一個。</p>
             <p>也最麻煩。</p>
             <p>柴克慢慢抬頭，跟上雷的步伐。</p>
@@ -562,7 +572,7 @@
         <div class="nav-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 50px; padding-top: 25px; gap: 10px;">
             <a href="chapter10.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem; flex-shrink: 0;">← 上一章</a>
             <span style="color: var(--gold-accent); font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.1em; text-align: center;">CHAPTER XI</span>
-            <a href="chapter12.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem; flex-shrink: 0;">下一章 </a>
+            <a href="chapter12.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem; flex-shrink: 0;">下一章</a>
         </div>
     </div>
 
