@@ -32,6 +32,23 @@
             text-indent: 2em;
         }
 
+        /* 燙金色時間與地點樣式 */
+        .novel-content p.scene-time-location {
+            text-indent: 0;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, #ffe875 0%, #f3e5ab 45%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+            margin-top: 2.4em;
+            margin-bottom: 2em;
+        }
+
+        .novel-content p.scene-time-location:first-child {
+            margin-top: 0;
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,6 +103,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
+            <p class="scene-time-location">午後，東湖教會外。</p>
             <p>「你一定是在跟我開玩笑。」</p>
             <p>柴克站在人行道上，難以置信地望著眼前的建築。</p>
             <p>克里斯已經走到入口，發現弟弟沒有跟上，便停下腳步。</p>
@@ -423,7 +441,7 @@
             <p>傑西沒有回答。</p>
             <p>他低頭看著自己的掌心，神情漸漸變得凝重。</p>
             <p>剛才那一瞬間，絕對不是普通的靜電。</p>
-            <p>那股力量，他再熟悉不過了。</p>
+            <p>那股力量，他再熟悉不過。</p>
             <p>十五年了。</p>
             <p>傑西緩緩抬起頭，第一次仔細端詳眼前的少年。</p>
             <p>棕色的頭髮、鼻樑、下顎，還有那雙眼睛。</p>
@@ -539,7 +557,7 @@
             <p>「我不知道迦勒為什麼會死，也不打算假裝自己知道。」</p>
             <p>這個回答顯然不在柴克的預料之中。</p>
             <p>傑西靠向椅背，語氣依舊平靜。</p>
-            <p>「有些痛苦，不會因為我們找到一句漂亮的神學答案，就突然不痛了。」</p>
+            <p>「有些痛苦，不會因為我們找到一句漂亮的神學答案，就突然不痛。」</p>
             <p>柴克沒有說話。</p>
             <p>「你生氣嗎？」</p>
             <p>「當然。」</p>
@@ -615,7 +633,7 @@
             <p>傑西緩緩握起手掌。</p>
             <p>「你兒子長大了。」</p>
             <p>他輕聲說。</p>
-            <p>深夜。</p>
+            <p class="scene-time-location">深夜，安德烈家。</p>
             <p>瑞秋推開家門時，客廳只剩一盞燈亮著。</p>
             <p>克里斯坐在餐桌前，筆電螢幕上密密麻麻全是程式碼。</p>
             <p>「還沒睡？」瑞秋問。</p>
