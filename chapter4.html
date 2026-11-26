@@ -32,6 +32,23 @@
             text-indent: 2em;
         }
 
+        /* 燙金色時間與地點樣式 */
+        .novel-content p.scene-time-location {
+            text-indent: 0;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, #ffe875 0%, #f3e5ab 45%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+            margin-top: 2.4em;
+            margin-bottom: 2em;
+        }
+
+        .novel-content p.scene-time-location:first-child {
+            margin-top: 0;
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,6 +103,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
+            <p class="scene-time-location">安德烈家。</p>
             <p>大門緩緩打開。</p>
             <p>映入眼簾的，是一片狼藉的客廳。</p>
             <p>椅子翻倒在地，破碎的杯子散落四處，沙發也被撞得歪斜。唯獨電視仍若無其事地播放著世界射箭錦標賽。</p>
@@ -164,7 +182,7 @@
             <p>瑞秋趁機衝進廚房，猛然拉開最下層的抽屜。</p>
             <p>柴克回頭的瞬間，正好看見母親從裡面拿出一把手槍。</p>
             <p>他的腳步差點停住。</p>
-            <p>「媽？涅？！」</p>
+            <p>「媽？妳？！」</p>
             <p>砰！</p>
             <p>槍聲猛然響起，震得整棟房子彷彿都跟著顫動。</p>
             <p>怪物受到攻擊，立刻轉向瑞秋。</p>
