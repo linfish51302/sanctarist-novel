@@ -32,6 +32,23 @@
             text-indent: 2em;
         }
 
+        /* 燙金色時間與地點樣式 */
+        .novel-content p.scene-time-location {
+            text-indent: 0;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, #ffe875 0%, #f3e5ab 45%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+            margin-top: 2.4em;
+            margin-bottom: 2em;
+        }
+
+        .novel-content p.scene-time-location:first-child {
+            margin-top: 0;
+        }
+
         /* --- 內文中段的高質感插圖樣式 --- */
         .chapter-illustration {
             max-width: 100%;
@@ -86,7 +103,7 @@
         <!-- 小說內文區 -->
         <div class="novel-content">
             
-            <p>美國・猶他州・鹽湖城</p>
+            <p class="scene-time-location">美國・猶他州・鹽湖城。</p>
             <p>電話響了十一聲。</p>
             <p>沒有人接。</p>
             <p>查德站在黃色警戒線外，望著眼前那棟熟悉的房子，眉頭越皺越緊。</p>
@@ -167,8 +184,7 @@
             <p>螢幕再次亮起。</p>
             <p>1 MISSED CALL</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
+            <p class="scene-time-location">東湖地下教會，臥室。</p>
             <p>「查德！」</p>
             <p>柴克猛然從床上坐起。</p>
             <p>他大口喘著氣，額頭早已布滿冷汗。</p>
@@ -261,8 +277,7 @@
             <p>最後，他忍不住低聲抱怨：</p>
             <p>「我真的很討厭我們家現在這種講話方式。」</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
+            <p class="scene-time-location">東湖地下教會，主廳。</p>
             <p>五分鐘後。</p>
             <p>柴克站在走廊盡頭。</p>
             <p>然後，他徹底忘記了剛才的不滿。</p>
@@ -318,6 +333,8 @@
             <p>克里斯想了想。</p>
             <p>「夠你忙一陣子了。」</p>
             <p>「真令人安心。」</p>
+
+            <p class="scene-time-location">東湖地下教會，長廊。</p>
             <p>他們繼續沿著長廊前進。</p>
             <p>道路兩側分布著不同區域。</p>
             <p>訓練室、醫療中心、客房、資料室，以及許多柴克連用途都猜不出來的設施。</p>
@@ -347,9 +364,6 @@
             <p>克里斯說完，便繼續向前走。</p>
             <p>柴克站在原地愣了幾秒，才重新跟上。</p>
             <p>不知道為什麼，這個回答反而讓他舒服了一點。</p>
-
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
             <p>經過一處轉角時，柴克注意到牆上掛著一幅古老的壁畫。</p>
             <p>畫中描繪著一群手持不同武器的人，站在黑暗與光明交界的地方。天空中雷電交錯，地面則遍布難以辨認的黑色身影。</p>
             <p>柴克停下腳步。</p>
@@ -386,12 +400,12 @@
             <p>一小團翡翠綠色的光芒在掌心浮現。</p>
             <p>無數細小的程式碼沿著他的指尖向上延伸，在空中逐漸組成一道立體影像。</p>
             <p>柴克睜大眼睛。</p>
-            <p>「我真的得先習慣你會變這種把戲....」</p>
+            <p>「我真的得先習慣你會變這種把戲……」</p>
             <p>克里斯輕輕一笑。</p>
             <p>隨著他揮動手指，綠色程式碼在空中排列成一片完整的光幕。</p>
             <p>光幕中央，出現了一道細小的裂痕。</p>
             <p>「按照我們歷史留下的記載，當人類第一次選擇背離神，原本完整的受造秩序便出現了裂痕。」</p>
-            <p>柴克看着影像。</p>
+            <p>柴克看著影像。</p>
             <p>裂痕逐漸擴大。</p>
             <p>某種黑色物質從中緩緩滲出。</p>
             <p>「那份不完美形成了黑暗力量。」</p>
@@ -525,8 +539,7 @@
             <p>眼睛瞬間亮了起來。</p>
             <p>「你終於開始了解我了。」</p>
 
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
+            <p class="scene-time-location">東湖地下教會，訓練室。</p>
             <p>訓練室比半座體育館還要大。</p>
             <p>柴克站在入口，忍不住張大嘴巴。</p>
             <p>黑色合金地板上刻著巨大的圓形雷紋。高處排列著數十組感應裝置，牆面則嵌滿各式機械結構。</p>
@@ -597,7 +610,7 @@
             <p>「就是它！」</p>
             <p>安娜挑眉。</p>
             <p>「怎樣？」</p>
-            <p>「現在看到還是覺得很不真實...」</p>
+            <p>「現在看到還是覺得很不真實……」</p>
             <p>「現在習慣了嗎？」</p>
             <p>「完全沒有。」</p>
             <p>安娜笑了。</p>
@@ -696,9 +709,6 @@
             <p>「已經沒有了！」</p>
             <p>安娜終於笑出聲。</p>
             <p>隨著她鬆開手，雙頭劍化作無數細小的雷光，消失在空氣中。</p>
-
-            <p style="text-align: center; margin: 30px 0; color: var(--gold-accent);">＊</p>
-
             <p>「下一個。」</p>
             <p>克里斯看向潔西卡。</p>
             <p>「靈獸使。」</p>
@@ -915,7 +925,7 @@
 
         <!-- 底部返回導覽 -->
         <div class="nav-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 50px; padding-top: 25px; gap: 10px;">
-            <a href="chapter5.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem; flex-shrink: 0;">← 上一頁</a>
+            <a href="chapter5.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem; flex-shrink: 0;">← 上一章</a>
             <span style="color: var(--gold-accent); font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.1em; text-align: center;">CHAPTER VI</span>
             <a href="chapter7.html" class="magical-btn" style="padding: 10px 20px; font-size: 0.85rem; flex-shrink: 0;">下一章</a>
         </div>
