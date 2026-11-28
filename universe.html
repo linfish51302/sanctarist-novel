@@ -1,26 +1,111 @@
-<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="探索聖術師宇宙，六大神聖元素、拉比、信望愛與光暗之戰。"><title>聖術師宇宙觀 | The Sanctarist Universe</title><style>:root{color-scheme:dark;--gold:#e5c78a;--muted:#b9b5ac;--bg:#0a0d10;--ink:#e9e5dc;--line:#ac895343;--serif:"Noto Serif TC","Songti TC","PMingLiU",serif;--sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.95}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;color:inherit}button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:5px}img{max-width:100%;display:block} [hidden]{display:none!important}.skip{position:fixed;top:-100px;left:10px;background:#fff;color:#111;z-index:10;padding:10px}.skip:focus{top:10px}.progress{height:2px;background:var(--gold);position:fixed;top:0;inset-inline:0;transform-origin:left;z-index:9}
+<!DOCTYPE html><html lang="zh-TW"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="探索聖術師宇宙，六大神聖元素、拉比、信望愛與光暗之戰。"><title>聖術師宇宙觀 | The Sanctarist Universe</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@500;600;700;800&amp;display=swap" rel="stylesheet"><style>:root{color-scheme:dark;--gold:#e5c78a;--muted:#b9b5ac;--bg:#0a0d10;--ink:#e9e5dc;--line:#ac895343;--serif:"Noto Serif TC","Songti TC","PMingLiU",serif;--sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.95}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;color:inherit}button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:5px}img{max-width:100%;display:block} [hidden]{display:none!important}.skip{position:fixed;top:-100px;left:10px;background:#fff;color:#111;z-index:10;padding:10px}.skip:focus{top:10px}.progress{height:2px;background:var(--gold);position:fixed;top:0;inset-inline:0;transform-origin:left;z-index:9}
 .hero-banner{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden;background:#131b1d url('universe-assets/universe-multiverse.webp') center/cover}.hero-banner video,.hero-overlay{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero-overlay{background:linear-gradient(0deg,#0a0d10 0%,#0a0d1090 28%,#0a0d1030 70%,#0a0d1080)}.hero-content{position:relative;text-align:center;width:min(1100px,94%);padding:70px 12px 45px}.hero-logo{width:min(350px,68vw);max-height:220px;object-fit:contain;margin:auto;filter:drop-shadow(0 5px 18px #000)}.universe-title-main{font:600 clamp(2rem,5vw,4rem)/1.25 var(--serif);letter-spacing:.13em;margin:18px 0;color:var(--gold);text-shadow:0 3px 16px #000}.universe-title-sub,.en-title,small,.universe-sub-title,.universe-return-subtitle{font-family:Georgia,serif;letter-spacing:.2em;color:var(--gold);font-size:.72rem}.hero-nav-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 26px;margin:36px auto}.hero-nav-item{display:grid;line-height:1.5;font-size:.94rem}.hero-nav-item:hover{color:var(--gold)}.en-title{font-size:.62rem}.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.primary,.secondary,.ig-action-btn{border:1px solid var(--gold);padding:11px 20px;display:inline-block;font-size:.9rem;letter-spacing:.06em}.primary{color:#10100e;background:var(--gold);font-weight:700}.secondary{background:#0005;color:#fff}.video-toggle{border:0;background:#0005;font-size:.75rem;padding:5px 12px;margin-top:22px;color:#ddd}
 .chapter{max-width:1600px;margin:auto;display:grid;grid-template-columns:1fr 1fr;align-items:start;border-top:1px solid var(--line);position:relative}.chapter.reverse .scene{order:2}.scene{position:sticky;top:0;height:100svh;overflow:hidden;background:#10191c}.scene img{width:100%;height:100%;object-fit:cover}.scene:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#080b10df,transparent 60%);pointer-events:none}.scene-caption{position:absolute;bottom:8%;left:8%;right:8%;z-index:1;display:grid;gap:6px}.scene-caption span{font:500 clamp(2rem,4vw,4rem)/1.3 var(--serif);color:#f3e7cf;letter-spacing:.08em}.reading{min-width:0;max-width:780px;margin:auto;padding:clamp(36px,6vw,100px) clamp(24px,5vw,70px)}.plain{display:block}.plain>.reading{max-width:1000px}.reading p{font-size:clamp(1rem,1.2vw,1.1rem);margin:0 0 1.25em;color:#d8d5cd;overflow-wrap:anywhere}.reading h2,.universe-main-title,.universe-return-title{font:600 clamp(1.9rem,3.5vw,3.1rem)/1.4 var(--serif);color:var(--gold);letter-spacing:.055em;margin:0 0 30px}.reading h2 span{display:block;font:400 .75rem/1.6 Georgia,serif;letter-spacing:.16em;margin-top:10px}.reading h3{font:600 clamp(1.4rem,2vw,1.9rem)/1.5 var(--serif);color:var(--gold);margin:68px 0 20px}.universe-sub-title{margin-top:-15px;margin-bottom:32px}.reading .center-text,blockquote{font-family:var(--serif);font-size:1.3rem;color:var(--gold);line-height:1.8}blockquote{margin:28px 0;padding:10px 0 10px 24px;border-left:2px solid var(--gold)}.magic-circle-container{--element:#d9b775;position:relative;margin:32px auto 48px;max-width:570px;aspect-ratio:1;display:grid;place-items:center;background:radial-gradient(circle,color-mix(in srgb,var(--element) 22%,transparent),transparent 68%);transition:background .3s}.magic-circle-img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 14px var(--element))}.element-hotspot{position:absolute;display:grid;place-items:center;min-width:56px;min-height:52px;padding:5px 8px;border:1px solid #d7b87580;background:#11171aee;border-radius:4px;color:#eee;line-height:1.25}.element-hotspot:hover,.element-hotspot[aria-pressed=true]{box-shadow:0 0 22px var(--element);border-color:var(--element);color:var(--element)}.cn-text{font:600 1.3rem var(--serif)}.en-text{font:400 .53rem Georgia,serif;letter-spacing:.07em}.hotspot-lightning{top:43%;left:-2%}.hotspot-water{top:12%;left:26%}.hotspot-wind{top:12%;right:23%}.hotspot-wood{top:43%;right:-2%}.hotspot-fire{bottom:12%;right:24%}.hotspot-earth{bottom:12%;left:24%}.element-modal{border-top:1px solid var(--gold);border-bottom:1px solid var(--line);padding:24px;margin-bottom:36px;background:#151a1d}.element-modal h4{color:var(--gold);font-size:1.2rem;margin:0 0 12px}.close-modal{display:block;margin:0 0 14px auto;background:transparent;border:1px solid #888;padding:3px 12px}.showcase-grid,.books-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0}.showcase-card{position:relative;padding:0;background:#111;border:1px solid var(--line);overflow:hidden;display:grid}.showcase-card img{width:100%;aspect-ratio:3/4;object-fit:cover}.showcase-card span{padding:12px;font-size:1rem}.showcase-card.active{border-color:var(--gold);box-shadow:0 0 18px #d4af3733}.showcase-panel{border-top:1px solid var(--line);padding:12px 0}.showcase-panel h3{margin-top:20px}.books-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.book-item{position:relative;display:grid;align-content:start;gap:8px;overflow:hidden}.book-item img{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line)}.book-title-tag{text-align:center;font-size:.95rem}.recommended-badge{position:absolute;background:var(--gold);color:#15110d;top:0;left:0;font-size:.7rem;padding:4px 8px;font-weight:bold}.locked img{filter:brightness(.5)}.lock-overlay{position:absolute;top:33%;left:0;right:0;text-align:center;display:grid}.lock-text{font-size:.75rem}.reading-order-tip{color:var(--muted);margin-top:20px}.contact-box{text-align:center}.contact-box h3{margin-top:0}.contact-box p{text-align:left}.contact-logo-link img{max-height:100px;max-width:200px;object-fit:contain;margin:32px auto}.contact-box p:nth-last-of-type(-n+2){text-align:center}.ig-action-btn{color:var(--gold)}footer{text-align:center;color:var(--muted);padding:35px 18px;font:400 .7rem/1.6 Georgia,serif;letter-spacing:.15em;border-top:1px solid var(--line)}
 @media(max-width:760px){.chapter{display:block}.scene{position:relative;height:55svh;min-height:290px}.reading{padding:44px 24px}.hero-content{padding-top:36px}.hero-nav-bar{gap:10px 18px;margin:25px auto}.hero-nav-item{font-size:.8rem}.hero-logo{max-height:150px}.hero-actions a{font-size:.82rem}.scene-caption{bottom:7%}.books-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.showcase-grid{gap:6px}.showcase-card span{font-size:.75rem;padding:7px 1px}.element-hotspot{min-width:44px;min-height:44px;padding:4px}.hotspot-water{left:19%}.hotspot-wind{right:19%}.hotspot-fire{right:19%}.hotspot-earth{left:19%}.en-text{font-size:.48rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
-</style></head><body><a class="skip" href="#main">跳至主要內容</a><div class="progress" aria-hidden="true"></div><header class="hero-banner">
+
+/* 2.1 — original black-gold identity, cinematic layout retained */
+:root{
+ --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+ --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+ --latin:"Cinzel",Georgia,serif;
+ --foil:linear-gradient(168deg,#fff4cf 0%,#eacb87 28%,#a47b36 48%,#f6dfa6 61%,#c6a05d 85%,#8b612b 100%);
+ --ease:cubic-bezier(.22,.7,.2,1);
+}
+.hero-banner{min-height:100svh;display:block}
+.hero-overlay{background:linear-gradient(0deg,#0a0d10 0%,#0a0d10af 14%,transparent 53%),linear-gradient(90deg,#090e16a0,transparent 38%,transparent 78%,#090e1640)}
+.hero-content{width:100%;min-height:100svh;padding:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.hero-brand{position:absolute;top:clamp(24px,7vh,76px);left:clamp(22px,6vw,110px);width:clamp(128px,19vw,270px);text-align:center}
+.hero-logo{width:100%;max-height:180px;object-fit:contain;margin:0 auto;filter:drop-shadow(0 3px 13px #050505b0)}
+.universe-title-wrapper{margin-top:7px}
+.universe-title-container{display:flex;align-items:center;justify-content:center;gap:10px}
+.title-line{height:1px;flex:1;background:linear-gradient(90deg,transparent,#d6b66d)}
+.title-line:last-child{transform:rotate(180deg)}
+.universe-title-main{font:600 clamp(.85rem,1.45vw,1.25rem)/1.6 var(--serif);letter-spacing:.32em;margin:0;white-space:nowrap;text-shadow:none}
+.universe-title-sub{font:500 clamp(.48rem,.75vw,.68rem)/1.7 var(--latin);letter-spacing:.16em;margin-top:5px}
+.hero-nav-bar{width:min(1120px,94%);gap:clamp(15px,3vw,44px);margin:0 auto 25px;align-items:center;justify-content:center}
+.hero-nav-item{transition:transform .35s var(--ease),filter .35s ease;text-align:center}
+.cn-title{font-family:var(--serif);font-weight:600;letter-spacing:.07em;color:#e7c98a}
+.en-title{font-family:var(--latin);font-size:.62rem;color:#d5c6a6;opacity:.92;letter-spacing:.17em}
+.hero-actions{margin:0 auto 12px;gap:12px}
+.primary,.secondary,.ig-action-btn{font-family:var(--serif);font-weight:600;letter-spacing:.08em;border-radius:3px;transition:transform .35s var(--ease),box-shadow .35s ease,background .35s ease}
+.primary{background:linear-gradient(145deg,#fae5af,#be934a 52%,#e3c28a);border:1px solid #f5dba4;box-shadow:0 3px 15px #0007;color:#16110c}
+.secondary{background:#080b10a6;color:#f0e3ca;border-color:#ba985f}
+.video-toggle{margin:0 auto 16px;font-family:var(--sans);background:#0b0d1290;color:#d8d0c0}
+.reading h2,.reading h3,.universe-main-title,.universe-return-title,.universe-title-main,.scene-caption span,.reading .center-text,.element-modal h4{color:#e3c78a}
+@supports ((background-clip:text) or (-webkit-background-clip:text)){
+ .universe-title-main,.reading h3,.universe-main-title,.universe-return-title,.scene-caption span,.reading .center-text,.element-modal h4,.reading h2{background-image:var(--foil);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 1px #0008)}
+ .reading h2 span{background:none;color:#d9c79f;-webkit-text-fill-color:#d9c79f}
+}
+.reading h2,.universe-main-title,.universe-return-title{letter-spacing:.09em;font-weight:700}
+.reading h2:after,.universe-title-section:after{content:"";display:block;width:min(220px,65%);height:1px;margin:22px 0;background:linear-gradient(90deg,#c8a569,transparent)}
+.reading h2 span,.universe-sub-title,.universe-return-subtitle,.scene-caption small,.en-text,footer{font-family:var(--latin);letter-spacing:.17em}
+.reading p{font-family:var(--sans);font-weight:400;line-height:2.05;letter-spacing:.025em;color:#ded9ce}
+.reading blockquote{background:linear-gradient(90deg,#b48c3820,transparent);border-color:#cdaa6b;color:#ebdcc0}
+.showcase-card,.book-item{border:1px solid #ad894c66;border-radius:8px;overflow:hidden;background:#111417;box-shadow:0 8px 26px #0008;transition:transform .4s var(--ease),box-shadow .4s ease,border-color .4s ease}
+.showcase-card img,.book-item img{transition:transform .5s var(--ease),filter .5s ease}
+.showcase-card img{aspect-ratio:9/16;filter:brightness(.83) contrast(1.04)}
+.showcase-card.active{border-color:#e4c37b;box-shadow:0 0 20px #c69b483c}
+.showcase-card.active img{filter:brightness(1)}
+.showcase-card span,.book-title-tag{font:600 .94rem/1.5 var(--serif);letter-spacing:.04em;color:#e8d7ae;padding:12px 5px;background:linear-gradient(180deg,#171b20,#0b0e12)}
+.book-item.recommended{border-color:#e1bd73;box-shadow:0 8px 25px #0009,0 0 20px #c69b482b}
+.recommended-badge{background:linear-gradient(135deg,#f9e2a4,#bc9047);border-radius:2px;z-index:3}
+.locked{cursor:not-allowed}.locked img{filter:brightness(.42) grayscale(.45)}
+.lock-text{color:#d2ba7c}
+.magic-circle-img{transition:transform .65s var(--ease),filter .65s ease}
+.element-hotspot{border-radius:8px;color:#e9d19b;transition:transform .3s var(--ease),box-shadow .3s ease,border-color .3s ease,background .3s ease}
+.element-hotspot .en-text{font-size:.52rem;letter-spacing:.05em}
+.element-hotspot[aria-pressed=true]{border-color:var(--element);box-shadow:0 0 24px var(--element);color:var(--element)}
+.contact-box{border:1px solid #b8955355;border-radius:8px;padding:clamp(22px,4vw,50px);background:radial-gradient(ellipse at top,#b48c3811,transparent 65%),#0d1014;box-shadow:0 10px 35px #0005}
+.contact-logo-link img{transition:filter .4s ease,transform .4s var(--ease);filter:drop-shadow(0 0 8px #c59d4650)}
+@media(hover:hover) and (pointer:fine){
+ .hero-nav-item:hover{transform:translateY(-4px);filter:drop-shadow(0 0 9px #d4af3780)}
+ .primary:hover,.secondary:hover,.ig-action-btn:hover{transform:translateY(-3px);box-shadow:0 0 24px #d4af3755}
+ .showcase-card:hover,.book-item.unlocked:hover{transform:translateY(-7px) scale(1.025);border-color:#e7c779;box-shadow:0 12px 25px #000a,0 0 26px #d4af3755;z-index:2}
+ .showcase-card:hover img,.book-item.unlocked:hover img{transform:scale(1.04);filter:brightness(1.08) contrast(1.05)}
+ .magic-circle-container:hover .magic-circle-img{transform:scale(1.025);filter:drop-shadow(0 0 27px var(--element)) brightness(1.1)}
+ .element-hotspot:hover{transform:translateY(-3px) scale(1.06);box-shadow:0 0 20px var(--element)}
+ .contact-logo-link:hover img{transform:scale(1.05);filter:drop-shadow(0 0 22px #d4af3790)}
+}
+@media(max-width:760px){
+ .hero-brand{top:max(20px,env(safe-area-inset-top));left:18px;width:clamp(98px,29vw,145px)}
+ .hero-logo{max-height:105px}
+ .hero-banner video{object-position:center}
+ .hero-content{min-height:100svh}
+ .hero-nav-bar{gap:12px 20px;margin-bottom:18px}
+ .hero-nav-item .cn-title{font-size:.82rem}
+ .en-title{font-size:.5rem}
+ .hero-actions{gap:8px}
+ .hero-actions a{padding:11px 12px;font-size:.76rem}
+ .universe-title-sub{font-size:.48rem}
+ .showcase-card span,.book-title-tag{font-size:.76rem;padding:8px 3px}
+ .reading h2,.universe-main-title,.universe-return-title{letter-spacing:.04em}
+}
+@media(max-height:500px) and (orientation:landscape){.hero-brand{top:12px;left:20px;width:120px}.hero-logo{max-height:84px}.hero-nav-bar{margin-bottom:12px}.hero-actions{margin-bottom:4px}.video-toggle{margin-bottom:6px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}.hero-nav-item:hover,.showcase-card:hover,.book-item.unlocked:hover,.primary:hover,.secondary:hover,.ig-action-btn:hover,.magic-circle-container:hover .magic-circle-img,.element-hotspot:hover{transform:none}.showcase-card:hover img,.book-item.unlocked:hover img{transform:none}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳至主要內容</a><div class="progress" aria-hidden="true"></div><header class="hero-banner">
         <video muted loop playsinline preload="none" poster="universe-assets/universe-multiverse.webp" aria-hidden="true">
             <source src="hero-video.mp4" type="video/mp4">
             您的瀏覽器不支援影片播放。
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <img src="logo-main.png" alt="聖術師 THE SANCTARIST 總 Logo" class="hero-logo">
+            <div class="hero-brand"><img src="logo-main.png" alt="聖術師 THE SANCTARIST 總 Logo" class="hero-logo">
             
             <!-- 完美置中的精緻金屬飾線標題 -->
             <div class="universe-title-wrapper">
                 <div class="universe-title-container">
                     <div class="title-line"></div>
-                    <h1 class="universe-title-main">聖術師宇宙觀</h1>
+                    <h1 class="universe-title-main">宇宙觀</h1>
                     <div class="title-line"></div>
                 </div>
                 <div class="universe-title-sub">THE SANCTARIST UNIVERSE</div>
-            </div>
+            </div></div>
 
             <!-- 無框質感導覽列 -->
             <nav class="hero-nav-bar">
@@ -384,4 +469,6 @@ document.querySelectorAll('a[target="_blank"]').forEach(a=>a.rel='noopener noref
 const progress=document.querySelector('.progress');
 function updateProgress(){const max=document.documentElement.scrollHeight-innerHeight;progress.style.transform='scaleX('+ (max>0?scrollY/max:0)+')';}
 addEventListener('scroll',updateProgress,{passive:true});addEventListener('resize',updateProgress);updateProgress();
-</script></body></html>
+</script>
+</body>
+</html>
