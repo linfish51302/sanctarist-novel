@@ -85,9 +85,98 @@
 @media(max-height:500px) and (orientation:landscape){.hero-brand{top:12px;left:20px;width:120px}.hero-logo{max-height:84px}.hero-nav-bar{margin-bottom:12px}.hero-actions{margin-bottom:4px}.video-toggle{margin-bottom:6px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}.hero-nav-item:hover,.showcase-card:hover,.book-item.unlocked:hover,.primary:hover,.secondary:hover,.ig-action-btn:hover,.magic-circle-container:hover .magic-circle-img,.element-hotspot:hover{transform:none}.showcase-card:hover img,.book-item.unlocked:hover img{transform:none}}
 
+
+/* 2.2 — ambient luminous particles and breathing title halos */
+.ambient-photons {
+  position: fixed; inset: 0; z-index: 4; overflow: hidden;
+  pointer-events: none; user-select: none; contain: strict;
+}
+.ambient-photon {
+  position: absolute; left: var(--x); top: 106%;
+  width: var(--size); height: var(--size); border-radius: 50%;
+  background: #f8dca0;
+  box-shadow: 0 0 5px #eac27b, 0 0 12px #d1a34c66;
+  opacity: 0; will-change: transform, opacity;
+  animation: photon-drift var(--duration) linear var(--delay) infinite;
+}
+@keyframes photon-drift {
+  0% { transform: translate3d(0,0,0); opacity: 0; }
+  12% { opacity: var(--opacity); }
+  35% { transform: translate3d(var(--sway),-40vh,0); opacity: calc(var(--opacity) * .6); }
+  65% { transform: translate3d(calc(var(--sway) * -.6),-77vh,0); opacity: var(--opacity); }
+  88% { opacity: calc(var(--opacity) * .6); }
+  100% { transform: translate3d(var(--sway),-117vh,0); opacity: 0; }
+}
+/* Separate soft halo: the metallic text and its existing decorative rule remain unchanged. */
+.universe-title-main,.universe-main-title,.reading h2,.reading h3,
+.universe-return-title,.scene-caption span,.element-modal h4 {
+  position: relative; isolation: isolate;
+}
+.universe-title-main::before,.universe-main-title::before,.reading h2::before,
+.reading h3::before,.universe-return-title::before,.scene-caption span::before,
+.element-modal h4::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  left: -12px; top: 0; width: min(100%, 360px); height: 1.8em;
+  background: radial-gradient(ellipse at 42% 48%,#e5b65340 0%,#d8a84a1c 38%,transparent 74%);
+  opacity: .35; transform-origin: 42% 50%;
+  animation: title-breath 6.8s ease-in-out infinite;
+}
+.universe-title-main::before { left: 0; width: 100%; background: radial-gradient(ellipse,#e5b65340,transparent 72%); }
+.reading h3::before { width: min(100%, 250px); }
+.reading h3:nth-of-type(2n)::before { animation-delay: -2.4s; }
+.scene-caption span::before { width: 90%; }
+@keyframes title-breath {
+  0%,100% { opacity: .28; transform: scale(.96); }
+  50% { opacity: .85; transform: scale(1.08); }
+}
+body.ambient-paused .ambient-photon,
+body.ambient-paused .universe-title-main::before,
+body.ambient-paused .universe-main-title::before,
+body.ambient-paused .reading h2::before,
+body.ambient-paused .reading h3::before,
+body.ambient-paused .universe-return-title::before,
+body.ambient-paused .scene-caption span::before,
+body.ambient-paused .element-modal h4::before { animation-play-state: paused; }
+@media(max-width:760px){
+ .ambient-photon:nth-child(n+13){display:none}
+ .ambient-photon{box-shadow:0 0 4px #eac27b,0 0 8px #d1a34c44}
+}
+@media(prefers-reduced-motion:reduce){
+ .ambient-photons{display:none}
+ .universe-title-main::before,.universe-main-title::before,.reading h2::before,
+ .reading h3::before,.universe-return-title::before,.scene-caption span::before,
+ .element-modal h4::before{animation:none!important;opacity:.4;transform:none}
+}
+
 </style>
 </head>
 <body>
+<div class="ambient-photons" aria-hidden="true">
+<i class="ambient-photon" style="--x:1.8%;--size:1.5px;--duration:26.3s;--delay:-25.0s;--sway:-10.6px;--opacity:0.29"></i>
+<i class="ambient-photon" style="--x:7.2%;--size:2px;--duration:30.5s;--delay:-24.3s;--sway:-18.2px;--opacity:0.31"></i>
+<i class="ambient-photon" style="--x:10.8%;--size:2px;--duration:31.9s;--delay:-30.7s;--sway:2.2px;--opacity:0.15"></i>
+<i class="ambient-photon" style="--x:13.5%;--size:1px;--duration:32.7s;--delay:-4.7s;--sway:-29.3px;--opacity:0.36"></i>
+<i class="ambient-photon" style="--x:18.9%;--size:1.5px;--duration:25.6s;--delay:-7.3s;--sway:-35.1px;--opacity:0.32"></i>
+<i class="ambient-photon" style="--x:22.0%;--size:1.5px;--duration:29.0s;--delay:-18.3s;--sway:0.4px;--opacity:0.38"></i>
+<i class="ambient-photon" style="--x:27.1%;--size:1.5px;--duration:33.4s;--delay:-18.5s;--sway:-5.3px;--opacity:0.17"></i>
+<i class="ambient-photon" style="--x:30.9%;--size:1.5px;--duration:38.3s;--delay:-18.4s;--sway:2.6px;--opacity:0.41"></i>
+<i class="ambient-photon" style="--x:36.0%;--size:1.5px;--duration:32.4s;--delay:-3.8s;--sway:24.0px;--opacity:0.36"></i>
+<i class="ambient-photon" style="--x:38.6%;--size:2px;--duration:41.3s;--delay:-7.2s;--sway:28.8px;--opacity:0.35"></i>
+<i class="ambient-photon" style="--x:44.3%;--size:1px;--duration:33.9s;--delay:-16.6s;--sway:-39.1px;--opacity:0.42"></i>
+<i class="ambient-photon" style="--x:47.7%;--size:2px;--duration:22.1s;--delay:-17.9s;--sway:25.1px;--opacity:0.40"></i>
+<i class="ambient-photon" style="--x:52.2%;--size:2px;--duration:26.3s;--delay:-1.3s;--sway:-33.2px;--opacity:0.23"></i>
+<i class="ambient-photon" style="--x:55.4%;--size:2px;--duration:31.4s;--delay:-5.3s;--sway:41.4px;--opacity:0.39"></i>
+<i class="ambient-photon" style="--x:59.5%;--size:3px;--duration:26.1s;--delay:-12.4s;--sway:38.8px;--opacity:0.13"></i>
+<i class="ambient-photon" style="--x:65.0%;--size:1px;--duration:42.0s;--delay:-31.8s;--sway:46.4px;--opacity:0.26"></i>
+<i class="ambient-photon" style="--x:68.5%;--size:2px;--duration:24.4s;--delay:-16.7s;--sway:32.4px;--opacity:0.21"></i>
+<i class="ambient-photon" style="--x:73.1%;--size:1px;--duration:40.4s;--delay:-0.1s;--sway:-17.2px;--opacity:0.24"></i>
+<i class="ambient-photon" style="--x:77.5%;--size:2px;--duration:32.6s;--delay:-20.0s;--sway:19.8px;--opacity:0.35"></i>
+<i class="ambient-photon" style="--x:81.7%;--size:2px;--duration:31.9s;--delay:-19.9s;--sway:38.2px;--opacity:0.35"></i>
+<i class="ambient-photon" style="--x:84.2%;--size:3px;--duration:27.4s;--delay:-7.4s;--sway:33.4px;--opacity:0.42"></i>
+<i class="ambient-photon" style="--x:89.0%;--size:2px;--duration:31.6s;--delay:-24.8s;--sway:34.2px;--opacity:0.25"></i>
+<i class="ambient-photon" style="--x:94.1%;--size:3px;--duration:33.2s;--delay:-32.8s;--sway:-14.4px;--opacity:0.28"></i>
+<i class="ambient-photon" style="--x:98.2%;--size:1px;--duration:32.6s;--delay:-1.7s;--sway:-10.2px;--opacity:0.42"></i>
+</div>
 <a class="skip" href="#main">跳至主要內容</a><div class="progress" aria-hidden="true"></div><header class="hero-banner">
         <video muted loop playsinline preload="none" poster="universe-assets/universe-multiverse.webp" aria-hidden="true">
             <source src="hero-video.mp4" type="video/mp4">
@@ -469,6 +558,10 @@ document.querySelectorAll('a[target="_blank"]').forEach(a=>a.rel='noopener noref
 const progress=document.querySelector('.progress');
 function updateProgress(){const max=document.documentElement.scrollHeight-innerHeight;progress.style.transform='scaleX('+ (max>0?scrollY/max:0)+')';}
 addEventListener('scroll',updateProgress,{passive:true});addEventListener('resize',updateProgress);updateProgress();
+
+// Pause decorative animations while this tab is hidden.
+function syncAmbient(){document.body.classList.toggle('ambient-paused',document.hidden);}
+document.addEventListener('visibilitychange',syncAmbient);syncAmbient();
 </script>
 </body>
 </html>
