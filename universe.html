@@ -148,6 +148,72 @@ body.ambient-paused .element-modal h4::before { animation-play-state: paused; }
  .element-modal h4::before{animation:none!important;opacity:.4;transform:none}
 }
 
+
+/* 2.3 — centered hero brand, refined centered glow and interactive instructions */
+.hero-brand{
+ position:relative;top:auto;left:auto;width:clamp(210px,27vw,400px);
+ align-self:center;margin:0 auto clamp(15px,3vh,35px);
+}
+.hero-logo{max-height:clamp(125px,24vh,240px);width:100%;object-fit:contain;margin:auto}
+.universe-title-wrapper{margin-top:5px}
+.universe-title-main{font-size:clamp(.95rem,1.65vw,1.4rem)}
+.hero-content{justify-content:flex-end}
+.hero-nav-bar{margin-bottom:22px}
+.hero-overlay{background:linear-gradient(0deg,#0a0d10 0%,#0a0d10b5 16%,#0a0d1035 39%,transparent 66%)}
+/* Keep centered headline and subheading together; center its own halo, not the box. */
+.contact-box h3{width:fit-content;max-width:100%;margin:0 auto 12px;text-align:center}
+.contact-box h3::before{
+ left:50%;top:50%;width:100%;height:2.5em;
+ background:radial-gradient(ellipse at center,#e5b65335 0%,#d8a84a12 38%,transparent 72%);
+ transform-origin:center;animation:centered-title-breath 6.8s ease-in-out infinite;
+}
+@keyframes centered-title-breath{
+ 0%,100%{opacity:.28;transform:translate(-50%,-50%) scale(.94)}
+ 50%{opacity:.8;transform:translate(-50%,-50%) scale(1.06)}
+}
+.contact-box p.contact-subtitle{
+ text-align:center;font-family:var(--latin);font-weight:500;font-size:clamp(.62rem,.85vw,.82rem);
+ letter-spacing:.17em;line-height:1.7;color:#c9b58c;margin:0 auto 30px;
+}
+/* Small, unmistakable guidance text; gold remains legible during the pulse. */
+.reading p.interaction-hint,.reading .reading-order-tip{
+ text-align:center;font-family:var(--serif);font-weight:600;
+ font-size:clamp(.76rem,1.05vw,.92rem);line-height:1.85;letter-spacing:.055em;
+ color:#dfbe77;margin:24px auto 14px;padding:7px 10px;
+ animation:hint-breath 5.6s ease-in-out infinite;
+}
+.reading .reading-order-tip{max-width:720px;border-top:1px solid #b8955330;border-bottom:1px solid #b8955330;padding:12px 10px}
+.interaction-hint::before{content:"✦";font-size:.72em;margin-right:.55em;color:#d8b56d}
+.interaction-hint::after{content:"✦";font-size:.72em;margin-left:.55em;color:#d8b56d}
+@supports ((background-clip:text) or (-webkit-background-clip:text)){
+ .reading p.interaction-hint,.reading .reading-order-tip{
+  background-image:linear-gradient(160deg,#f8e5b7 0%,#c29a55 45%,#f5dda2 70%,#d4b476 100%);
+  background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
+ }
+}
+@keyframes hint-breath{
+ 0%,100%{filter:drop-shadow(0 0 2px #d9a64c25)}
+ 50%{filter:drop-shadow(0 0 7px #e6b65a88)}
+}
+body.ambient-paused .interaction-hint,body.ambient-paused .reading-order-tip{animation-play-state:paused}
+@media(max-width:760px){
+ .hero-brand{top:auto;left:auto;width:clamp(175px,48vw,245px);margin-bottom:18px}
+ .hero-logo{max-height:clamp(105px,20vh,155px)}
+ .hero-nav-bar{margin-bottom:15px}
+ .universe-title-main{font-size:.95rem}
+ .contact-box h3{font-size:clamp(1.12rem,5vw,1.5rem)}
+ .contact-box p.contact-subtitle{letter-spacing:.10em}
+}
+@media(max-height:500px) and (orientation:landscape){
+ .hero-brand{top:auto;left:auto;width:160px;margin-bottom:8px}
+ .hero-logo{max-height:90px}
+ .hero-nav-bar{margin-bottom:8px}
+}
+@media(prefers-reduced-motion:reduce){
+ .contact-box h3::before{transform:translate(-50%,-50%);animation:none!important}
+ .interaction-hint,.reading-order-tip{animation:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -256,7 +322,7 @@ body.ambient-paused .element-modal h4::before { animation-play-state: paused; }
             
             </div></section><section class="chapter plain"><div class="reading"><h2 id="section-elements">六大神聖元素與聖術陣<br><span>THE SIX SACRED ELEMENTS</span></h2>
             
-            <p>觸碰聖術陣上的元素，探索各自的神聖力量。</p>
+            <p class="interaction-hint">觸碰聖術陣上的元素，探索各自的神聖力量。</p>
 
             
             <div class="magic-circle-container">
@@ -343,7 +409,7 @@ body.ambient-paused .element-modal h4::before { animation-play-state: paused; }
             <p>後世將這些嶄新的聖術形式歸納為三大類型：</p>
             <p class="center-text">術器使、元素使、靈獸使。</p>
 
-            <p>選擇一種聖術師，探索信、望、愛如何具現化。</p>
+            <p class="interaction-hint">選擇一種聖術師，探索信、望、愛如何具現化。</p>
 
             
             <div class="showcase-grid">
@@ -491,7 +557,7 @@ body.ambient-paused .element-modal h4::before { animation-play-state: paused; }
             
             </div></section><section class="chapter plain"><div class="reading"><div class="contact-box">
                 <h3>讓故事，跨越文字的界線。</h3>
-                <p>BEYOND THE PAGES, INTO NEW WORLDS.</p>
+                <p class="contact-subtitle">BEYOND THE PAGES, INTO NEW WORLDS.</p>
                 <p>我們相信，一個好的故事，不應只停留在文字之中。《聖術師 The Sanctarist》以六大元素為起點，交織出橫跨不同國度、世代與命運的奇幻宇宙。在這個世界裡，我們不只描繪超凡的力量與冒險，更希望透過每一段故事，探索信念、盼望、愛，以及人性之中的光明與掙扎。</p>
                 <p>而這個宇宙，仍有無限可能等待被看見。我們期待與同樣熱愛故事及藝術創作的夥伴攜手，讓《聖術師》以影視、動畫,漫畫、遊戲、音樂、舞台藝術，或其他富有創意的形式，延伸出更多動人的篇章。</p>
                 <p>無論您來自影視製作公司、藝術創作團隊，或是對本作品的改編、授權及跨界合作抱有興趣的創作者，我們都誠摯歡迎您的聯繫。讓我們一起，賦予這個宇宙更多被看見的可能。</p>
