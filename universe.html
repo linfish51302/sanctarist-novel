@@ -214,6 +214,43 @@ body.ambient-paused .interaction-hint,body.ambient-paused .reading-order-tip{ani
  .interaction-hint,.reading-order-tip{animation:none!important}
 }
 
+
+/* 2.4 — larger floating official logo; no duplicate reading buttons */
+.hero-brand{
+ width:clamp(420px,54vw,800px);
+ margin:0 auto clamp(10px,2vh,24px);
+}
+.hero-logo{
+ width:100%;max-height:clamp(250px,48vh,480px);height:auto;
+ object-fit:contain;margin:0 auto;
+ filter:drop-shadow(0 0 12px #e4bc7066) drop-shadow(0 0 30px #d4af3740);
+ animation:official-logo-float 5.2s ease-in-out infinite;
+ will-change:transform;
+}
+@keyframes official-logo-float{
+ 0%,100%{transform:translateY(0)}
+ 50%{transform:translateY(-7px)}
+}
+.universe-title-wrapper{margin-top:2px}
+.universe-title-container{width:min(100%,480px);margin:auto}
+.hero-nav-bar{margin-bottom:18px}
+.video-toggle{margin-bottom:18px}
+body.ambient-paused .hero-logo{animation-play-state:paused}
+@media(max-width:760px){
+ .hero-brand{width:min(90vw,490px);margin-bottom:16px}
+ .hero-logo{max-height:clamp(190px,35vh,300px)}
+ .hero-nav-bar{margin-bottom:12px}
+}
+@media(max-height:500px) and (orientation:landscape){
+ .hero-brand{width:min(50vw,320px);margin-bottom:4px}
+ .hero-logo{max-height:35vh}
+ .hero-nav-bar{margin-bottom:8px}
+ .video-toggle{margin-bottom:6px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-logo{animation:none!important;transform:none;will-change:auto}
+}
+
 </style>
 </head>
 <body>
@@ -284,7 +321,7 @@ body.ambient-paused .interaction-hint,body.ambient-paused .reading-order-tip{ani
                     <span class="cn-title">探索聖術師系列作品</span>
                     <span class="en-title">SERIES WORKS</span>
                 </a>
-            </nav><div class="hero-actions"><a class="primary" href="https://linfish51302.github.io/sanctarist-novel/index.html">開始閱讀 · 失落的繼承者</a><a class="secondary" href="#section-elements">探索世界觀</a></div><button class="video-toggle" type="button" aria-pressed="false">播放背景影片</button>
+            </nav><button class="video-toggle" type="button" aria-pressed="false">播放背景影片</button>
         </div>
     </header><main id="main"><section class="chapter "><div class="scene"><img src="universe-assets/universe-multiverse.webp" alt="" loading="lazy" decoding="async"><div class="scene-caption"><small>PROLOGUE · 00</small><span>世界之間</span></div></div><div class="reading">
             
